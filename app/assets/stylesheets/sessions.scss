@@ -1,3 +1,30 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.session-form {
+  width: 200px;
+  height: 300px;
+  border: 1px #e6e6e6 solid;
+  padding: 30px;
+};
+
+.session-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.session-label {
+  font-family: "Amazon Amber", Arial, sans-serif;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.session-input {
+  margin-bottom: 14px;
+  padding: 5px;
+}

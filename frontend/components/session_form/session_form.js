@@ -16,9 +16,13 @@ class SessionForm extends React.Component {
   addName(formType) {
     if (this.props.formType === 'signup') {
       return (
-      <label>Your first name
-        <input type="text" onChange={this.handleField("first_name")} value={this.state.first_name} placeholder="First name"/>
-      </label>);
+      <div className="session-form-type">Create account
+        <label className="session-label">Your first name
+          <input type="text" onChange={this.handleField("first_name")} value={this.state.first_name} placeholder="First name" className="session-input"/>
+        </label>
+      </div>);
+    } else {
+      return (<div className="session-form-type">Sign in</div>);
     }
   }
 
@@ -46,19 +50,19 @@ class SessionForm extends React.Component {
       return <li key={idx}>{error}</li>;
     });
     return (
-      <div>
-        <form onSubmit={this.handleSubmit.bind(this)} className="form">
-          <ul className="errors">{errs}</ul>
+      <div className="session-container">
+        <form onSubmit={this.handleSubmit.bind(this)} className="session-form">
+          <ul className="session-errors">{errs}</ul>
           {this.addName(this.props.formType)}
-          <label>Email
-            <input type="text" onChange={this.handleField("email")} placeholder="Email" value={this.state.email}/>
+          <label className="session-label">Email
+            <input type="text" onChange={this.handleField("email")} placeholder="Email" value={this.state.email} className="session-input"/>
           </label>
           <br/>
-          <label>Password
-            <input type='password' onChange={this.handleField("password")} placeholder="Password" value={this.state.password} />
+          <label className="session-label">Password
+            <input type='password' onChange={this.handleField("password")} placeholder="Password" value={this.state.password} className="session-input"/>
           </label>
           <br/>
-          <button className="submit-button">{buttonText}</button>
+          <button className="session-submit-button">{buttonText}</button>
           {this.addLink(this.props.formType)}
         </form>
       </div>
