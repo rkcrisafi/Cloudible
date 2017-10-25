@@ -35,8 +35,8 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div>Already have an account?
-          <Link to="/login" className="sign-in-link">Sign In</Link>
+        <div className="session-already-have-account">Already have an account?
+          <Link to="/login" className="sign-in-link"> Sign In</Link>
         </div>
       );
     }
@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
             <div className="session-input-name">Email</div>
             <input type="text" onChange={this.handleField("email")} value={this.state.email} className="session-input"/>
           </label>
-          <br/>
+
           <label className="session-label">
             <div className="session-input-name">Password</div>
             <input type='password' onChange={this.handleField("password")} value={this.state.password} className="session-input"/>
