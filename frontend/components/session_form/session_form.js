@@ -16,7 +16,8 @@ class SessionForm extends React.Component {
   addName(formType) {
     if (this.props.formType === 'signup') {
       return (
-      <div className="session-form-type">Create account
+      <div>
+        <div className="session-form-type">Create account</div>
         <label className="session-label">Your first name
           <input type="text" onChange={this.handleField("first_name")} value={this.state.first_name} placeholder="First name" className="session-input"/>
         </label>
@@ -45,7 +46,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const buttonText = this.props.formType === 'login' ? "Sign in" : "Create your Cloudible account";
+    const buttonText = this.props.formType === 'login' ? "Sign in" : "Create your Cloudible Account";
     let errs = this.props.errors.map((error, idx) => {
       return <li key={idx}>{error}</li>;
     });

@@ -4,8 +4,8 @@
 
 
 .session-form {
-  width: 200px;
-  height: 300px;
+  width: 296px;
+  height: 384px;
   border: 1px #e6e6e6 solid;
   padding: 30px;
 };
@@ -20,11 +20,32 @@
 .session-label {
   font-family: "Amazon Amber", Arial, sans-serif;
   font-size: 13px;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2px;
+
 }
 
 .session-input {
   margin-bottom: 14px;
   padding: 5px;
+  height: 40px;
+  font-size: 11px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #a6a6a6;
+}
+
+.session-input:focus {
+  box-shadow: none;
+}
+
+.session-submit-button {
+  padding: 10px 30px 10px 30px;
+  width: 100%;
+  font-size: 14px;
+  background: #f7991c;
+  border-color: #f7991c;
+  cursor: pointer;
 }
