@@ -1,13 +1,17 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
 
-const App = () => (
+const App = (props) => (
   <div>
     <header>
       <h1>Cloudible</h1>
-      <GreetingContainer />
+      {!['/login', '/signup'].includes(props.location.pathname) ? (
+        <div>
+          <GreetingContainer />
+        </div>
+      ) : (null)}
     </header>
 
     <Route path="/login" component={SessionFormContainer} />
@@ -15,4 +19,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default withRouter(App);
