@@ -25,12 +25,12 @@ class SessionForm extends React.Component {
   addLink(formType) {
     if (this.props.formType === 'login') {
       return (
-        <Link to="/signup">Create your Cloudible account</Link>
+        <Link to="/signup" className="sign-up-link">Create your Cloudible account</Link>
       );
     } else {
       return (
         <div>Already have an account?
-          <Link to="/login">Sign In</Link>
+          <Link to="/login" className="sign-in-link">Sign In</Link>
         </div>
       );
     }
@@ -42,9 +42,13 @@ class SessionForm extends React.Component {
 
   render() {
     const buttonText = this.props.formType === 'login' ? "Sign in" : "Create your Cloudible account";
+    let errs = this.props.errors.map((error, idx) => {
+      return <li key={idx}>{error}</li>;
+    });
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)} className="form">
+          <ul className="errors">{errs}</ul>
           {this.addName(this.props.formType)}
           <label>Email
             <input type="text" onChange={this.handleField("email")} placeholder="Email" value={this.state.email}/>
@@ -54,7 +58,7 @@ class SessionForm extends React.Component {
             <input type='password' onChange={this.handleField("password")} placeholder="Password" value={this.state.password} />
           </label>
           <br/>
-          <button>{buttonText}</button>
+          <button className="submit-button">{buttonText}</button>
           {this.addLink(this.props.formType)}
         </form>
       </div>
