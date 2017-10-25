@@ -23,8 +23,6 @@
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  padding-bottom: 2px;
-
 }
 
 .session-input {
@@ -41,11 +39,31 @@
   box-shadow: none;
 }
 
+.session-input-name {
+  padding: 4px 0 4px 0;
+}
+
 .session-submit-button {
   padding: 10px 30px 10px 30px;
   width: 100%;
   font-size: 14px;
   background: #f7991c;
-  border-color: #f7991c;
+  border: 1px solid #f7991c;
   cursor: pointer;
+  // box-shadow: none;
+  outline: 0;
+}
+
+.sign-up-link {
+  display: flex;
+  justify-content: center;
+  padding: 14px 0 14px 0;
+  width: 100%;
+  text-align: center;
+  color: black;
+  background-color: #e6e6e6;
+  text-decoration: none;
+  margin-top: 30px;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  font-size: 15px;
 }
