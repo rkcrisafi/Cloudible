@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') {
       return (
       <label>Your first name
-        <input type="text" onChange={this.handleField("first_name")} value={this.state.first_name}/>
+        <input type="text" onChange={this.handleField("first_name")} value={this.state.first_name} placeholder="First name"/>
       </label>);
     }
   }
@@ -47,11 +47,11 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           {this.addName(this.props.formType)}
           <label>Email
-            <input type="text" onChange={this.handleField("email")} value={this.state.email}/>
+            <input type="text" onChange={this.handleField("email")} placeholder="Email" value={this.state.email}/>
           </label>
           <br/>
           <label>Password
-            <input type='password' onChange={this.handleField("password")} value={this.state.password} />
+            <input type='password' onChange={this.handleField("password")} placeholder="Password" value={this.state.password} />
           </label>
           <br/>
           <button>{buttonText}</button>
