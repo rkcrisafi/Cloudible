@@ -21,7 +21,7 @@ export const signup = user => dispatch => {
   return APIUtil.signup(user).then(user => {
     return dispatch(receiveCurrentUser(user));
   }, errors => {
-    return dispatch(receiceErrors(errors));
+    return dispatch(receiveErrors(errors));
   });
 };
 
