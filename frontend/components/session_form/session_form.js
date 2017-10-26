@@ -8,11 +8,6 @@ class SessionForm extends React.Component {
     this.state = { email: "", password:"" };
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.formType !== newProps.formType) {
-      this.props.clearErrors();
-    }
-  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -34,6 +29,12 @@ class SessionForm extends React.Component {
     }
   }
 
+  handleClick () {
+    this.props.clearErrors();
+    this.props.history.push('login');
+
+  }
+
   addLink(formType) {
     if (this.props.formType === 'login') {
       return (
@@ -43,13 +44,13 @@ class SessionForm extends React.Component {
             <h5  className="session-new-to-cloud">New to Cloudible?</h5>
             <hr className="session-divider"/>
           </div>
-          <Link to="/signup" className="sign-up-link">Create your Cloudible account</Link>
+          <a href="/#signup" className="sign-up-link">Create your Cloudible account</a>
         </div>
       );
     } else {
       return (
         <div className="session-already-have-account">Already have an account?
-          <Link to="/login" className="sign-in-link"> Sign In</Link>
+          <a className="sign-in-link" href="#/login" onClick={() => this.props.clearErrors()}> Sign In</a>
         </div>
       );
     }
