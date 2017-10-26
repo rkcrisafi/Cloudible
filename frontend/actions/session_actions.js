@@ -40,3 +40,7 @@ export const logout = () => dispatch => {
     return dispatch(receiveErrors(errors));
   });
 };
+
+export const clearErrors = (currentUser) => dispatch => {
+  return dispatch(receiveCurrentUser(currentUser));
+};

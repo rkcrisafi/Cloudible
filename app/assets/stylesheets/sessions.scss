@@ -25,6 +25,17 @@
   letter-spacing: -2px;
 }
 
+.session-errors {
+  font-size: 13px;
+  color: #c40000;
+  border: 1px solid #c40000;
+  width: 296px;
+  padding: 30px;
+  margin-bottom: 10px;
+  list-style-type: disc;
+  line-height: 1.8;
+}
+
 .session-label {
   // font-family: "Amazon Amber", Arial, sans-serif;
   font-size: 13px;

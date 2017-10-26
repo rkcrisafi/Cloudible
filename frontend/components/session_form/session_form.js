@@ -8,6 +8,12 @@ class SessionForm extends React.Component {
     this.state = { email: "", password:"" };
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.formType !== newProps.formType) {
+      this.props.clearErrors();
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
@@ -62,8 +68,8 @@ class SessionForm extends React.Component {
     return (
       <div className="session-container">
         <h1 className="session-logo">cloudible</h1>
+        { errs.length === 0 ? null : <ul className="session-errors">{errs}</ul>}
         <form onSubmit={this.handleSubmit.bind(this)} className="session-form">
-          <ul className="session-errors">{errs}</ul>
           {this.addName(this.props.formType)}
           <label className="session-label">
             <div className="session-input-name">Email</div>
