@@ -31,7 +31,14 @@ class SessionForm extends React.Component {
   addLink(formType) {
     if (this.props.formType === 'login') {
       return (
-        <Link to="/signup" className="sign-up-link">Create your Cloudible account</Link>
+        <div>
+          <div className="session-division-new">
+            <hr className="session-divider"/>
+            <h5  className="session-new-to-cloud">New to Cloudible?</h5>
+            <hr className="session-divider"/>
+          </div>
+          <Link to="/signup" className="sign-up-link">Create your Cloudible account</Link>
+        </div>
       );
     } else {
       return (
@@ -51,8 +58,10 @@ class SessionForm extends React.Component {
     let errs = this.props.errors.map((error, idx) => {
       return <li key={idx}>{error}</li>;
     });
+    let placeHolder = this.props.formType === 'signup' ? "At least 6 characters" : "";
     return (
       <div className="session-container">
+        <h1 className="session-logo">cloudible</h1>
         <form onSubmit={this.handleSubmit.bind(this)} className="session-form">
           <ul className="session-errors">{errs}</ul>
           {this.addName(this.props.formType)}
@@ -63,7 +72,7 @@ class SessionForm extends React.Component {
 
           <label className="session-label">
             <div className="session-input-name">Password</div>
-            <input type='password' onChange={this.handleField("password")} value={this.state.password} className="session-input"/>
+            <input type='password' onChange={this.handleField("password")} value={this.state.password} className="session-input" placeholder={placeHolder}/>
           </label>
           <br/>
           <button className="session-submit-button">{buttonText}</button>

@@ -7,9 +7,9 @@ import { AuthRoute } from '../util/route_util';
 const App = (props) => (
   <div>
     <header>
-      <Link to="/" className="app-logo">Cloudible</Link>
       {!['/login', '/signup'].includes(props.location.pathname) ? (
         <div>
+          <Link to="/" className="app-logo">Cloudible</Link>
           <GreetingContainer />
         </div>
       ) : (null)}
