@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  image_url: MyString
+  author: MyString
+  narrator: MyString
+  publisher: MyString
+  audio: MyString
+  length: MyString
+  unabridged: MyString
+  language: MyString
+  summary: MyString
+
+two:
+  title: MyString
+  image_url: MyString
+  author: MyString
+  narrator: MyString
+  publisher: MyString
+  audio: MyString
+  length: MyString
+  unabridged: MyString
+  language: MyString
+  summary: MyString
