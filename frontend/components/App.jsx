@@ -8,7 +8,7 @@ const App = (props) => (
   <div>
     <header>
       {!['/login', '/signup'].includes(props.location.pathname) ? (
-        <div>
+        <div className="greeting-nav">
           <Link to="/" className="app-logo">Cloudible</Link>
           <GreetingContainer />
         </div>
