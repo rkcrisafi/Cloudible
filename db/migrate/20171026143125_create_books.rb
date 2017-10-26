@@ -1,16 +1,14 @@
 class CreateBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :books do |t|
-      t.string :title
-      t.string :image_url
-      t.string :author
-      t.string :narrator
-      t.string :publisher
-      t.string :audio
-      t.string :length
-      t.string :unabridged
-      t.string :language
-      t.string :summary
+      t.string :title, null: false
+      t.string :author, null: false
+      t.string :narrator, null: false
+      t.string :publisher, null: false
+      t.integer :length, null: false
+      t.boolean :unabridged, null: false
+      t.string :language, null: false
+      t.text :summary, null: false
 
       t.timestamps
     end
