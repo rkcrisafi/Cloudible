@@ -12,6 +12,25 @@ class Api::UsersController < ApplicationController
     end
   end
 
+
+  def update
+    if params[:type] == 'add' && params[:user_id] == current_user.id
+      @library_item = Library.new( book_id: params[:book_id], user_id: params[:user_id])
+
+      if @library_item.save
+        render :show
+      else
+        render json: @library.item.full_messages, status: 422
+      end
+      render :show
+    else
+      @library_item = current_user.book.find(params[:book_id])
+      @library_item.destroy
+      render :show
+    end
+
+  end
+
   private
 
   def user_params

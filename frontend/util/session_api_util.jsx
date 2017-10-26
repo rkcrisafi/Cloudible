@@ -20,3 +20,19 @@ export const logout = () => {
     url: '/api/session'
   });
 };
+
+export const add_book = (user_id, book_id) => {
+  return $.ajax({
+    method: 'patch',
+    url: `/api/users/${user_id}`,
+    data: { type: 'add', book_id }
+  });
+};
+
+export const delete_book = (user_id, book_id) => {
+  return $.ajax({
+    method: 'patch',
+    url: `/api/users/${user_id}`,
+    data: { type: 'remove', book_id }
+  });
+};
