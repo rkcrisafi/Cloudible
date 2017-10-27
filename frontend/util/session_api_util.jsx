@@ -36,3 +36,10 @@ export const delete_book = (user_id, book_id) => {
     data: { type: 'remove', book_id }
   });
 };
+
+export const show_library = (user_id) => {
+  return $.ajax({
+    method: 'get',
+    url: `api/users/${user_id}/books`
+  });
+};

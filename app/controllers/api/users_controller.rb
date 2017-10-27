@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-
+    debugger
   end
 
 
@@ -24,12 +24,11 @@ class Api::UsersController < ApplicationController
         @book = Book.find(params[:book_id])
         render 'api/books/show'
       else
-        render json: @library_item.full_messages, status: 422
+        render json: @library_item.errors.full_messages, status: 422
       end
 
     elsif params[:type] == 'remove' && params[:id].to_i == current_user.id
       @library_item = current_user.libraries.find_by(book_id: params[:book_id])
-      debugger
       @library_item.destroy
       render json: params[:book_id]
     end
