@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    debugger
+    
   end
 
 

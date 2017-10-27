@@ -7,12 +7,12 @@ export const REMOVE_BOOK = 'REMOVE_BOOK';
 // export const CREATE_BOOK = 'CREATE_BOOK';
 export const RECEIVE_USER_BOOKS = 'RECEIVE_USER_BOOKS';
 
-const reveiveBooks = (books) => ({
+const receiveBooks = (books) => ({
   type: RECEIVE_BOOKS,
   books
 });
 
-const reveiveBook = (book) => ({
+const receiveBook = (book) => ({
   type: RECEIVE_BOOK,
   book
 });
