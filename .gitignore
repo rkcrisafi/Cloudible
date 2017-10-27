@@ -17,5 +17,9 @@ node_modules/
 bundle.js
 bundle.js.map
 /yarn-error.log
+/.DS_Store
 
 .byebug_history
+
+# Ignore application configuration
+/config/application.yml

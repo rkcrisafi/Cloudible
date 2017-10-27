@@ -7,6 +7,12 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :libraries
+  has_many :books,
+    through: :libraries,
+    source: :book
+
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
