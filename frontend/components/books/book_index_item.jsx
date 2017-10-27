@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const BookIndexItem = ({ book }) => {
-  
-  let description = book.summary.slice(0,500) + "..."
+  // debugger
+  let description = book.summary.slice(0,500) + "...";
   return (
     <li>
       <Link to={`books/${book.id}`}>
-        {book.image}
+          <img src={book.imageUrl} width="100" height="100" />
       </Link>
       {book.title}
       {book.author}
