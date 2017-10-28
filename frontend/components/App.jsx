@@ -9,11 +9,17 @@ const App = (props) => (
   <div>
     <header>
       {!['/login', '/signup'].includes(props.location.pathname) ? (
-        <div className="greeting-nav">
-          <Link to="/" className="app-logo">Cloudible</Link>
-          <GreetingContainer />
-          <Route exact path="/" component={BookIndexContainer} />
+
+        <div>
+          <div className="greeting-nav">
+            <Link to="/" className="app-logo">Cloudible</Link>
+            <GreetingContainer className="greeting-container"/>
+          </div>
+          <div>
+            <Route exact path="/" component={BookIndexContainer} />
+          </div>
         </div>
+
       ) : (null)}
     </header>
 
