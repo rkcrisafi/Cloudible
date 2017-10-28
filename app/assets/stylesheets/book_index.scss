@@ -11,14 +11,9 @@
   // padding-bottom: 20px;
   max-width: 1020px;
   min-width: 1020px;
-  height: 480px;
+  height: 505px;
   display: flex;
   flex-wrap: wrap;
-
-}
-
-.book-index-description {
-  display: none;
 
 }
 
@@ -29,19 +24,86 @@
 
 .book-index-outside-narrator {
   width: 150px;
-  height: 50px;
+  height: 30px;
   font-family: "Amazon Amber", Arial, sans-serif;
   font-size: 13px;
   margin: 0 10px 10px 10px;
   border: 1px solid white;
   background: white;
-  padding: 5px;
+  padding: 5px 5px 20px 5px;
   color: gray;
   font-weight: 700;
 }
 
 .book-index-item {
   width: 150px;
-  height: 100px;
+  position: relative;
+  // height: 100px;
   margin: 10px;
+}
+
+.book-index-item:hover  .left-side-drop  .book-index-description {
+  background: white;
+  z-index: 5;
+  display: inline;
+}
+
+.book-index-item:hover  .right-side-drop  .book-index-description {
+  background: white;
+  z-index: 5;
+  display: inline;
+}
+
+.left-side-drop .book-index-description {
+  position: absolute;
+  left: 180px;
+  top: -20px;
+}
+
+.right-side-drop .book-index-description {
+  position: absolute;
+  right: 150px;
+  top: -20px;
+}
+
+.book-index-description {
+  // position: absolute;
+  width: 200px;
+  height: 330px;
+  border: white;
+  background: white;
+  display: none;
+  width: 250px;
+  height: 330px;
+  box-shadow: 2px 2px 3px #dbdee0;
+  border: 1px #dbdee0 solid;
+  border-radius: 2px;
+  padding: 30px 20px 10px 20px;
+  font-family: "Amazon Amber", Arial, sans-serif;
+}
+
+.book-index-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.book-index-author-line,
+.book-index-narrator-line,
+.book-index-format-line,
+.book-index-length-line {
+  display: flex;
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.book-index-by,
+.book-index-narrator,
+.book-index-format,
+.book-index-duration {
+  font-weight: 700;
+  padding-right: 3px;
+}
+
+.book-index-summary {
+  font-size: 13px;
 }

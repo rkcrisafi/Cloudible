@@ -13,6 +13,7 @@ const App = (props) => (
         <div>
           <div className="greeting-nav">
             <Link to="/" className="app-logo">Cloudible</Link>
+            <Link to="/books" className="browse-library">Browse Cloudible</Link>
             <GreetingContainer className="greeting-container"/>
           </div>
           <div>
