@@ -1,0 +1,168 @@
+.hfront-page {
+  height: 150px;
+  width: 100%;
+
+}
+
+.hgreeting-nav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  height: 100px;
+  width: 918px;
+  min-width: 918px;
+}
+
+.hlogo-browse {
+  // padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+}
+
+.happ-logo {
+  width: 150px;
+  text-decoration: none;
+  padding: 20px 20px 20px 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: black;
+}
+
+.hbrowse-library {
+  text-decoration: none;
+  padding-top: 40px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 14px;
+
+}
+
+.hgreeting-signin-link, .hgreeting-signin-link a {
+  text-decoration: none;
+  color: #176ad6;
+  padding-top: 15px;
+  font-size: 13px;
+}
+
+.hbrowse-library:hover, .hgreeting-signin-link:hover {
+  text-decoration: underline;
+}
+
+.hbook-index {
+  display: flex;
+  justify-content: center;
+  // background: #f6f7f7;
+}
+
+.hbook-index-list {
+  // display: flex;
+  // justify-content: center;
+  padding-top: 15px;
+  // padding-bottom: 20px;
+  max-width: 1035px;
+  min-width: 1035px;
+  height: 505px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.index-book-image-link {
+  margin: 10px 10px 2px 10px;
+  // float: left;
+}
+
+.hbook-index-item {
+  width: 230px;
+  position: relative;
+  // height: 100px;
+  margin: 8px;
+}
+
+.hbook-index-item:hover  .hleft-side-drop  .hbook-index-description {
+  // background: white;
+  z-index: 5;
+  display: inline;
+}
+
+.hindex-book-image-link {
+  border-radius: 7px;
+  box-shadow: 0px 7px 3px #a9a9aa;
+
+}
+
+.hbook-index-item:hover  .hright-side-drop  .hbook-index-description {
+  // background: white;
+  z-index: 5;
+  display: inline;
+}
+
+.hleft-side-drop .hbook-index-description {
+  position: absolute;
+  left: 240px;
+  top: 0px;
+}
+
+.hright-side-drop .hbook-index-description {
+  position: absolute;
+  right: 250px;
+  top: 0px;
+}
+
+.hbook-index-description {
+  // position: absolute;
+  width: 200px;
+  height: 330px;
+  border: white;
+  display: none;
+  width: 240px;
+  height: 370px;
+  border: 1px #dbdee0 solid;
+  border-radius: 2px;
+  padding: 30px 10px 10px 10px;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  background-color: #f2f2f7;
+  color: #2c2c2d;
+}
+
+.hbook-index-title {
+  font-size: 19px;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.hbook-index-format-length {
+  display: flex;
+  font-size: 12px;
+  padding-bottom: 10px;
+  color: gray;
+  font-weight: 700;
+}
+
+.hbook-format {
+  padding-right: 3px;
+}
+
+.hbook-index-author-line,
+.hbook-index-narrator-line {
+  display: flex;
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.hbook-index-by,
+.hbook-index-narrator {
+  // font-weight: 700;
+  padding-right: 3px;
+}
+
+.hbook-index-author, .hbook-index-narrator-name {
+  font-weight: 700;
+}
+
+.hbook-index-summary {
+  font-size: 13px;
+  padding-top: 10px;
+}

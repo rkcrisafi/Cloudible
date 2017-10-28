@@ -1,0 +1,27 @@
+import React from 'react';
+import BookIndexItem from './book_index_item_homepage';
+import shuffle from '../../../util/_shuffle';
+
+class BookIndex extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchBooks();
+  }
+
+  render () {
+
+    return (
+      <div className = "hbook-index">
+        <ul className="hbook-index-list">
+          {
+          shuffle(this.props.books).slice(0,20).map((book, idx) => (
+              <BookIndexItem key={book.id} book={book} idx={idx}/>
+            ))
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default BookIndex;
