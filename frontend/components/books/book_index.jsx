@@ -1,5 +1,6 @@
 import React from 'react';
 import BookIndexItem from './book_index_item';
+import shuffle from '../../util/_shuffle';
 
 class BookIndex extends React.Component {
 
@@ -8,11 +9,12 @@ class BookIndex extends React.Component {
   }
 
   render () {
+
     return (
       <div className = "book-index">
         <ul className="book-index-list">
           {
-            this.props.books.map((book, idx) => (
+          shuffle(this.props.books).slice(0,12).map((book, idx) => (
               <BookIndexItem key={book.id} book={book} idx={idx}/>
             ))
           }

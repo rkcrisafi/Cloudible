@@ -11,10 +11,14 @@ const App = (props) => (
       {!['/login', '/signup'].includes(props.location.pathname) ? (
 
         <div>
-          <div className="greeting-nav">
-            <Link to="/" className="app-logo">Cloudible</Link>
-            <Link to="/books" className="browse-library">Browse Cloudible</Link>
-            <GreetingContainer className="greeting-container"/>
+          <div className="front-page">
+            <div className="greeting-nav">
+              <div className="logo-browse">
+                <Link to="/" className="app-logo">Cloudible</Link>
+                <Link to="/books" className="browse-library">Browse Cloudible</Link>
+              </div>
+              <GreetingContainer className="greeting-container"/>
+            </div>
           </div>
           <div>
             <Route exact path="/" component={BookIndexContainer} />

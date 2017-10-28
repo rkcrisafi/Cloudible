@@ -34,9 +34,8 @@ const BookIndexItem = ({ book, idx }) => {
         </Link>
         <div className="book-index-outside-narrator-line">
           <div className="book-index-outside-narrator">Narrator:</div>
-          <div className="book-index-outide-narrator-name">{book.narrator}</div>
+          <div className="book-index-outside-narrator-name">{book.narrator}</div>
         </div>
-        <div className="book-index-outside-narrator">Narrator: {book.narrator}</div>
 
         <div>{((idx+1) % 6 === 5 || (idx+1) % 6 === 0) ?
             <div className="right-side-drop">{fullDescription}</div> :

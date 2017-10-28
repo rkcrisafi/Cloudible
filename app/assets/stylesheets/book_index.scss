@@ -1,3 +1,56 @@
+.front-page {
+  background-image: image-url("background1.png");
+  height: 500px;
+  width: 100%;
+
+}
+
+.greeting-nav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  height: 100px;
+  width: 918px;
+  min-width: 918px;
+}
+
+.logo-browse {
+  // padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+}
+
+.app-logo {
+  width: 150px;
+  text-decoration: none;
+  padding: 20px 20px 20px 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: black;
+}
+
+.browse-library {
+  text-decoration: none;
+  padding-top: 40px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 13px;
+
+}
+
+.browse-library:hover, .greeting-signin-link:hover {
+  text-decoration: underline;
+}
+
+.greeting-signin-link, .greeting-signin-link a {
+  text-decoration: none;
+  color: black;
+  padding-top: 15px;
+  font-size: 13px;
+}
+
 .book-index {
   display: flex;
   justify-content: center;
@@ -9,8 +62,8 @@
   // justify-content: center;
   padding-top: 15px;
   // padding-bottom: 20px;
-  max-width: 1020px;
-  min-width: 1020px;
+  max-width: 1035px;
+  min-width: 1035px;
   height: 505px;
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +75,8 @@
   // float: left;
 }
 
-.book-index-outside-narrator {
+.book-index-outside-narrator-line {
+  display: flex;
   width: 150px;
   height: 30px;
   font-family: "Amazon Amber", Arial, sans-serif;
@@ -31,15 +85,21 @@
   border: 1px solid white;
   background: white;
   padding: 5px 5px 20px 5px;
+  color: black;
+}
+
+.book-index-outside-narrator {
   color: gray;
   font-weight: 700;
+  padding-right: 5px;
+
 }
 
 .book-index-item {
   width: 150px;
   position: relative;
   // height: 100px;
-  margin: 10px;
+  margin: 11px;
 }
 
 .book-index-item:hover  .left-side-drop  .book-index-description {
@@ -74,7 +134,7 @@
   background: white;
   display: none;
   width: 250px;
-  height: 330px;
+  height: 370px;
   box-shadow: 2px 2px 3px #dbdee0;
   border: 1px #dbdee0 solid;
   border-radius: 2px;
@@ -106,4 +166,5 @@
 
 .book-index-summary {
   font-size: 13px;
+  padding-top: 10px;
 }
