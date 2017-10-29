@@ -1,3 +1,6 @@
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";
+
 .hfront-page {
   height: 150px;
   width: 100%;
@@ -50,23 +53,37 @@
   text-decoration: underline;
 }
 
-.hbook-index {
-  display: flex;
-  justify-content: center;
-  // background: #f6f7f7;
+.slick-prev {
+  background-color: black;
+  z-index: 10;
 }
 
-.hbook-index-list {
-  // display: flex;
-  // justify-content: center;
-  padding-top: 15px;
-  // padding-bottom: 20px;
-  max-width: 1035px;
-  min-width: 1035px;
-  height: 505px;
-  display: flex;
-  flex-wrap: wrap;
+// .hbook-index {
+//   display: flex;
+//   justify-content: center;
+//   // background: #f6f7f7;
+//   // min-height: 0;
+//   // min-width: 0;
+// }
 
+// .hbook-index-list {
+//   // display: flex;
+//   // justify-content: center;
+//   padding-top: 15px;
+//   // padding-bottom: 20px;
+//   max-width: 1035px;
+//   min-width: 1035px;
+//   height: 505px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: auto;
+//
+// }
+
+.homepage-slider {
+  max-width: 1020px;
+  margin: auto;
+  overflow-y: visible;
 }
 
 .index-book-image-link {
@@ -125,6 +142,7 @@
   font-family: "Amazon Amber", Arial, sans-serif;
   background-color: #f2f2f7;
   color: #2c2c2d;
+  z-index: 100;
 }
 
 .hbook-index-title {
