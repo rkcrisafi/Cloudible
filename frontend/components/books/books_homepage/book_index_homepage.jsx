@@ -5,6 +5,12 @@ import Slider from 'react-slick';
 
 
 class BookIndex extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { idx: null };
+    this.books = [];
+  }
 
   componentDidMount() {
     this.props.fetchBooks();
@@ -20,14 +26,41 @@ class BookIndex extends React.Component {
     $('.slick-next').css("height", "60px");
     $('.slick-arrow .slick-next').css("font-size", "40px");
 
-    // $('.homepage-each-element').hover
+    console.log(":here");
+    const that = this;
+    setTimeout(() => $('.homepage-each-element').hover(
+      (e) => {
+        console.log();
+        let idx = parseInt(e.currentTarget.dataset.index);
+        if (idx !== this.state.idx) {
+          that.setState({ idx });
+        }
+        // debugger
+        const top = $(e.currentTarget).offset().top;
+        const left = $(e.currentTarget).offset().left + 250;
+        $('.hbook-index-description').css({display: "block", 'top': top, 'left': left });
 
+    },
+      (e) => {
+        $('.hbook-index-description').css("display", "none");
 
+    }), 50);
 
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.books) {
+      this.books = shuffle(newProps.books.concat(newProps.books)).slice(0,20);
+    }
+  }
+
   render () {
-    let books = this.props.books.concat(this.props.books);
+
+    let description;
+    if (this.state.idx) {
+      description  = this.books[this.state.idx].summary.slice(0,500) + "...";
+    }
+
     let settings = {
       // accessibility: true,
       dots: true,
@@ -44,11 +77,35 @@ class BookIndex extends React.Component {
         <ul>
           <Slider {...settings} className="homepage-slider">
             {
-            shuffle(books).slice(0,20).map((book, idx) => (
-                <li style={{position: "relative"}} className="homepage-each-element"><BookIndexItem key={book.id} book={book} idx={idx} style={{position: "absolute"}}/></li>
+            this.books.map((book, idx) => (
+                <div key={idx} className="homepage-each-element">
+                  <BookIndexItem  book={book} idx={idx} data-idx={idx}/>
+                </div>
               ))
             }
           </Slider>
+            {this.state.idx ? (<div className="hbook-index-description">
+              <div className="hbook-index-title">{this.books[this.state.idx].title}</div>
+
+                <div className="hbook-index-format-length">
+                  <div className="hbook-format">{this.books[this.state.idx].unabridged ? "UNABRIDGED " : "ABRIDGED " }
+                </div>
+                  <div className="hbook-index-length">
+                    {this.books[this.state.idx] !== undefined  ? (this.books[this.state.idx].length) :
+                    null}
+                  </div>
+                </div>
+
+              <div className="hbook-index-author-line">
+                <div className="hbook-index-by">By </div>
+                <div className="hbook-index-author"> {this.books[this.state.idx].author}</div>
+              </div>
+              <div className="hbook-index-narrator-line">
+                <div className="hbook-index-narrator">Narrated By</div>
+                <div className="hbook-index-narrator-name">{this.books[this.state.idx].narrator}</div>
+              </div>
+              <div className="hbook-index-summary">{description}</div>
+            </div>) : (null)}
         </ul>
       </div>
     );
