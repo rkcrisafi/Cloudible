@@ -14,16 +14,16 @@ const App = (props) => {
         {!['/login', '/signup'].includes(props.location.pathname) ? (
           <div>
           <header>
-        { /*   <Switch>
+            <Switch>
               <Route exact path="/" component={NavBar} />
               <Route exact path="/books" component={NavBar} />
               <Route exact path="/books/:bookId" component={NavBar} />
-            </Switch> */ }
+            </Switch>
           </header>
             <Switch>
               <Route exact path="/books/:bookId" component={BookShow} />
               <Route exact path="/" component={LandingBookIndexContainer} />
-              { /*<Route exact path="/books" component={HomepageBookIndexContainer} */ }
+              <Route exact path="/books" component={HomepageBookIndexContainer} />
             </Switch>
           </div>
           ) : (null)}
@@ -33,5 +33,6 @@ const App = (props) => {
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </div>;
 };
+
 
 export default withRouter(App);

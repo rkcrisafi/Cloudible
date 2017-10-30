@@ -3,7 +3,7 @@ import BookIndex from './book_index_homepage';
 import { fetchBooks } from '../../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   return {
     books: Object.keys(state.books).map(id => state.books[id])
   };

@@ -16,8 +16,8 @@ export default (props) => {
           </div>
           <GreetingContainer className="greeting-container"/>
         </div>
-     </div>)
-  } else if (props.location.pathname = "/books") {
+     </div>);
+  } else if (props.location.pathname === "/books" || props.match.path === "/books/:bookId") {
     nav_bar = (
       <div className="hfront-page">
         <div className="hgreeting-nav">
@@ -27,7 +27,7 @@ export default (props) => {
           </div>
           <GreetingContainer className="hgreeting-container"/>
         </div>
-      </div>)
+      </div>);
   }
   return nav_bar;
 };
