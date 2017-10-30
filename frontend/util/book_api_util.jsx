@@ -17,20 +17,20 @@ export const deleteBook = (user_id, book_id) => {
 export const showLibrary = (user_id) => {
   return $.ajax({
     method: 'get',
-    url: `api/users/${user_id}/books`
+    url: `/api/users/${user_id}/books`
   });
 };
 
 export const fetchBooks = () => {
   return $.ajax({
     method: 'get',
-    url: 'api/books'
+    url: '/api/books'
   });
 };
 
 export const fetchBook = (book_id) => {
   return $.ajax({
     method: 'get',
-    url: `api/books/${book_id}`
+    url: `/api/books/${book_id}`
   });
 };

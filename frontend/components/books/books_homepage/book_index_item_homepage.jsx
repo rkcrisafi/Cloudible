@@ -31,7 +31,7 @@ const BookIndexItem = ({ book, idx }) => {
   return (
     <li>
       <div className="hbook-index-item">
-        <Link to={`books/${book.id}`}>
+        <Link to={`/books/${book.id}`}>
             <img src={book.imageUrl} width="230" height="230"  className="hindex-book-image-link"/>
         </Link>
 

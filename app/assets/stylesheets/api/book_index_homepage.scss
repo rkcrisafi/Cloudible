@@ -53,10 +53,6 @@
   text-decoration: underline;
 }
 
-.slick-prev {
-  background-color: black;
-  z-index: 10;
-}
 
 // .hbook-index {
 //   display: flex;
@@ -114,6 +110,7 @@
   // background: white;
   z-index: 5;
   display: inline;
+  overflow-y: visible;
 }
 
 .hleft-side-drop .hbook-index-description {

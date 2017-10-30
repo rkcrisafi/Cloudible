@@ -1,53 +1,37 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import { Route, withRouter, Link } from 'react-router-dom';
+import { Route, withRouter, Link, Switch } from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute } from '../util/route_util';
-// import BookIndexContainer from './books/book_index_container';
-import BookIndexContainer from './books/books_homepage/book_index_container_homepage';
+import LandingBookIndexContainer from './books/book_index_container';
+import HomepageBookIndexContainer from './books/books_homepage/book_index_container_homepage';
+import NavBar from './nav_bar/nav_bar';
+import BookShow from './books/book_show/book_show_container';
 
-const App = (props) => (
-  <div>
-    <header>
-      {!['/login', '/signup'].includes(props.location.pathname) ? (
+const App = (props) => {
 
-        // <div>
-        //   <div className="front-page">
-        //     <div className="greeting-nav">
-        //       <div className="logo-browse">
-        //         <Link to="/" className="app-logo">Cloudible</Link>
-        //         <Link to="/books" className="browse-library">Browse Cloudible</Link>
-        //       </div>
-        //       <GreetingContainer className="greeting-container"/>
-        //     </div>
-        //   </div>
-        //   <div>
-        //     <Route exact path="/" component={BookIndexContainer} />
-        //   </div>
-        // </div>
-
-
-        <div>
-          <div className="hfront-page">
-            <div className="hgreeting-nav">
-              <div className="hlogo-browse">
-                <Link to="/" className="happ-logo">Cloudible</Link>
-                <Link to="/books" className="hbrowse-library">Browse Cloudible</Link>
-              </div>
-              <GreetingContainer className="hgreeting-container"/>
-            </div>
-          </div>
+    return <div>
+        {!['/login', '/signup'].includes(props.location.pathname) ? (
           <div>
-            <Route exact path="/books" component={BookIndexContainer} />
+          <header>
+        { /*   <Switch>
+              <Route exact path="/" component={NavBar} />
+              <Route exact path="/books" component={NavBar} />
+              <Route exact path="/books/:bookId" component={NavBar} />
+            </Switch> */ }
+          </header>
+            <Switch>
+              <Route exact path="/books/:bookId" component={BookShow} />
+              <Route exact path="/" component={LandingBookIndexContainer} />
+              { /*<Route exact path="/books" component={HomepageBookIndexContainer} */ }
+            </Switch>
           </div>
-        </div>
+          ) : (null)}
 
-      ) : (null)}
-    </header>
 
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-  </div>
-);
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+    </div>;
+};
 
 export default withRouter(App);

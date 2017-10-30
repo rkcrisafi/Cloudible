@@ -29,7 +29,7 @@ const BookIndexItem = ({ book, idx }) => {
   return (
     <li>
       <div className="book-index-item">
-        <Link to={`books/${book.id}`}>
+        <Link to={`/books/${book.id}`} >
             <img src={book.imageUrl} width="150" height="150"  className="index-book-image-link"/>
         </Link>
         <div className="book-index-outside-narrator-line">
