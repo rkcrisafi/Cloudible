@@ -25,33 +25,29 @@ render () {
 
   return (
     <div>
-      <div className="book-show-book">
-        <img src={book.imageUrl} width="400" height="400"  className="show-book-image"/>
-        <div className="book-show-description">
-          <h1 className="book-show-title">{book.title}</h1>
-            <div className="book-show-author-line">
-              <div className="book-show-by">By {book.author}</div>
-              <div className="book-show-author"> {book.author}</div>
-            </div>
-            <div className="book-show-narrator-line">
-              <div className="book-show-narrator">Narrated By</div>
-              <div className="book-show-narrator-name">{book.narrator}</div>
-            </div>
-            <div className="book-show-length-line">
-              <div className="book-show-duration">Length:</div>
-              <div className="book-show-length">{book.length}</div>
-            </div>
+      <div className="book-show-book-section">
+        <div className="book-show-book">
+          <img src={book.imageUrl} width="232" height="232"  className="show-book-image"/>
+          <div className="book-show-description">
+
+            <h1 className="book-show-title">{book.title}</h1>
+            <div className="book-show-by">By: {book.author}</div>
+            <div className="book-show-narrator-name">Narrated by: {book.narrator}</div>
+            <div className="book-show-length">Length: {book.length}</div>
             <div className="book-show-format">{book.unabridged ? "Unabridged" : "Abridged" }</div>
-            <div className="book-show-language-line">
-              <div className="book-show-language">Languages:</div>
-              <div className="book-show-language">{book.language}</div>
-            </div>
+            <div className="book-show-language">Language: {book.language}</div>
           </div>
         </div>
-        <div className="show-book-buy-button">
+          <div className="show-book-buy-button">
 
-          <button onClick={this.handleClick.bind(this)}>Free Trial</button>
-          <button onClick={this.handleClick.bind(this)}>This One on Us</button>
+            <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>
+            <div className="book-show-division-or">
+              <hr className="book-show-divider-left"/>
+              <div className="book-show-or">OR</div>
+              <hr className="book-show-divider-right"/>
+            </div>
+            <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button>
+          </div>
         </div>
     </div>
     );

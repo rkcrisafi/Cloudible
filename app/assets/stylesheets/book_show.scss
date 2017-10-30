@@ -1,0 +1,103 @@
+
+.book-show-book-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  padding-top: 20px;
+
+}
+
+.book-show-book {
+  display: flex;
+  padding: 20px 15px 5px 20px;
+}
+
+.show-book-image {
+  padding-right: 15px;
+}
+
+.book-show-description {
+  color: gray;
+  font-size: 14px;
+}
+
+.book-show-title {
+  font-size: 25px;
+  font-weight: 700;
+  padding: 5px 5px 15px 0px;
+  color: black;
+}
+
+.book-show-by, .book-show-narrator-name, .book-show-length, .book-show-format, .book-show-language {
+  margin: 5px;
+}
+
+.show-book-buy-button {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+}
+
+.book-show-free-button, .book-show-on-us-button, .book-show-or {
+  margin: 20px 5px;
+}
+
+.book-show-free-button {
+  width: 317px;
+  height: 40px;
+  background: #f7991c;
+  font-size: 14px;
+  border: 1px solid #f7991c;
+  outline: 0;
+}
+
+.book-show-free-button:hover {
+  background: orange;
+}
+
+.book-show-on-us-button {
+  width: 317px;
+  height: 40px;
+  background: #e6e6e6;
+  font-size: 14px;
+  border: 1px solid #e6e6e6;
+  outline: 0;
+}
+
+.book-show-on-us-button:hover {
+  background: #f2f2f2;
+}
+
+.book-show-or {
+  display: flex;
+  justify-content: center;
+  color: gray;
+
+}
+
+.book-show-division-or {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.book-show-divider-left, .book-show-divider-right {
+  width: 32%;
+  height: 0;
+  background-color: orange;
+  color: orange;
+  border-color: #e6e6e6;
+  margin-top: 30px;
+  padding-left: 5px;
+ }
+
+ .book-show-divider-left {
+   margin-left: 5px;
+ }
+
+ .book-show-divider-right {
+   margin-right: 5px;
+ }
