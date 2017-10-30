@@ -32,12 +32,21 @@ class BookIndex extends React.Component {
       (e) => {
         console.log();
         let idx = parseInt(e.currentTarget.dataset.index);
-        if (idx !== this.state.idx) {
+        console.log(idx);
+
+        if (idx !== that.state.idx) {
           that.setState({ idx });
         }
+        let top;
+        let left;
         // debugger
-        const top = $(e.currentTarget).offset().top;
-        const left = $(e.currentTarget).offset().left + 250;
+        if (idx+1 % 4 === 3 || idx+1 % 4 === 0 ) {
+          top = $(e.currentTarget).offset().top;
+          left = $(e.currentTarget).offset().left - 285;
+        } else {
+          top = $(e.currentTarget).offset().top;
+          left = $(e.currentTarget).offset().left + 250;
+        }
         $('.hbook-index-description').css({display: "block", 'top': top, 'left': left });
 
     },
