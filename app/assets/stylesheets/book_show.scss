@@ -43,7 +43,7 @@
   margin: 20px 5px;
 }
 
-.book-show-free-button {
+.book-show-free-button, .book-show-listen-now-button {
   width: 317px;
   height: 40px;
   background: #f7991c;
@@ -52,22 +52,34 @@
   outline: 0;
 }
 
-.book-show-free-button:hover {
+.book-show-free-button:hover, .book-show-listen-now-button:hover {
   background: orange;
 }
 
-.book-show-on-us-button {
+.book-show-on-us-button, .book-show-in-your-library-button {
   width: 317px;
   height: 40px;
   background: #e6e6e6;
   font-size: 14px;
   border: 1px solid #e6e6e6;
-  outline: 0;
+  // outline: 0;
 }
 
-.book-show-on-us-button:hover {
+.book-show-on-us-button:hover{
   background: #f2f2f2;
+  border: 1px solid #f2f2f2;
 }
+
+.book-show-in-your-library-button {
+  background: #00a8a8;
+  height: 40px;
+}
+
+.book-show-in-your-library-button:hover {
+  background: #00c1c1;
+}
+
+
 
 .book-show-or {
   display: flex;

@@ -9,7 +9,7 @@ class BookShow extends React.Component {
 
   handleClick(e) {
     if (this.props.currentUserId) {
-      this.props.addBook(this.props.currentUserId, this.props.bookId).then(() => this.props.history.push("/library"));
+      this.props.addBook(this.props.currentUserId, this.props.book.id).then(() => this.props.history.push("/library"));
     } else {
       this.props.history.push("/login");
     }
@@ -22,7 +22,7 @@ render () {
   if (!book) {
     return <div>Loading....</div>;
   }
-
+  // debugger
   return (
     <div>
       <div className="book-show-book-section">
@@ -39,14 +39,17 @@ render () {
           </div>
         </div>
           <div className="show-book-buy-button">
-
-            <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>
+            { this.props.currentUser.bookIds.includes(book.id) ?
+              <button className="book-show-listen-now-button">Listen Now</button> :
+              <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>}
             <div className="book-show-division-or">
               <hr className="book-show-divider-left"/>
               <div className="book-show-or">OR</div>
               <hr className="book-show-divider-right"/>
             </div>
-            <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button>
+            { this.props.currentUser.bookIds.includes(book.id) ?
+              <button className="book-show-in-your-library-button" onClick={() => this.props.history.push("/library")}>In your library</button> :
+              <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button> }
           </div>
         </div>
     </div>

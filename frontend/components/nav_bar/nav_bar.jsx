@@ -1,12 +1,21 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state, ownProps) => {
+  let currentUser = state.session.currentUser ? state.session.currentUser : undefined;
+  // debugger
+  return {
+    currentUser
+  };
+};
 
 
-
-export default (props) => {
-  let nav_bar;
-  if (props.location.pathname === "/") {
+const NavBar = (props) => {
+  let nav_bar = <div>that supposed to be my navbar</div>;
+  // debugger
+  if (props.location.pathname === "/" && !props.currentUser)  {
     nav_bar = (
       <div className="front-page">
         <div className="greeting-nav">
@@ -31,3 +40,5 @@ export default (props) => {
   }
   return nav_bar;
 };
+
+export default withRouter(connect(mapStateToProps, null)(NavBar));

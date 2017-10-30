@@ -40,7 +40,7 @@ class BookIndex extends React.Component {
         let top;
         let left;
         // debugger
-        if (idx+1 % 4 === 3 || idx+1 % 4 === 0 ) {
+        if ((idx+1) % 4 === 3 || (idx+1) % 4 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
         } else {
