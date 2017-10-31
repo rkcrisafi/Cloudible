@@ -26,7 +26,7 @@ const NavBar = (props) => {
           <GreetingContainer className="greeting-container"/>
         </div>
      </div>);
-  } else if (props.location.pathname === "/books" || props.match.path === "/books/:bookId") {
+  } else if (props.location.pathname === "/books" || props.match.path === "/books/:bookId" || props.match.path === "/library") {
     nav_bar = (
       <div className="hfront-page">
         <div className="hgreeting-nav">

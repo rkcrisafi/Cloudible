@@ -4,30 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 const BookIndexItem = ({ book, idx }) => {
   // debugger
   let fullDescription = null;
-  // (
-  //   <div className="hbook-index-description">
-  //     <div className="hbook-index-title">{book.title}</div>
-  //
-  //       <div className="hbook-index-format-length">
-  //         <div className="hbook-format">{book.unabridged ? "UNABRIDGED " : "ABRIDGED " }
-  //       </div>
-  //         <div className="hbook-index-length">
-  //           {book.length !== undefined  ? (book.length) :
-  //           null}
-  //         </div>
-  //       </div>
-  //
-  //     <div className="hbook-index-author-line">
-  //       <div className="hbook-index-by">By </div>
-  //       <div className="hbook-index-author"> {book.author}</div>
-  //     </div>
-  //     <div className="hbook-index-narrator-line">
-  //       <div className="hbook-index-narrator">Narrated By</div>
-  //       <div className="hbook-index-narrator-name">{book.narrator}</div>
-  //     </div>
-  //     <div className="hbook-index-summary">{description}</div>
-  //   </div>
-  // );
   return (
     <li>
       <div className="hbook-index-item">

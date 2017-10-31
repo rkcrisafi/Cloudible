@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
-import BookIndex from './book_index_homepage';
+import Library from './library';
 import { showLibrary, deleteBook, fetchBook } from '../../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
-    bookIds: Object.keys(state.books).map(id => state.books[id])
+    books: state.session.currentUser.bookIds.map(id => state.books[id]).filter(el => el !== undefined),
+    currentUserId: state.session.currentUser.id
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   showLibrary: (user_id) => dispatch(showLibrary(user_id)),
   deleteBook: (user_id, book_id) => dispatch(deleteBook(user_id, book_id)),
-  fetchBook: (book) => dispatch(fetchBook(book))
 });
 
 export default connect(

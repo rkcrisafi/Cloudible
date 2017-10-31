@@ -1,0 +1,20 @@
+.library-table-header {
+  height: 69px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+table, thead th, tbody td {
+  border: 1px solid white;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  font-size: 13px;
+}
+
+th {
+  background-color: #dedede;
+  height: 69px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}

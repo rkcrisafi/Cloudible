@@ -7,6 +7,7 @@ import LandingBookIndexContainer from './books/book_index_container';
 import HomepageBookIndexContainer from './books/books_homepage/book_index_container_homepage';
 import NavBar from './nav_bar/nav_bar';
 import BookShow from './books/book_show/book_show_container';
+import LibraryContainer from './books/library/library_container';
 
 const App = (props) => {
 
@@ -18,12 +19,14 @@ const App = (props) => {
               <Route exact path="/" component={NavBar} />
               <Route exact path="/books" component={NavBar} />
               <Route exact path="/books/:bookId" component={NavBar} />
+              <Route exact path="/library" component={NavBar} />
             </Switch>
           </header>
             <Switch>
               <Route exact path="/books/:bookId" component={BookShow} />
               <Route exact path="/" component={LandingBookIndexContainer} />
               <Route exact path="/books" component={HomepageBookIndexContainer} />
+              <Route exact path="/library" component={LibraryContainer} />
             </Switch>
           </div>
           ) : (null)}
