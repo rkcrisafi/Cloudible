@@ -2,9 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class BookShow extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.state = { playing: false };
+
+  }
+
   componentDidMount() {
     // debugger
     this.props.fetchBook(this.props.match.params.bookId);
+
   }
 
   handleClick(e) {
@@ -16,21 +24,50 @@ class BookShow extends React.Component {
 
   }
 
+  toggleAudio (audio) {
+    //audio comes from somewhere
+    // debugger
+    if (audio.paused) {
+      audio.play();
+      this.setState({playing: true});
+    } else {
+      audio.pause();
+      this.setState({playing: false});
+
+    }
+  }
+
 render () {
   console.log(this.props.book);
   const book = this.props.book;
   if (!book) {
     return <div>Loading....</div>;
   }
+  let theAudio = (
+    <audio controls ref={audio => this.audio = audio}>
+      <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
+    </audio>);
   // debugger
   return (
-    <div>
+    <div className="book-show-page">
       <div className="book-show-book-section">
+
         <div className="book-show-book">
-          <img src={book.imageUrl} width="232" height="232"  className="show-book-image"/>
-          <audio controls ref={audio => this.audio = audio} className="show-book-audio">
-            <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
-          </audio>
+          <div className="book-show-just-book">
+            <img src={book.imageUrl} width="232" height="232"  className="show-book-image"/>
+          </div>
+          <div className="show-book-audio">{theAudio}</div>
+          <div onClick={() => this.toggleAudio(this.audio)} className="book-show-audio">
+            { !this.state.playing ?
+              <i className="fa fa-play-circle" aria-hidden="true" font-size="13px"></i> :
+              <i className="fa fa-pause-circle" aria-hidden="true"></i>
+            }
+            <div className="book-show-sample-word">Sample</div>
+          </div>
+        </div>
+
+        <div>
+
           <div className="book-show-description">
 
             <h1 className="book-show-title">{book.title}</h1>
@@ -41,21 +78,20 @@ render () {
             <div className="book-show-language">Language: {book.language}</div>
           </div>
         </div>
-          <div className="show-book-buy-button">
-            { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
-              <button className="book-show-listen-now-button">Listen Now</button> :
-              <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>}
-            <div className="book-show-division-or">
-              <hr className="book-show-divider-left"/>
-              <div className="book-show-or">OR</div>
-              <hr className="book-show-divider-right"/>
-            </div>
-            { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
-              <button className="book-show-in-your-library-button" onClick={() => this.props.history.push("/library")}>In your library</button> :
-              <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button> }
-          </div>
+      </div>
+      <div className="show-book-buy-button">
+        { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
+          <button className="book-show-listen-now-button">Listen Now</button> :
+          <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>}
+        <div className="book-show-division-or">
+          <hr className="book-show-divider-left"/>
+          <div className="book-show-or">OR</div>
+          <hr className="book-show-divider-right"/>
         </div>
-
+        { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
+          <button className="book-show-in-your-library-button" onClick={() => this.props.history.push("/library")}>In your library</button> :
+          <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button> }
+      </div>
     </div>
     );
   }

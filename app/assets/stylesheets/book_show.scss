@@ -1,5 +1,5 @@
 
-.book-show-book-section {
+.book-show-page {
   max-width: 1020px;
   margin: auto;
   width: 100%;
@@ -10,17 +10,41 @@
 
 }
 
-.book-show-book {
+.book-show-book-section {
   display: flex;
   padding: 20px 15px 5px 20px;
 }
 
 .show-book-image {
   padding-right: 15px;
+  margin-bottom: 10px;
 }
 
 .show-book-audio {
   display: none;
+}
+
+.book-show-audio {
+  // text-align: center;
+  // vertical-align: center;
+  width: 232px;
+  height: 30px;
+  background: #f2f2f2;
+  font-size: 20px;
+  color: gray;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.book-show-sample-word {
+  font-size: 14px;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+.fa .fa-play-circle, .fa .fa-pause-circle {
+  font-size: 1px;
 }
 
 .book-show-description {
