@@ -26,13 +26,16 @@ const NavBar = (props) => {
           <GreetingContainer className="greeting-container"/>
         </div>
      </div>);
-  } else if (props.location.pathname === "/books" || props.match.path === "/books/:bookId" || props.match.path === "/library") {
+  } else {
     nav_bar = (
       <div className="hfront-page">
         <div className="hgreeting-nav">
           <div className="hlogo-browse">
             <Link to="/" className="happ-logo">Cloudible</Link>
             <Link to="/books" className="hbrowse-library">Browse Cloudible</Link>
+            { props.currentUser ?
+              <Link to="/library" className="nav-library-link">Library</Link> : (null)
+            }
           </div>
           <GreetingContainer className="hgreeting-container"/>
         </div>

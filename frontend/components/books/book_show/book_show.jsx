@@ -39,7 +39,7 @@ render () {
           </div>
         </div>
           <div className="show-book-buy-button">
-            { this.props.currentUser.bookIds.includes(book.id) ?
+            { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
               <button className="book-show-listen-now-button">Listen Now</button> :
               <button onClick={this.handleClick.bind(this)} className="book-show-free-button">Free Trial</button>}
             <div className="book-show-division-or">
@@ -47,7 +47,7 @@ render () {
               <div className="book-show-or">OR</div>
               <hr className="book-show-divider-right"/>
             </div>
-            { this.props.currentUser.bookIds.includes(book.id) ?
+            { this.props.currentUser && this.props.currentUser.bookIds.includes(book.id) ?
               <button className="book-show-in-your-library-button" onClick={() => this.props.history.push("/library")}>In your library</button> :
               <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button> }
           </div>

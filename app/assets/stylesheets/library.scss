@@ -1,13 +1,30 @@
-.library-table-header {
-  height: 69px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.library-library {
+  font-family: "Amazon Amber", Arial, sans-serif;
+  color: #f45d26;
+  padding-bottom: 20px;
+  padding-left: 120px;
+}
+
+table {
+  margin: auto;
+  // text-align: center;
+}
+
+thead th {
+  font-weight: 700px;
 }
 
 table, thead th, tbody td {
   border: 1px solid white;
   font-family: "Amazon Amber", Arial, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+  min-width: 100px;
+}
+
+td:last-child {
+  width: 150px;
 }
 
 th {

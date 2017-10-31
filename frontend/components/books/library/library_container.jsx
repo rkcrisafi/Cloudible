@@ -3,7 +3,7 @@ import Library from './library';
 import { showLibrary, deleteBook, fetchBook } from '../../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   return {
     books: state.session.currentUser.bookIds.map(id => state.books[id]).filter(el => el !== undefined),
     currentUserId: state.session.currentUser.id

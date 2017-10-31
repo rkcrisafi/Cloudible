@@ -1,0 +1,64 @@
+.hfront-page {
+  height: 130px;
+  width: 100%;
+}
+
+.hgreeting-nav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  height: 100px;
+  width: 918px;
+  min-width: 918px;
+}
+
+.hlogo-browse {
+  // padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+}
+
+.happ-logo {
+  width: 150px;
+  text-decoration: none;
+  padding: 20px 20px 20px 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: black;
+}
+
+.hbrowse-library, .nav-library-link {
+  text-decoration: none;
+  padding-top: 40px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 14px;
+}
+
+.hbrowse-library:hover, .nav-library-link:hover, .hgreeting-signin-link:hover, .logout-button:hover {
+  text-decoration: underline;
+}
+
+.greeting-user, .logout-button {
+  text-decoration: none;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 13px;
+  padding-right: 15px;
+}
+
+.greeting-logout {
+  display: flex;
+}
+
+
+
+.hgreeting-signin-link, .hgreeting-signin-link a {
+  text-decoration: none;
+  color: #176ad6;
+  padding-top: 15px;
+  font-size: 13px;
+}
