@@ -28,7 +28,9 @@ render () {
       <div className="book-show-book-section">
         <div className="book-show-book">
           <img src={book.imageUrl} width="232" height="232"  className="show-book-image"/>
-          <audio controls src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3"/>
+          <audio controls ref={audio => this.audio = audio} className="show-book-audio">
+            <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
+          </audio>
           <div className="book-show-description">
 
             <h1 className="book-show-title">{book.title}</h1>
@@ -53,6 +55,7 @@ render () {
               <button onClick={this.handleClick.bind(this)} className="book-show-on-us-button">This One on Us</button> }
           </div>
         </div>
+
     </div>
     );
   }

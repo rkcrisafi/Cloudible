@@ -7,6 +7,7 @@ class BookIndex extends React.Component {
     super(props);
 
     this.state = { audioIdx: null };
+    this.books = [];
   }
 
 
@@ -14,17 +15,25 @@ class BookIndex extends React.Component {
     this.props.fetchBooks();
   }
 
-  handleAudioState (oldIdx, newIdx, book) {
+  componentWillReceiveProps (newProps) {
+    if (this.books.length === 0) {
+      this.books = shuffle(newProps.books).slice(0,12);
+    }
+  }
+
+  handleAudioState (oldIdx, newIdx, book, audio) {
+    // debugger
     if (oldIdx === newIdx) {
-      audio.toggleAudio();
+      this.toggleAudio(audio);
     } else {
       $(".book-index-audio").attr("src", book.audioUrl);
     }
     this.setState({ audioIdx: newIdx });
   }
 
-  toggleAudio () {
+  toggleAudio (audio) {
     //audio comes from somewhere
+    // debugger
     if (audio.paused) {
       audio.play();
     } else {
@@ -33,19 +42,23 @@ class BookIndex extends React.Component {
   }
 
   render () {
+    // debugger
     let theAudio = (
-      <audio controls>
+      <audio controls ref={audio => this.audio = audio}>
         <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
-      </audio>);
+      </audio>
+    );
+      // debugger
     return (
       <div className = "book-index">
         <ul className="book-index-list">
           {
-          shuffle(this.props.books).slice(0,12).map((book, idx) => (
-              <BookIndexItem key={book.id} audioId={audioIdx} book={book} idx={idx} audio={theAudio}/>
+          this.books.map((book, idx) => (
+              <BookIndexItem key={book.id} audioId={this.state.audioIdx} book={book} idx={idx} audio={this.audio} handleAudioClick={this.handleAudioState.bind(this)} />
             ))
           }
         </ul>
+        <div className="book-index-the-only-audio">{theAudio}</div>
       </div>
     );
   }

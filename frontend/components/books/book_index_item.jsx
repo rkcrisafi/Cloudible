@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-const BookIndexItem = ({ book, idx, audio }) => {
+const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
   // debugger
   let description = book.summary.slice(0,500) + "...";
   let fullDescription = (
@@ -28,20 +28,22 @@ const BookIndexItem = ({ book, idx, audio }) => {
     </div>
   );
 
-  handleAudioClick () {
-    if ()
-  }
-
-
   return (
     <li>
       <div className="book-index-item">
-        <Link to={`/books/${book.id}`} >
-          <div>
-            <img src={book.imageUrl} width="150" height="150"  className="index-book-image-link"/>
-            <div className="book-index-audio">{audio}</div>
+
+          <div className="book-index-book-player">
+            <Link to={`/books/${book.id}`} >
+              <img src={book.imageUrl} width="150" height="150"  className="index-book-image-link"/>
+            </Link>
+
+            <div onClick={() => handleAudioClick(audioId, idx, book, audio)} className="book-index-audio">
+              { (idx === audioId && audio.paused) || (audioId === null || idx !== audioId) ?
+                <i className="fa fa-play-circle" aria-hidden="true"></i> :
+                <i className="fa fa-pause-circle" aria-hidden="true"></i>
+              }
+            </div>
           </div>
-        </Link>
 
         <div className="book-index-outside-narrator-line">
           <div className="book-index-outside-narrator">Narrator:</div>
