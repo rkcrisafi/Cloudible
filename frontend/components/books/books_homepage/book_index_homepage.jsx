@@ -24,7 +24,15 @@ class BookIndex extends React.Component {
     $('.slick-next').css("height", "60px");
     $('.slick-prev').css("color", "60px");
     $('.slick-next').css("height", "60px");
-    $('.slick-arrow .slick-next').css("font-size", "40px");
+    $('.slick-next').css("font-size", "40px");
+    $('.slick-prev').css("background-color", "gray");
+    $('.slick-prev').css("opacity", "0.8");
+    $('.slick-next').css("opacity", "0.8");
+    $('.slick-next').css("background-color", "gray");
+    $('.slick-prev').css("left", "5px");
+    $('.slick-prev').css("z-index", "200");
+    $('.slick-next').css("right", "15px");
+    $('.slick-next').css("z-index", "200");
 
     console.log(":here");
     const that = this;
