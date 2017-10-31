@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+
 const BookIndexItem = ({ book, idx, audio }) => {
   // debugger
   let description = book.summary.slice(0,500) + "...";
@@ -26,7 +27,11 @@ const BookIndexItem = ({ book, idx, audio }) => {
       <div className="book-index-summary">{description}</div>
     </div>
   );
-  
+
+  handleAudioClick () {
+    if ()
+  }
+
 
   return (
     <li>
@@ -34,7 +39,7 @@ const BookIndexItem = ({ book, idx, audio }) => {
         <Link to={`/books/${book.id}`} >
           <div>
             <img src={book.imageUrl} width="150" height="150"  className="index-book-image-link"/>
-            <div onClick={handleAudioClick} className="book-index-audio">{audio}</div>
+            <div className="book-index-audio">{audio}</div>
           </div>
         </Link>
 

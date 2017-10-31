@@ -14,8 +14,22 @@ class BookIndex extends React.Component {
     this.props.fetchBooks();
   }
 
-  handleAudioState (audioIdx) {
+  handleAudioState (oldIdx, newIdx, book) {
+    if (oldIdx === newIdx) {
+      audio.toggleAudio();
+    } else {
+      $(".book-index-audio").attr("src", book.audioUrl);
+    }
+    this.setState({ audioIdx: newIdx });
+  }
 
+  toggleAudio () {
+    //audio comes from somewhere
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
   }
 
   render () {
@@ -28,7 +42,7 @@ class BookIndex extends React.Component {
         <ul className="book-index-list">
           {
           shuffle(this.props.books).slice(0,12).map((book, idx) => (
-              <BookIndexItem key={book.id} book={book} idx={idx} audio={theAudio}/>
+              <BookIndexItem key={book.id} audioId={audioIdx} book={book} idx={idx} audio={theAudio}/>
             ))
           }
         </ul>
