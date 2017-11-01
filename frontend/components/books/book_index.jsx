@@ -26,6 +26,9 @@ class BookIndex extends React.Component {
     if (oldIdx === newIdx) {
       this.toggleAudio(audio);
     } else {
+      if (audio.paused) {
+        audio.play();
+      }
       $(".book-index-audio").attr("src", book.audioUrl);
     }
     this.setState({ audioIdx: newIdx });
