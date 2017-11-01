@@ -1,5 +1,5 @@
 import * as BookApiUtil from '../util/book_api_util';
-
+import { receiveCurrentUser } from './session_actions';
 
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
@@ -36,7 +36,7 @@ export const fetchBook = book => dispatch => (
 );
 
 export const addBook = (user_id, book_id) => dispatch => (
-  BookApiUtil.addBook(user_id, book_id).then(book => dispatch(receiveBook(book)))
+  BookApiUtil.addBook(user_id, book_id).then(user => dispatch(receiveCurrentUser(user)))
 );
 
 export const deleteBook = (user_id, book_id) => dispatch => (

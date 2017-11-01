@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'reviews/rails'
+
+  get 'reviews/g'
+
+  get 'reviews/controller'
+
+  get 'reviews/Reviews'
+
+  get 'reviews/create'
+
+  get 'ratings/create'
+
+  get 'ratings/update'
+
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do

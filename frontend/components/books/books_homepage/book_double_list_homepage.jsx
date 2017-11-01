@@ -27,9 +27,9 @@ class BookDoubleList extends React.Component {
     $('.slick-prev').css("left", "5px");
     $('.slick-prev').css("top", "150px");
     $('.slick-next').css("top", "150px");
-    $('.slick-prev').css("z-index", "200");
+    $('.slick-prev').css("z-index", "99");
     // $('.slick-next').css("right", "20px");
-    $('.slick-next').css("z-index", "200");
+    $('.slick-next').css("z-index", "99");
 
 
 
@@ -38,10 +38,11 @@ class BookDoubleList extends React.Component {
       (e) => {
         console.log();
         let idx = parseInt(e.currentTarget.dataset.idx);
+        let book_idx = parseInt(e.currentTarget.dataset.bookId);
         console.log(idx);
 
-        if (idx !== that.state.idx) {
-          that.setState({ idx });
+        if (book_idx !== that.state.idx) {
+          that.setState({ idx: book_idx });
         }
         let top;
         let left;
@@ -93,10 +94,14 @@ class BookDoubleList extends React.Component {
   }
 
   render () {
+    const correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
+
+
+    const hovBook = correct_book_id_books[0];
 
     let description;
     if (this.state.idx) {
-      description  = this.books[this.state.idx].summary.slice(0,500) + "...";
+      description  = hovBook.summary.slice(0,500) + "...";
     }
 
     let settings = {
@@ -120,30 +125,30 @@ class BookDoubleList extends React.Component {
             this.makeNewList(this.books).map((book, idx) => (
 
               <div key={idx}>
-                <BookIndexItem idx={idx} data-idx={idx} book={book}/>
+                <BookIndexItem idx={idx} book={book}/>
               </div>
               ))
             }
           </Slider>
             {this.state.idx ? (<div className="hbook-index-description">
-              <div className="hbook-index-title">{this.books[this.state.idx].title}</div>
+              <div className="hbook-index-title">{hovBook.title}</div>
 
                 <div className="hbook-index-format-length">
-                  <div className="hbook-format">{this.books[this.state.idx].unabridged ? "UNABRIDGED " : "ABRIDGED " }
+                  <div className="hbook-format">{hovBook.unabridged ? "UNABRIDGED " : "ABRIDGED " }
                 </div>
                   <div className="hbook-index-length">
-                    {this.books[this.state.idx] !== undefined  ? (this.books[this.state.idx].length) :
+                    {hovBook !== undefined  ? (hovBook.length) :
                     null}
                   </div>
                 </div>
 
               <div className="hbook-index-author-line">
                 <div className="hbook-index-by">By </div>
-                <div className="hbook-index-author"> {this.books[this.state.idx].author}</div>
+                <div className="hbook-index-author"> {hovBook.author}</div>
               </div>
               <div className="hbook-index-narrator-line">
                 <div className="hbook-index-narrator">Narrated By</div>
-                <div className="hbook-index-narrator-name">{this.books[this.state.idx].narrator}</div>
+                <div className="hbook-index-narrator-name">{hovBook.narrator}</div>
               </div>
               <div className="hbook-index-summary">{description}</div>
             </div>) : (null)}

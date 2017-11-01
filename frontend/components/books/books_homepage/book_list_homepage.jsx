@@ -25,20 +25,22 @@ class BookList extends React.Component {
     $('.slick-next').css("opacity", "0.8");
     $('.slick-next').css("background-color", "gray");
     $('.slick-prev').css("left", "0px");
-    $('.slick-prev').css("z-index", "200");
+    $('.slick-prev').css("z-index", "99");
     $('.slick-next').css("right", "15px");
-    $('.slick-next').css("z-index", "200");
+    $('.slick-next').css("z-index", "99");
 
     // console.log(":here");
     const that = this;
     setTimeout(() => $('.homepage-each-element').hover(
       (e) => {
         console.log();
+        debugger
         let idx = parseInt(e.currentTarget.dataset.index);
+        let book_idx = parseInt(e.currentTarget.dataset.bookId);
         console.log(idx);
-
-        if (idx !== that.state.idx) {
-          that.setState({ idx });
+        //if we use book_idx here we may get it working
+        if (book_idx !== that.state.idx) {
+          that.setState({ idx: book_idx });
         }
         let top;
         let left;
@@ -67,10 +69,16 @@ class BookList extends React.Component {
   }
 
   render () {
-
+    const correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
+    // debugger
+    //if we set const correct_book_id_books = this.books.filter(book => book.id === this.state.idx)
+    //it will give us all of the books with the correct book id
+    //then we can just say correct_book_id_books[0] and grab the first book
+    //this book should have the correct description
+    const hovBook = correct_book_id_books[0];
     let description;
-    if (this.state.idx) {
-      description  = this.books[this.state.idx].summary.slice(0,500) + "...";
+    if (hovBook) {
+      description  = hovBook.summary.slice(0,500) + "...";
     }
 
     let settings = {
@@ -85,36 +93,36 @@ class BookList extends React.Component {
 
     };
     return (
-      <div >
+      <div>
         <ul>
           <Slider {...settings} className="homepage-slider">
             {
             this.books.map((book, idx) => (
-                <div key={idx} className="homepage-each-element">
-                  <BookIndexItem  book={book} idx={idx} data-idx={idx}/>
+                <div key={idx} data-book-id={book.id} data-idx={idx} className="homepage-each-element">
+                  <BookIndexItem  book={book} idx={idx} />
                 </div>
               ))
             }
           </Slider>
             {this.state.idx ? (<div className="hbook-index-description">
-              <div className="hbook-index-title">{this.books[this.state.idx].title}</div>
+              <div className="hbook-index-title">{hovBook.title}</div>
 
                 <div className="hbook-index-format-length">
-                  <div className="hbook-format">{this.books[this.state.idx].unabridged ? "UNABRIDGED " : "ABRIDGED " }
+                  <div className="hbook-format">{hovBook.unabridged ? "UNABRIDGED " : "ABRIDGED " }
                 </div>
                   <div className="hbook-index-length">
-                    {this.books[this.state.idx] !== undefined  ? (this.books[this.state.idx].length) :
+                    {hovBook !== undefined  ? (hovBook.length) :
                     null}
                   </div>
                 </div>
 
               <div className="hbook-index-author-line">
                 <div className="hbook-index-by">By </div>
-                <div className="hbook-index-author"> {this.books[this.state.idx].author}</div>
+                <div className="hbook-index-author"> {hovBook.author}</div>
               </div>
               <div className="hbook-index-narrator-line">
                 <div className="hbook-index-narrator">Narrated By</div>
-                <div className="hbook-index-narrator-name">{this.books[this.state.idx].narrator}</div>
+                <div className="hbook-index-narrator-name">{hovBook.narrator}</div>
               </div>
               <div className="hbook-index-summary">{description}</div>
             </div>) : (null)}

@@ -23,7 +23,8 @@ class Api::UsersController < ApplicationController
       @library_item = Library.new( book_id: params[:book_id], user_id: params[:id])
       if @library_item.save
         @book = Book.find(params[:book_id])
-        render 'api/books/show'
+        @user = current_user
+        render :show
       else
         render json: @library_item.errors.full_messages, status: 422
       end
@@ -31,7 +32,7 @@ class Api::UsersController < ApplicationController
     elsif params[:type] == 'remove' && params[:id].to_i == current_user.id
       @library_item = current_user.libraries.find_by(book_id: params[:book_id])
       @library_item.destroy
-      render json: params[:book_id]
+      render json: params[:book_id] # render :show as well
     end
   end
 
