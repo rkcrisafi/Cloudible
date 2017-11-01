@@ -28,7 +28,7 @@ class BookDoubleList extends React.Component {
     $('.slick-prev').css("top", "150px");
     $('.slick-next').css("top", "150px");
     $('.slick-prev').css("z-index", "200");
-    $('.slick-next').css("right", "20px");
+    // $('.slick-next').css("right", "20px");
     $('.slick-next').css("z-index", "200");
 
 

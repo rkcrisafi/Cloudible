@@ -16,15 +16,10 @@ class BookList extends React.Component {
     this.props.fetchBooks();
 
 
-    $('.slick-prev').css("background-color", "black");
-    $('.slick-next').css("background-color", "black");
     $('.slick-prev').css("width", "40px");
     $('.slick-next').css("width", "40px");
     $('.slick-prev').css("height", "60px");
     $('.slick-next').css("height", "60px");
-    $('.slick-prev').css("color", "60px");
-    $('.slick-next').css("height", "60px");
-    $('.slick-next').css("font-size", "40px");
     $('.slick-prev').css("background-color", "gray");
     $('.slick-prev').css("opacity", "0.8");
     $('.slick-next').css("opacity", "0.8");
