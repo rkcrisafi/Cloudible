@@ -28,6 +28,7 @@ const App = (props) => {
               <Route exact path="/books" component={HomepageBookIndexContainer} />
               <Route exact path="/library" component={LibraryContainer} />
             </Switch>
+
           </div>
           ) : (null)}
 

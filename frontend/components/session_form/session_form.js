@@ -68,7 +68,9 @@ class SessionForm extends React.Component {
     let placeHolder = this.props.formType === 'signup' ? "At least 6 characters" : "";
     return (
       <div className="session-container">
-        <h1 className="session-logo">cloudible</h1>
+        <h1 className="session-logo">
+          <img src="https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/Audible_logo%400%2C1x.png" width="150" height="50"  className="greeting-logo"/>
+        </h1>
         { errs.length === 0 ? null : <ul className="session-errors">{errs}</ul>}
         <form onSubmit={this.handleSubmit.bind(this)} className="session-form">
           {this.addName(this.props.formType)}

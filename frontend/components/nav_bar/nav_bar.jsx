@@ -20,7 +20,10 @@ const NavBar = (props) => {
       <div className="front-page">
         <div className="greeting-nav">
           <div className="logo-browse">
-            <Link to="/" className="app-logo">Cloudible</Link>
+            <Link to="/" className="app-logo">
+              <img src="https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/Audible_logo%400%2C1x.png" width="150" height="50"  className="greeting-logo"/>
+
+            </Link>
             <Link to="/books" className="browse-library">Browse Cloudible</Link>
           </div>
           <GreetingContainer className="greeting-container"/>
@@ -31,7 +34,9 @@ const NavBar = (props) => {
       <div className="hfront-page">
         <div className="hgreeting-nav">
           <div className="hlogo-browse">
-            <Link to="/" className="happ-logo">Cloudible</Link>
+            <Link to="/" className="happ-logo">
+              <img src="https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/Audible_logo%400%2C1x.png" width="150" height="50"  className="greeting-logo"/>
+            </Link>
             <Link to="/books" className="hbrowse-library">Browse Cloudible</Link>
             { props.currentUser ?
               <Link to="/library" className="nav-library-link">Library</Link> : (null)

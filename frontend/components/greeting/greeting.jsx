@@ -8,7 +8,7 @@ class Greeting extends React.Component {
       return (
         <div className="greeting-logout">
           <h1 className="greeting-user">Hi, {this.props.currentUser.first_name}!</h1>
-          <Link to="/" onClick={ () => this.props.logout() } className="logout-button">Sign out</Link>
+          <Link to="/" onClick={ () => this.props.logout() } className="logout-button">Sign Out</Link>
         </div>
       );
     } else {
