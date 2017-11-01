@@ -34,7 +34,7 @@ class BookDoubleList extends React.Component {
 
 
     const that = this;
-    setTimeout(() => $('.homepage-each-element ').hover(
+    setTimeout(() => $('.lhomepage-each-element ').hover(
       (e) => {
         console.log();
         let idx = parseInt(e.currentTarget.dataset.idx);
@@ -119,7 +119,7 @@ class BookDoubleList extends React.Component {
 
             this.makeNewList(this.books).map((book, idx) => (
 
-              <div key={idx} className="lhomepage-each-element">
+              <div key={idx}>
                 <BookIndexItem idx={idx} data-idx={idx} book={book}/>
               </div>
               ))

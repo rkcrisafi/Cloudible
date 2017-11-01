@@ -43,7 +43,7 @@ class BookList extends React.Component {
         let top;
         let left;
         // debugger
-        if ((idx+1) % 6 === 0 ) {
+        if ((idx+1) % 4 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
         } else {

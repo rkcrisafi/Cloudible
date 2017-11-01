@@ -15,4 +15,6 @@ class Book < ApplicationRecord
     through: :libraries,
     source: :listener
 
+  has_many :ratings
+
 end
