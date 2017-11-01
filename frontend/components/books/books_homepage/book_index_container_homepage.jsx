@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import BookIndex from './book_double_list_homepage';
+import BookList from './book_list_homepage';
+import BookDList from './book_double_list_homepage';
 // './book_index_homepage'
 import { fetchBooks } from '../../../actions/book_actions';
 
@@ -14,7 +15,12 @@ const mapDispatchToProps = dispatch => ({
   fetchBooks: () => dispatch(fetchBooks())
 });
 
-export default connect(
+export const BookSingleList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookIndex);
+)(BookList);
+
+export const BookDoubleList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookDList);

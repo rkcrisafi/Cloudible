@@ -1,5 +1,5 @@
 import React from 'react';
-import BookIndexItem from './book_index_item_homepage';
+import BookIndexItem from './book_list_item';
 import shuffle from '../../../util/_shuffle';
 import Slider from 'react-slick';
 
@@ -16,30 +16,28 @@ class BookDoubleList extends React.Component {
     this.props.fetchBooks();
 
 
-    $('.slick-prev').css("background-color", "black");
-    $('.slick-next').css("background-color", "black");
     $('.slick-prev').css("width", "40px");
     $('.slick-next').css("width", "40px");
     $('.slick-prev').css("height", "60px");
     $('.slick-next').css("height", "60px");
-    $('.slick-prev').css("color", "60px");
-    $('.slick-next').css("height", "60px");
-    $('.slick-next').css("font-size", "40px");
     $('.slick-prev').css("background-color", "gray");
     $('.slick-prev').css("opacity", "0.8");
     $('.slick-next').css("opacity", "0.8");
     $('.slick-next').css("background-color", "gray");
     $('.slick-prev').css("left", "5px");
+    $('.slick-prev').css("top", "150px");
+    $('.slick-next').css("top", "150px");
     $('.slick-prev').css("z-index", "200");
-    $('.slick-next').css("right", "15px");
+    $('.slick-next').css("right", "20px");
     $('.slick-next').css("z-index", "200");
 
-    console.log(":here");
+
+
     const that = this;
-    setTimeout(() => $('.homepage-each-element').hover(
+    setTimeout(() => $('.homepage-each-element ').hover(
       (e) => {
         console.log();
-        let idx = parseInt(e.currentTarget.dataset.index);
+        let idx = parseInt(e.currentTarget.dataset.idx);
         console.log(idx);
 
         if (idx !== that.state.idx) {
@@ -48,12 +46,15 @@ class BookDoubleList extends React.Component {
         let top;
         let left;
         // debugger
-        if ((idx+1) % 4 === 3 || (idx+1) % 4 === 0 ) {
+        if ((idx+1) % 6 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
+        } else if ((idx+1) % 6 === 1 ) {
+          top = $(e.currentTarget).offset().top;
+          left = $(e.currentTarget).offset().left + 330;
         } else {
           top = $(e.currentTarget).offset().top;
-          left = $(e.currentTarget).offset().left + 250;
+          left = $(e.currentTarget).offset().left + 150;
         }
         $('.hbook-index-description').css({display: "block", 'top': top, 'left': left });
 
@@ -71,6 +72,26 @@ class BookDoubleList extends React.Component {
     }
   }
 
+  makeNewList(arr) {
+    let newLength = arr.length - (arr.length % 6);
+    let result = [];
+    let mini = [];
+    arr.slice(0,newLength).forEach((book, idx) => {
+
+      if ((idx+1) % 6 === 1 || (idx+1) % 6 === 0) {
+        result.push({book, idx});
+      } else {
+        mini.push({book, idx});
+        if (mini.length === 4) {
+          result.push(mini);
+          mini = [];
+        }
+      }
+    });
+    // debugger;
+    return result;
+  }
+
   render () {
 
     let description;
@@ -83,8 +104,8 @@ class BookDoubleList extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 6,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       arrows: true,
       vertical: false
 
@@ -92,12 +113,15 @@ class BookDoubleList extends React.Component {
     return (
       <div >
         <ul>
-          <Slider {...settings} className="homepage-slider">
+          <Slider {...settings} className="lhomepage-slider">
             {
-            this.books.map((book, idx) => (
-                <div key={idx} className="homepage-each-element">
-                  <BookIndexItem  book={book} idx={idx} data-idx={idx}/>
-                </div>
+
+
+            this.makeNewList(this.books).map((book, idx) => (
+
+              <div key={idx} className="lhomepage-each-element">
+                <BookIndexItem idx={idx} data-idx={idx} book={book}/>
+              </div>
               ))
             }
           </Slider>
