@@ -12,7 +12,7 @@ Book.destroy_all
    { title: "Nightfall",
     author: "Isaac Asimov",
     narrator: "Stephen Eley",
-    length: "1 hour and 35 min",
+    length: "1 hrs and 35 mins",
     unabridged: true,
     language: "English",
     summary:
@@ -23,7 +23,7 @@ Book.destroy_all
     { title: "Checkov Collected Stories",
     author: "Anton Checkov",
     narrator: "Alan Davis Drake",
-    length: "18 hours and 15 min",
+    length: "18 hrs and 15 mins",
     unabridged: true,
     language: "English",
     summary:
@@ -34,8 +34,8 @@ Book.destroy_all
 
      { title: "The Adventures of Sherlock Holmes",
       author: "Sir Arthur Conan Doyle",
-      narrator: "Steven Jobs",
-      length: "45 min",
+      narrator: "Steven Bobs",
+      length: "45 mins",
       unabridged: false,
       language: "English",
       summary:
@@ -45,8 +45,8 @@ Book.destroy_all
       },
        { title: "Crime and Punishment",
         author: "Fyodor Dostoyevski",
-        narrator: "Bill Gates",
-        length: "35 min",
+        narrator: "Dill Gates",
+        length: "35 mins",
         unabridged: false,
         language: "English",
         summary:
@@ -57,7 +57,7 @@ Book.destroy_all
          {title: "Pride and Prejudice",
           author: "Jane Austen",
           narrator: "Annie Coleman Rothenberg",
-          length: "14 hrs and 15 min",
+          length: "14 hrs and 15 mins",
           unabridged: true,
           language: "English",
           summary:
@@ -67,11 +67,89 @@ Book.destroy_all
          },
           { title: "Tales of the Jazz Age",
             author: "F. Scott Fitzerald",
-            narrator: "Vladimir Putin",
-            length: "39 min",
+            narrator: "Vladimir Sanchez",
+            length: "39 mins",
             unabridged: false,
             language: "English",
             summary: "This book contains selections from the F. Scott Fitzgerald collectionTales of the Jazz Age. The short stories collected here include the novelette May Day and the novella The Diamond as Big as the Ritz.",
             image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/tales_of_jazz.jpg",
             audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/tales-of-the-jazz-age-002-the-jellybean.5765.mp3"
-             }])
+             },
+             { title: "The Adventures of Tom Sawyer",
+              author: "Mark Twain",
+              narrator: "John Greenman",
+              length: "3 hrs and 35 mins",
+              unabridged: true,
+              language: "English",
+              summary:
+               "The Adventures of Tom Sawyer (published 1876) is a very well-known and popular story concerning American youth. Mark Twain's lively tale of the scrapes and adventures of boyhood is set in St. Petersburg, Missouri, where Tom Sawyer and his friend Huckleberry Finn have the kinds of adventures many boys can imagine: racing bugs during class, impressing girls, especially Becky Thatcher, with fights and stunts in the schoolyard, getting lost in a cave, and playing pirates on the Mississippi River.
+
+One of the most famous incidents in the book describes how Tom persuades his friends to do a boring, hateful chore for him: whitewashing (i.e., painting) a fence.
+
+This was the first novel to be written on a typewriter.
+",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/tom_sawyer.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b"
+             },
+             { title: "The Picture of Dorian Gray",
+              author: "Oscar Wilde",
+              narrator: "Michael Johns",
+              length: "32 mins",
+              unabridged: false,
+              language: "English",
+              summary:
+               "The studio was filled with the rich odour of roses, and when the light summer wind stirred amidst the trees of the garden, there came through the open door the heavy scent of the lilac, or the more delicate perfume of the pink-flowering thorn.
+From the corner of the divan of Persian saddle-bags on which he was lying, smoking, as was his custom, innumerable cigarettes, Lord Henry Wotton could just catch the gleam of the honey-sweet and honey-coloured blossoms of a laburnum, whose tremulous branches seemed hardly able to bear the burden of a beauty so flamelike as theirs; and now and then the fantastic shadows of birds in flight flitted across the long tussore-silk curtains that were stretched in front of the huge window, producing a kind of momentary Japanese effect, and making him think of those pallid, jade-faced painters of Tokyo who, through the medium of an art that is necessarily immobile, seek to convey the sense of swiftness and motion.",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/dorian_gray.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/the-picture-of-dorian-gray-001-chapter-1.1937.mp3"
+             },
+             { title: "Eugene Oneguine",
+              author: "Alexander Pushkin",
+              narrator: "Mary Ann",
+              length: "2 hrs and 45 mins",
+              unabridged: false,
+              language: "English",
+              summary:
+               "The studio was filled with the rich odour of roses, and when the light summer wind stirred amidst the trees of the garden, there came through the open door the heavy scent of the lilac, or the more delicate perfume of the pink-flowering thorn.
+From the corner of the divan of Persian saddle-bags on which he was lying, smoking, as was his custom, innumerable cigarettes, Lord Henry Wotton could just catch the gleam of the honey-sweet and honey-coloured blossoms of a laburnum, whose tremulous branches seemed hardly able to bear the burden of a beauty so flamelike as theirs; and now and then the fantastic shadows of birds in flight flitted across the long tussore-silk curtains that were stretched in front of the huge window, producing a kind of momentary Japanese effect, and making him think of those pallid, jade-faced painters of Tokyo who, through the medium of an art that is necessarily immobile, seek to convey the sense of swiftness and motion.",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/220px-Eugene_Onegin's_portrait_by_Pushkin.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/eugeneoneguine_01_pushkin_64kb.mp3"
+             },
+
+             { title: "Hamlet",
+              author: "William Shakespeare",
+              narrator: "Jonathan Bill",
+              length: "3 hrs and 19 mins",
+              unabridged: false,
+              language: "English",
+              summary:
+               "Hamlet is a tragedy and revenge play by William Shakespeare. It is one of his best-known works, one of the most-quoted writings in the English language and is universally included on lists of the worlds greatest books.",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/hamlet.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/hamlet-002-act-1-scene-1.1626.mp3"
+             },
+             { title: "Animal Farm",
+              author: "George Orwell",
+              narrator: "Jonathan Bill",
+              length: "5 hrs and 56 mins",
+              unabridged: false,
+              language: "English",
+              summary:
+               "One night, all the animals at Mr. Jones Manor Farm assemble in a barn to hear old Major, a pig, describe a dream he had about a world where all animals live free from the tyranny of their human masters. old Major dies soon after the meeting, but the animals inspired by his philosophy of Animalism plot a rebellion against Jones. Two pigs, Snowball and Napoleon, prove themselves important figures and planners of this dangerous enterprise. When Jones forgets to feed the animals, the revolution occurs, and Jones and his men are chased off the farm. Manor Farm is renamed Animal Farm, and the Seven Commandments of Animalism are painted on the barn wall.",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/animal_farm.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/AnimalFarm01.mp3"
+             },
+
+             { title: "The Curious Case of Benjamin Button",
+              author: "Scott F. Fitzgerald",
+              narrator: "Andy Michaels",
+              length: "6 hrs and 56 mins",
+              unabridged: true,
+              language: "English",
+              summary:
+              "Description
+              A life lived backwards, with events happening in reverse order forms the strange and unexpected framework of one of F Scott Fitzgerald's rare short stories. The Curious Case of Benjamin Button was published in Collier's in 1927 and the idea came to Fitzgerald apparently from a quote of Mark Twain's in which he regretted that the best part of life came at the beginning and the worst at the end. Fitzgerald's concept of using this notion and turning the normal sequence of life on its head resulted in this delightful, thought provoking fantasy tale. ",
+               image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/benjamin_button.jpg",
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/BenjaminButton01-05-Fitzgerald-ADDrake_64kb.mp3"
+             },
+
+             ])
