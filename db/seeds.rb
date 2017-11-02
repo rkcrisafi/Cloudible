@@ -29,7 +29,7 @@ Book.destroy_all
     summary:
      "Anton Chekhov (1860-1904) shares insightful moments in the everyday lives of 19th Century Russians. With great economy, Chekhov's short stories reveal the depths of human joy, confusion, dissatisfaction, and sorrow. His tales elicit a deep sympathy for all people, wherever they may be, in Russia more than a hundred years ago or anywhere in the world today. These translations, by Constance Garnett, Marian Fell, and others, are offered here as public domain recordings created both for LibriVox.org and at public performances. The copyright recordings that are clearly stated as such are offered here by permission of the publisher are intended for personal and classroom use only and are not for commercial distribution. ",
      image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/checkov_stories.png",
-     audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/bet-Chekhov-ADDrake.mp3"
+     audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/EP100_Nightfall.mp3"
    },
 
      { title: "The Adventures of Sherlock Holmes",
