@@ -8,6 +8,7 @@ import BookIndex from './books/books_homepage/book_index_homepage';
 import NavBar from './nav_bar/nav_bar';
 import BookShow from './books/book_show/book_show_container';
 import LibraryContainer from './books/library/library_container';
+import BookSearch from './books/book_search';
 
 const App = (props) => {
 
@@ -20,6 +21,7 @@ const App = (props) => {
               <Route exact path="/books" component={NavBar} />
               <Route exact path="/books/:bookId" component={NavBar} />
               <Route exact path="/library" component={NavBar} />
+              <Route exact path="/results" component={NavBar} />
             </Switch>
           </header>
             <Switch>
@@ -27,6 +29,7 @@ const App = (props) => {
               <Route exact path="/" component={LandingBookIndexContainer} />
               <Route exact path="/books" component={BookIndex} />
               <Route exact path="/library" component={LibraryContainer} />
+              <Route exact path="/results" component={BookSearch} />
             </Switch>
 
           </div>

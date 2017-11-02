@@ -13,4 +13,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :api do
+    get '/search/:query', to: 'search#index'
+  end
+
 end
