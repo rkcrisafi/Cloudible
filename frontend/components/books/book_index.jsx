@@ -30,7 +30,10 @@ class BookIndex extends React.Component {
       if (audio.paused) {
         audio.play();
       }
-      $(".book-index-audio").attr("src", book.audioUrl);
+      // debugger
+      $("audio").attr("src", book.audioUrl);
+      audio.play();
+      // debugger
     }
     this.setState({ audioIdx: newIdx });
   }
@@ -49,7 +52,7 @@ class BookIndex extends React.Component {
     // debugger
     let theAudio = (
       <audio controls ref={audio => this.audio = audio}>
-        <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
+        <source src="" type="audio/mp3"/>
       </audio>
     );
       // debugger

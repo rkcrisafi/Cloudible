@@ -89,7 +89,7 @@ One of the most famous incidents in the book describes how Tom persuades his fri
 This was the first novel to be written on a typewriter.
 ",
                image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/tom_sawyer.jpg",
-               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b"
+               audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/crime-and-punishment-002-part-1-chapter-1.3392.mp3"
              },
              { title: "The Picture of Dorian Gray",
               author: "Oscar Wilde",
@@ -141,7 +141,7 @@ From the corner of the divan of Persian saddle-bags on which he was lying, smoki
 
              { title: "The Curious Case of Benjamin Button",
               author: "Scott F. Fitzgerald",
-              narrator: "Andy Michaels",
+              narrator: "Alan Davis Drake",
               length: "6 hrs and 56 mins",
               unabridged: true,
               language: "English",

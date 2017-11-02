@@ -57,11 +57,11 @@ class BookDoubleList extends React.Component {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left + 150;
         }
-        $('.hbook-index-description').css({display: "block", 'top': top, 'left': left });
+        $('.lbook-index-description').css({display: "block", 'top': top, 'left': left });
 
     },
       (e) => {
-        $('.hbook-index-description').css("display", "none");
+        $('.lbook-index-description').css("display", "none");
 
     }), 200);
 
@@ -130,7 +130,7 @@ class BookDoubleList extends React.Component {
               ))
             }
           </Slider>
-            {this.state.idx ? (<div className="hbook-index-description">
+            {this.state.idx ? (<div className="lbook-index-description">
               <div className="hbook-index-title">{hovBook.title}</div>
 
                 <div className="hbook-index-format-length">

@@ -34,7 +34,6 @@ class BookList extends React.Component {
     setTimeout(() => $('.homepage-each-element').hover(
       (e) => {
         console.log();
-        debugger
         let idx = parseInt(e.currentTarget.dataset.index);
         let book_idx = parseInt(e.currentTarget.dataset.bookId);
         console.log(idx);
@@ -58,7 +57,7 @@ class BookList extends React.Component {
       (e) => {
         $('.hbook-index-description').css("display", "none");
 
-    }), 200);
+    }), 500);
 
   }
 
@@ -104,7 +103,7 @@ class BookList extends React.Component {
               ))
             }
           </Slider>
-            {this.state.idx ? (<div className="hbook-index-description">
+            {this.state.idx && hovBook ? (<div className="hbook-index-description">
               <div className="hbook-index-title">{hovBook.title}</div>
 
                 <div className="hbook-index-format-length">

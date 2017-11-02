@@ -45,7 +45,7 @@ render () {
   }
   let theAudio = (
     <audio controls ref={audio => this.audio = audio}>
-      <source src="http://s3.us-east-2.amazonaws.com/cloudible-dev/audio/ladysusan_1_austen_64kb.mp3" type="audio/mp3"/>
+      <source src={this.props.book.audioUrl} type="audio/mp3"/>
     </audio>);
   // debugger
   return (

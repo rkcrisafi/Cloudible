@@ -11,7 +11,7 @@ class UserProfile extends React.Component {
   }
 
   render () {
-    debugger
+    // debugger
     const pic = this.props.user.image_url ? this.props.user.image_url : null;
     return (
       <div className="user-profile">

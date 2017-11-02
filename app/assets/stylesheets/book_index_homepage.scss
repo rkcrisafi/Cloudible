@@ -45,7 +45,7 @@
 }
 
 
-.hbook-index-item:hover  .hleft-side-drop  .hbook-index-description {
+.hbook-index-item:hover  .hleft-side-drop  .hbook-index-description, .lbook-index-description {
   z-index: 5;
   display: inline;
 }
@@ -67,26 +67,26 @@
   // margin-right: 15px;
 }
 
-.hbook-index-item:hover  .hright-side-drop  .hbook-index-description {
+.hbook-index-item:hover  .hright-side-drop  .hbook-index-description, .lbook-index-description {
   // background: white;
   z-index: 5;
   display: inline;
   // overflow-y: visible;
 }
 
-.hleft-side-drop .hbook-index-description {
+.hleft-side-drop .hbook-index-description, .lbook-index-description {
   position: absolute;
   left: 240px;
   top: 0px;
 }
 
-.hright-side-drop .hbook-index-description {
+.hright-side-drop .hbook-index-description, .lbook-index-description {
   position: absolute;
   right: 250px;
   top: 0px;
 }
 
-.hbook-index-description {
+.hbook-index-description, .lbook-index-description {
   position: absolute;
   width: 200px;
   height: 330px;
