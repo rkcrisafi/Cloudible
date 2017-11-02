@@ -8,7 +8,7 @@
 
 Book.destroy_all
 
- books = Book.create([
+ books = Book.create!([
    { title: "Nightfall",
     author: "Isaac Asimov",
     narrator: "Stephen Eley",
