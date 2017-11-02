@@ -101,7 +101,7 @@
   color: gray;
 }
 
-.sign-up-link {
+.sign-up-link, .demo-login {
   display: flex;
   justify-content: center;
   padding: 14px 0 14px 0;
@@ -114,7 +114,7 @@
   font-size: 15px;
 }
 
-.sign-up-link:hover {
+.sign-up-link:hover, .demo-login:hover {
   background-color: #f2f2f2;
 }
 

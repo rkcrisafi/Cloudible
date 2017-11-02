@@ -44,7 +44,12 @@ class SessionForm extends React.Component {
             <h5  className="session-new-to-cloud">New to Cloudible?</h5>
             <hr className="session-divider"/>
           </div>
+
           <a href="/#signup" className="sign-up-link" onClick={() => this.props.clearErrors()}>Create your Cloudible account</a>
+          <div className="demo-login"
+            onClick={() => this.props.processForm({email: "tester2", password: "tester"})}>
+            Demo Login
+          </div>
         </div>
       );
     } else {

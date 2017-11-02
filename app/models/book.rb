@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  include PgSearch
+  multisearchable against: %i(title author)
 
   validates :title, :author, :narrator, :length, :language, :summary, presence: true
   validates :unabridged, inclusion: { in: [true, false] }
@@ -16,5 +18,29 @@ class Book < ApplicationRecord
     source: :listener
 
   has_many :ratings
+
+  def overall_rating
+    self.ratings.average(:overall)
+  end
+
+  def num_overall_ratings
+    self.ratings.overall.length
+  end
+
+  def num_story_ratings
+    self.ratings.story.length
+  end
+
+  def num_performance_ratings
+    self.ratings.performance.length
+  end
+
+  def story_rating
+    self.ratings.average(:story)
+  end
+
+  def performance_rating
+    self.ratings.average(:performance)
+  end
 
 end

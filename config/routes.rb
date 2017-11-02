@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/rails'
-
-  get 'reviews/g'
-
-  get 'reviews/controller'
-
-  get 'reviews/Reviews'
-
-  get 'reviews/create'
-
-  get 'ratings/create'
-
-  get 'ratings/update'
 
   root to: 'static_pages#root'
 
@@ -20,6 +7,10 @@ Rails.application.routes.draw do
       resources :books, only: [:index]
     end
     resource :session, only: [:create, :destroy]
-    resources :books, only: [:index, :show]
+    resources :books, only: [:index, :show] do
+      resources :ratings, only: [:create, :update] do
+        resources :reviews, only: :create
+      end
+    end
   end
 end

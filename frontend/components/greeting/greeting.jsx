@@ -9,6 +9,7 @@ class Greeting extends React.Component {
         <div className="greeting-logout">
           <h1 className="greeting-user">Hi, {this.props.currentUser.first_name}!</h1>
           <Link to="/" onClick={ () => this.props.logout() } className="logout-button">Sign Out</Link>
+          <input className="search-bar" ></input>
         </div>
       );
     } else {
