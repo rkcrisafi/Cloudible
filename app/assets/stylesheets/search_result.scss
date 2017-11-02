@@ -1,0 +1,24 @@
+
+.search-result-page {
+  width: 1000px;
+  margin-top: 50px;
+}
+
+.search-result-book {
+  display: flex;
+  font-family: "Amazon Amber", Arial, sans-serif;
+  margin-left: 100px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.search-title-link {
+  font-weight: 700;
+}
+
+.search-description {
+  padding: 10px 15px;
+  font-size: 13px;
+  line-height: 1.5;
+}

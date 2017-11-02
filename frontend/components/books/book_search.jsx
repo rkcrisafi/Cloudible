@@ -21,25 +21,26 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     return (
       <div className="search-result-page">
-        {this.props.books.map((book) => {
+        {this.props.books ? (this.props.books.map((book) => {
          return (
           <div className="search-result-book">
             <Link to={`/books/${book.id}`} >
               <img src={book.imageUrl} width="150" height="150"  className="search-image-link"/>
             </Link>
-
-            <div className="search-title-link"><Link to={`/books/${book.id}`}>{book.title}</Link></div>
-            <div className="search-author">By {book.author}</div>
-            <div className="search-narrator">Narrated By {book.narrator}</div>
-            <div className="search-length">Length: {book.length}</div>
-
+            <div className="search-description">
+              <div className="search-title-link"><Link to={`/books/${book.id}`}>{book.title}</Link></div>
+              <div className="search-author">By {book.author}</div>
+              <div className="search-narrator">Narrated By {book.narrator}</div>
+              <div className="search-length">Length: {book.length}</div>
+            </div>
           </div>
         );
-      })}
-      </div>
+      })
+    ) : (null) }
+    </div>
     );
   }
 }
