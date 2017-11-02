@@ -3,10 +3,12 @@ import ErrorsReducer from './errors_reducer';
 import { combineReducers } from 'redux';
 import BooksReducer from './book_reducer';
 import SearchReducer from './search_reducer';
+import UserReducer from './user_reducer';
 
 export default combineReducers({
   session: SessionReducer,
   errors: ErrorsReducer,
   books: BooksReducer,
-  search: SearchReducer
+  search: SearchReducer,
+  user: UserReducer
 });
