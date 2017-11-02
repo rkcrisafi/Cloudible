@@ -63,7 +63,7 @@ class BookDoubleList extends React.Component {
       (e) => {
         $('.hbook-index-description').css("display", "none");
 
-    }), 50);
+    }), 200);
 
   }
 

@@ -50,6 +50,25 @@
   font-size: 13px;
 }
 
+.search-bar-with-icon {
+  position: relative;
+}
+
+.fa-search {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.search-bar {
+  width: 215px;
+  height: 33px;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
 .book-index {
   display: flex;
   justify-content: center;

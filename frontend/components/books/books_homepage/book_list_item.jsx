@@ -8,7 +8,8 @@ const BookIndexItem = ({ book, idx }) => {
       { !Array.isArray(book) ? (
        <div data-idx={book.idx} className="lbook-index-item lhomepage-each-element" data-book-id={book.book.id}>
           <Link to={`/books/${book.book.id}`}>
-            <img src={book.book.imageUrl} className="lindex-book-image-link"/>
+            <img src={book.book.imageUrl} className="lindex-book-image-link"
+              width="300" height="300" />
           </Link>
       </div>) :
         (<div className="lbook-small-book-index">

@@ -27,6 +27,15 @@ class Greeting extends React.Component {
  }
 
   render () {
+    const navBarSearchElement = (
+      <form className="nav-search-bar" onChange={this.handleChange('query')}
+      onSubmit={this.handleSearch}>
+      <div className="search-bar-with-icon">
+        <input className="search-bar" placeholder="Search for a great book"/>
+        <i onClick={this.handleSearch} className="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </form>)
+
     if (this.props.currentUser) {
       return (
         <div className="greeting-search-bar">
@@ -34,10 +43,7 @@ class Greeting extends React.Component {
             <h1 className="greeting-user">Hi, {this.props.currentUser.first_name}!</h1>
             <Link to="/" onClick={ () => this.props.logout() } className="logout-button">Sign Out</Link>
           </div>
-          <form className="nav-search-bar" onChange={this.handleChange('query')}
-            onSubmit={this.handleSearch}>
-            <input className="search-bar" placeholder="Search for a great book"/>
-          </form>
+          {navBarSearchElement}
         </div>
       );
     } else {
@@ -46,10 +52,7 @@ class Greeting extends React.Component {
           <div className="greeting-signin-link">
             <Link to='/login'>Sign In</Link>
           </div>
-          <form className="nav-search-bar" onChange={this.handleChange('query')}
-            onSubmit={this.handleSearch}>
-            <input className="search-bar" placeholder="Search for a great book"/>
-          </form>
+            {navBarSearchElement}
         </div>
       );
     }

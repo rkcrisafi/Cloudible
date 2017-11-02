@@ -17,6 +17,7 @@ class BookIndex extends React.Component {
 
   componentWillReceiveProps (newProps) {
     if (this.books.length === 0) {
+      // debugger
       this.books = shuffle(newProps.books).slice(0,12);
     }
   }
