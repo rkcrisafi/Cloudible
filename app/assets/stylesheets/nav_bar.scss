@@ -30,7 +30,7 @@
   color: black;
 }
 
-.hbrowse-library, .nav-library-link {
+.hbrowse-library, .nav-library-link, .nav-listener {
   text-decoration: none;
   padding-top: 40px;
   margin-bottom: 10px;
@@ -38,7 +38,8 @@
   font-size: 14px;
 }
 
-.hbrowse-library:hover, .nav-library-link:hover, .hgreeting-signin-link:hover, .logout-button:hover {
+.hbrowse-library:hover, .nav-library-link:hover, .hgreeting-signin-link:hover, .logout-button:hover,
+.nav-listener:hover {
   text-decoration: underline;
 }
 

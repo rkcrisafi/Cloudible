@@ -41,6 +41,11 @@ const NavBar = (props) => {
             { props.currentUser ?
               <Link to="/library" className="nav-library-link">Library</Link> : (null)
             }
+
+            {props.currentUser ?
+              <Link to={`/listener/${props.currentUser.id}`} className="nav-listener">Listener Page</Link> : (null)
+            }
+
           </div>
           <GreetingContainer className="hgreeting-container"/>
         </div>

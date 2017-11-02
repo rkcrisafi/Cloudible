@@ -1,4 +1,4 @@
-json.extract! user, :email, :id, :first_name, :image_url, :created_at
+json.extract! user, :email, :id, :first_name, :image_url, :created_at, :location
 json.bookIds do
   json.array! user.books.map{|book| book.id}
 end
