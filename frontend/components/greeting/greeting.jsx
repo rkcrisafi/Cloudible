@@ -35,7 +35,7 @@ class Greeting extends React.Component {
         <input  value={this.state.query} className="search-bar" placeholder="Search for a great book"/>
         <i onClick={this.handleSearch} className="fa fa-search" aria-hidden="true"></i>
       </div>
-    </form>)
+    </form>);
 
     if (this.props.currentUser) {
       return (

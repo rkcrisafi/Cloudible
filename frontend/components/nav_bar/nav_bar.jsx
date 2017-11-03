@@ -28,9 +28,16 @@ const NavBar = (props) => {
           </div>
           <GreetingContainer className="greeting-container"/>
         </div>
-        <div className="listening-try-cloudible">
-          <div></div>
+        <div className="under-nav-div">
+          <div className="land-empty-div"></div>
+          <div className="slogan">
+            <div className="listening-try-cloudible">
+              <div className="listening">LISTENING</div>
+              <div className="is-the-new-reading">IS THE NEW READING</div>
+              <div className="button-try-cloudible-free" onClick={() => props.history.push("/login")} >Try Cloudible Free</div>
+            </div>
         </div>
+      </div>
      </div>);
   } else {
     nav_bar = (
