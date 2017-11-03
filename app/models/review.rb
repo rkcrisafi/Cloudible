@@ -13,6 +13,4 @@ class Review < ApplicationRecord
     source: :book
 
 
-
-
 end

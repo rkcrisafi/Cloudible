@@ -17,7 +17,7 @@ class Greeting extends React.Component {
    e.preventDefault();
    this.props.sendSearch(this.state.query).then(
      (action) => {
-       return this.props.history.push(`/results`);
+       this.props.history.push(`/results`);
        this.setState({query: ""});
      }
    );
@@ -32,7 +32,7 @@ class Greeting extends React.Component {
       <form className="nav-search-bar" onChange={this.handleChange('query')}
       onSubmit={this.handleSearch}>
       <div className="search-bar-with-icon">
-        <input className="search-bar" placeholder="Search for a great book"/>
+        <input  value={this.state.query} className="search-bar" placeholder="Search for a great book"/>
         <i onClick={this.handleSearch} className="fa fa-search" aria-hidden="true"></i>
       </div>
     </form>)

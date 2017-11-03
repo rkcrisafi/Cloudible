@@ -33,13 +33,23 @@ class Api::UsersController < ApplicationController
       @library_item = current_user.libraries.find_by(book_id: params[:book_id])
       @library_item.destroy
       render json: params[:book_id] # render :show as well
+
+    elsif params[:user][:image]
+      @user = current_user
+      if @user.update(user_params)
+        render :show
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+
+
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :image_url, :location)
+    params.require(:user).permit(:email, :password, :first_name, :image, :location)
   end
 
 end

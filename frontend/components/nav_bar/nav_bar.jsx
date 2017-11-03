@@ -28,6 +28,9 @@ const NavBar = (props) => {
           </div>
           <GreetingContainer className="greeting-container"/>
         </div>
+        <div className="listening-try-cloudible">
+          <div></div>
+        </div>
      </div>);
   } else {
     nav_bar = (
