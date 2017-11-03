@@ -62,7 +62,7 @@ class BookList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.books) {
+    if (newProps.books && this.books.length === 0) {
       this.books = shuffle(newProps.books.concat(newProps.books)).slice(0,20);
     }
   }
