@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends React.Component {
   constructor (props) {
@@ -7,6 +7,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchUser(this.props.userId);
   }
 
@@ -16,7 +17,7 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile">
         <div className="user-pic-reviews">
-          { this.props.user ? (
+          { !$.isEmptyObject(this.props.user) ? (
             <div>
               <div className="user-pic-description">
                 <div className="user-pic-part">
@@ -24,11 +25,12 @@ class UserProfile extends React.Component {
                 </div>
                 <div className="user-description">
                   <div className="user-first-name">{this.props.user.first_name}</div>
+                  <Link className="user-create-my-profile" to={`/listener/${this.props.userId}/edit`}>Create My Profile</Link>
                   <div className="user-location">
                     {this.props.user.location ?
                     this.props.user.location :
                     null }
-                    <div className="listener-since">{this.props.user.created_at.year}</div>
+                    <div className="listener-since">Listener Since {this.props.user.created_at.slice(0,4)}</div>
                   </div>
                 </div>
               </div>

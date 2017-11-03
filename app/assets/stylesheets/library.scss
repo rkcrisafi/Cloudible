@@ -35,3 +35,18 @@ th {
 tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
+
+.library-rating-stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+
+.library-rating-stars:hover {
+  color: orange;
+}
+
+// .library-rating-stars i:hover {
+//   background-color: orange;
+// }

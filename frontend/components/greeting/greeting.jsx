@@ -18,6 +18,7 @@ class Greeting extends React.Component {
    this.props.sendSearch(this.state.query).then(
      (action) => {
        return this.props.history.push(`/results`);
+       this.setState({query: ""});
      }
    );
  }

@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { fetchUser } from '../../actions/user_actions';
+import { withRouter } from 'react-router';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
     user: state.user,
-    userId: state.session.currentUser.id
+    userId: ownProps.match.params.userId
   };
 };
 
@@ -16,7 +17,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserProfile);
+)(UserProfile));

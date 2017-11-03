@@ -10,7 +10,13 @@ const LibraryItem = ({ book }) => {
       <td>{book.author}</td>
       <td>{book.length}</td>
       <td>
-        <div>* * * * *</div>
+        <div className="library-rating-stars">
+          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <i className="fa fa-star-o" aria-hidden="true"></i>
+        </div>
         <div>Write a review link</div>
       </td>
     </tr>

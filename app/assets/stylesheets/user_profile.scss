@@ -1,0 +1,30 @@
+.user-profile {
+  font-family: "Amazon Amber", Arial, sans-serif;
+  width: 1020px;
+  margin: auto;
+  // text-align: center;
+}
+.user-pic-reviews {
+  display: flex;
+  color: #cccccc;
+}
+
+.user-pic-description {
+  display: flex;
+  padding-left: 10px;
+}
+
+.user-description {
+  padding-left: 15px;
+}
+
+.user-first-name {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.listener-since {
+  font-size: 13px;
+  font-family: Georgia, Arial, sans-serif;
+  padding-top: 20px;
+}
