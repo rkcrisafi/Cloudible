@@ -150,6 +150,9 @@ From the corner of the divan of Persian saddle-bags on which he was lying, smoki
               A life lived backwards, with events happening in reverse order forms the strange and unexpected framework of one of F Scott Fitzgerald's rare short stories. The Curious Case of Benjamin Button was published in Collier's in 1927 and the idea came to Fitzgerald apparently from a quote of Mark Twain's in which he regretted that the best part of life came at the beginning and the worst at the end. Fitzgerald's concept of using this notion and turning the normal sequence of life on its head resulted in this delightful, thought provoking fantasy tale. ",
                image: "https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/benjamin_button.jpg",
                audio: "https://s3.us-east-2.amazonaws.com/cloudible-dev/audio/BenjaminButton01-05-Fitzgerald-ADDrake_64kb.mp3"
-             },
+             }
 
              ])
+
+
+demo = User.create(first_name: "Demo User", email: "tester2", password: "tester")
