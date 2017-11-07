@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(book_id: params[:book_id])
+    @reviews = Review.where(rating_id: params[:rating_id])
   end
 
   def create

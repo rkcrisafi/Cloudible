@@ -15,8 +15,8 @@ const receiveReview = (review) => ({
   book
 });
 
-export const fetchReviews = () => dispatch => (
-    ReviewApiUtil.fechReviews().then(reviews => dispatch(receiveReviews(reviews)))
+export const fetchReviews = (bookId) => dispatch => (
+    ReviewApiUtil.fechReviews(bookId).then(reviews => dispatch(receiveReviews(reviews)))
 );
 
 export const createReview = review => dispatch => (
