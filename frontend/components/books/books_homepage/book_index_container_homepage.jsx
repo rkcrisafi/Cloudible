@@ -5,7 +5,6 @@ import BookDList from './book_double_list_homepage';
 import { fetchBooks } from '../../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     books: Object.keys(state.books).map(id => state.books[id])
   };

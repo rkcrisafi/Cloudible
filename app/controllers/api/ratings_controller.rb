@@ -6,12 +6,14 @@ class Api::RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(rating_params)
-    @rating.user_id = current_user.id;
+    @rating.user_id = current_user.id
+    @rating.book_id = params[:book_id]
+    debugger
 
     if @rating.save
-      render :index
+      render :show
     else
-      render json: review.errors.full_massages, status: 422
+      render json: @rating.errors.full_messages, status: 422
     end
 
   end

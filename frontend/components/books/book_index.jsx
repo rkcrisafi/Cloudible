@@ -17,30 +17,25 @@ class BookIndex extends React.Component {
 
   componentWillReceiveProps (newProps) {
     if (this.books.length === 0) {
-      // debugger
       this.books = shuffle(newProps.books).slice(0,12);
     }
   }
 
   handleAudioState (oldIdx, newIdx, book, audio) {
-    // debugger
     if (oldIdx === newIdx) {
       this.toggleAudio(audio);
     } else {
       if (audio.paused) {
         audio.play();
       }
-      // debugger
       $("audio").attr("src", book.audioUrl);
       audio.play();
-      // debugger
     }
     this.setState({ audioIdx: newIdx });
   }
 
   toggleAudio (audio) {
     //audio comes from somewhere
-    // debugger
     if (audio.paused) {
       audio.play();
     } else {
@@ -49,13 +44,11 @@ class BookIndex extends React.Component {
   }
 
   render () {
-    // debugger
     let theAudio = (
       <audio controls ref={audio => this.audio = audio}>
         <source src="" type="audio/mp3"/>
       </audio>
     );
-      // debugger
     return (
       <div className = "book-index">
         <ul className="book-index-list">

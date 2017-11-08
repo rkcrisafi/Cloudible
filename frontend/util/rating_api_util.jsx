@@ -1,29 +1,15 @@
-export const addRating = (user_id, book_id) => {
+export const addRating = (book_id, rating) => {
   return $.ajax({
     method: 'post',
-    url: `/api/ratings`,
-    data: {user_id, book_id}
+    url: `/api/books/${book_id}/ratings`,
+    data: { rating }
   });
 };
 
-export const updateRating = (user_id, book_id) => {
+export const updateRating = (book_id, rating) => {
   return $.ajax({
     method: 'patch',
-    url: `api/ratings/${rating_id}`,
-    data: {user_id, book_id}
+    url: `api/books/${book_id}/ratings/${rating_id}`,
+    data: { rating }
   });
 };
-
-// export const fetchRatings = () => {
-//   $.ajax({
-//     method: 'get',
-//     url: 'api/ratings'
-//   });
-// };
-//
-// export const fetchRating = id => {
-//   $.ajax({
-//     method: 'get',
-//     url: `api/ratings/${id}`
-//   });
-// };

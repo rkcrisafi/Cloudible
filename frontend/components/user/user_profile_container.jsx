@@ -4,7 +4,7 @@ import { fetchUser, updateUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  // 
   return {
     user: state.user,
     userId: ownProps.match.params.userId

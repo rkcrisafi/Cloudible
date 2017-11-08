@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
-  // debugger
   let description = book.summary.slice(0,500) + "...";
   let fullDescription = (
     <div className="book-index-description">

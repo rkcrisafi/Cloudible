@@ -29,21 +29,18 @@ class BookList extends React.Component {
     $('.slick-next').css("right", "15px");
     $('.slick-next').css("z-index", "99");
 
-    // console.log(":here");
     const that = this;
     setTimeout(() => $('.homepage-each-element').hover(
       (e) => {
-        console.log();
         let idx = parseInt(e.currentTarget.dataset.index);
         let book_idx = parseInt(e.currentTarget.dataset.bookId);
-        console.log(idx);
         //if we use book_idx here we may get it working
         if (book_idx !== that.state.idx) {
           that.setState({ idx: book_idx });
         }
         let top;
         let left;
-        // debugger
+        // 
         if ((idx+1) % 4 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
@@ -69,7 +66,7 @@ class BookList extends React.Component {
 
   render () {
     const correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
-    // debugger
+    // 
     //if we set const correct_book_id_books = this.books.filter(book => book.id === this.state.idx)
     //it will give us all of the books with the correct book id
     //then we can just say correct_book_id_books[0] and grab the first book

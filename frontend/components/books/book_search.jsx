@@ -21,7 +21,6 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="search-result-page">
         {this.props.books ? (this.props.books.map((book) => {

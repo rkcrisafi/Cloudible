@@ -7,7 +7,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    // 
     this.props.fetchUser(this.props.userId);
   }
 
@@ -30,7 +30,7 @@ class UserProfile extends React.Component {
   }
 
   render () {
-    // debugger
+    // 
     const pic = this.props.user.imageUrl ? this.props.user.imageUrl : null;
     return (
       <div className="user-profile">

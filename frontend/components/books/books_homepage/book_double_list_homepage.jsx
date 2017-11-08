@@ -28,7 +28,6 @@ class BookDoubleList extends React.Component {
     $('.slick-prev').css("top", "150px");
     $('.slick-next').css("top", "150px");
     $('.slick-prev').css("z-index", "99");
-    // $('.slick-next').css("right", "20px");
     $('.slick-next').css("z-index", "99");
 
 
@@ -36,17 +35,14 @@ class BookDoubleList extends React.Component {
     const that = this;
     setTimeout(() => $('.lhomepage-each-element ').hover(
       (e) => {
-        console.log();
         let idx = parseInt(e.currentTarget.dataset.idx);
         let book_idx = parseInt(e.currentTarget.dataset.bookId);
-        console.log(idx);
 
         if (book_idx !== that.state.idx) {
           that.setState({ idx: book_idx });
         }
         let top;
         let left;
-        // debugger
         if ((idx+1) % 6 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
@@ -89,7 +85,6 @@ class BookDoubleList extends React.Component {
         }
       }
     });
-    // debugger;
     return result;
   }
 
@@ -105,7 +100,6 @@ class BookDoubleList extends React.Component {
     }
 
     let settings = {
-      // accessibility: true,
       dots: true,
       infinite: true,
       speed: 500,

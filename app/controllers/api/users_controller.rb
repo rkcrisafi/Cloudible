@@ -18,7 +18,6 @@ class Api::UsersController < ApplicationController
 
 
   def update
-    # debugger
     if params[:type] == 'add' && params[:id].to_i == current_user.id
       @library_item = Library.new( book_id: params[:book_id], user_id: params[:id])
       if @library_item.save

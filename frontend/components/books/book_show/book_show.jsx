@@ -10,7 +10,6 @@ class BookShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchBook(this.props.match.params.bookId);
 
   }
@@ -26,7 +25,6 @@ class BookShow extends React.Component {
 
   toggleAudio (audio) {
     //audio comes from somewhere
-    // debugger
     if (audio.paused) {
       audio.play();
       this.setState({playing: true});
@@ -38,7 +36,6 @@ class BookShow extends React.Component {
   }
 
 render () {
-  console.log(this.props.book);
   const book = this.props.book;
   if (!book) {
     return <div>Loading....</div>;
@@ -47,7 +44,6 @@ render () {
     <audio controls ref={audio => this.audio = audio}>
       <source src={this.props.book.audioUrl} type="audio/mp3"/>
     </audio>);
-  // debugger
   return (
     <div className="book-show-page">
       <div className="book-show-book-description-buttons">

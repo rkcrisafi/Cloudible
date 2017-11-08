@@ -30,6 +30,10 @@
   display: none;
 }
 
+.book-show-audio:hover {
+  cursor: pointer;
+}
+
 .book-show-audio {
   // text-align: center;
   // vertical-align: center;
@@ -90,6 +94,7 @@
 
 .book-show-free-button:hover, .book-show-listen-now-button:hover {
   background: orange;
+  cursor: pointer;
 }
 
 .book-show-on-us-button, .book-show-in-your-library-button {
@@ -104,6 +109,7 @@
 .book-show-on-us-button:hover{
   background: #f2f2f2;
   border: 1px solid #f2f2f2;
+  cursor: pointer;
 }
 
 .book-show-in-your-library-button {
@@ -113,6 +119,7 @@
 
 .book-show-in-your-library-button:hover {
   background: #00c1c1;
+  cursor: pointer;
 }
 
 
@@ -164,5 +171,5 @@
    font-size: 14px;
    color: gray;
    line-height: 1.5;
-   
+
  }

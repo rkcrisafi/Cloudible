@@ -8,7 +8,7 @@ class Library extends React.Component {
   }
 
   render () {
-    // debugger
+    // 
     return (<div>
       <div className="library-library">Library</div>
       <table className="library-table">
