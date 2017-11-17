@@ -1,6 +1,6 @@
 # Cloudible
 
-[Cloudible live](https://cloudible.herokuapp.com/#/)
+[Cloudible live](http://cloudible.herokuapp.com/#/)
 
 Cloudible is a full-stack web application, a clone of Audible. On the backend it's built on Ruby on Rails and, on the frontend, on React and Redux.  
 
@@ -9,13 +9,13 @@ Cloudible is a full-stack web application, a clone of Audible. On the backend it
 
 ### Audio
 
-![Audio](https://cloudible.herokuapp.com/#/)
+![Audio](http://cloudible.herokuapp.com/#/)
 
 Audios can be played on the landing page and book show page. The listeners can play/pause the samples of the books by clicking the play/pause icons. There's only one source of audio on the book index page and every time user clicks on a new one, the source attribute corresponds to the new `audioId`. This also prevents users from playing multiple books simultaneously.
 
 ### Book Carousel
 
-![Carousel example](https://cloudible.herokuapp.com/#/books)
+![Carousel example](http://cloudible.herokuapp.com/#/books)
 
 The book index page contains two types of carousels. To build those, the React-Slick library was installed and modified significantly. The original carousel has an overflow hidden property which was hiding the book description dropdown. Also, depending on the position of the book the user hovers, the description pops out on the left or right side of the book.
 
