@@ -1,8 +1,20 @@
+if @user_library
+  ratings = current_user.ratings
+end
+
 @books.each do |book|
   json.set! book.id do
     json.extract! book, :id, :title, :author, :narrator, :length, :unabridged, :summary
     json.imageUrl asset_path(book.image.url)
     json.audioUrl asset_path(book.audio.url)
+
+    if @user_library
+      # debugger
+      rating = ratings.find { |rating| rating.book_id == book.id }
+      if rating
+        json.extract! rating, :overall, :performance, :story
+      end
+    end
 
     json.overallRating book, :overall_rating
     json.storyRating book, :story_rating
