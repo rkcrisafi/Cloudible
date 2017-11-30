@@ -38,13 +38,24 @@ tr:nth-child(odd) {
 
 .library-rating-stars {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
+  font-size: 15px;
+  color: #e84f27;
 
 }
 
+// .library-rating-line {
+//   padding: 3px;
+// }
+
 .library-rating-stars:hover {
-  color: orange;
+  color: #e84f27;
+}
+
+.fa.fa-star, .fa.fa-star-o {
+  padding: 1.5px;
 }
 
 // .library-rating-stars i:hover {

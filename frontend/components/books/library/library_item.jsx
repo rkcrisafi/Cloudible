@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LibraryRatingItem from './library_rating_item';
 
 const LibraryItem = ({ book }) => {
 
@@ -11,11 +12,9 @@ const LibraryItem = ({ book }) => {
       <td>{book.length}</td>
       <td>
         <div className="library-rating-stars">
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <LibraryRatingItem type={book.overall}/>
+          <LibraryRatingItem type={book.performance}/>
+          <LibraryRatingItem type={book.story}/>
         </div>
         <div>Write a review link</div>
       </td>

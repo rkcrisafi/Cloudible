@@ -20,9 +20,9 @@ end
     json.storyRating book, :story_rating
     json.performanceRating book, :performance_rating
 
-    # json.numOverallRatings book, :num_overall_ratings
-    # json.numStoryRatings book, :num_story_ratings
-    # json.numPerformanceRatings book, :num_performance_ratings
+    json.numOverallRatings book, :num_overall_ratings
+    json.numStoryRatings book, :num_story_ratings
+    json.numPerformanceRatings book, :num_performance_ratings
 
 
   end

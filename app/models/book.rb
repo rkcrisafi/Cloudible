@@ -23,17 +23,17 @@ class Book < ApplicationRecord
     self.ratings.average(:overall).to_i
   end
 
-  # def num_overall_ratings
-  #   self.ratings.where(rating.overall not null)
-  # end
+  def num_overall_ratings
+    self.ratings.count(:overall).to_i
+  end
 
-  # def num_story_ratings
-  #   self.ratings.story.length
-  # end
+  def num_story_ratings
+    self.ratings.count(:story).to_i
+  end
 
-  # def num_performance_ratings
-  #   self.ratings.performance.length
-  # end
+  def num_performance_ratings
+    self.ratings.count(:performance).to_i
+  end
 
   def story_rating
     self.ratings.average(:story).to_i
