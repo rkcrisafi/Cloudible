@@ -12,9 +12,9 @@ const LibraryItem = ({ book }) => {
       <td>{book.length}</td>
       <td>
         <div className="library-rating-stars">
-          <LibraryRatingItem type={book.overall}/>
-          <LibraryRatingItem type={book.performance}/>
-          <LibraryRatingItem type={book.story}/>
+          <LibraryRatingItem type={book.overall} name="Overall"/>
+          <LibraryRatingItem type={book.performance} name="Performance"/>
+          <LibraryRatingItem type={book.story} name="Story"/>
         </div>
         <div>Write a review link</div>
       </td>

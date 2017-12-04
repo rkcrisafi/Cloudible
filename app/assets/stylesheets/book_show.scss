@@ -73,6 +73,21 @@
   margin: 5px;
 }
 
+.book-show-rating-type {
+  display: flex;
+}
+
+.book-show-rating-just-stars {
+  color: orange;
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.book-show-rating-just-stars > .fa.fa-star, .fa.fa-star-o {
+  padding: 1.5px;
+  font-size: 18px;
+}
+
 .show-book-buy-button {
   display: flex;
   flex-direction: column;

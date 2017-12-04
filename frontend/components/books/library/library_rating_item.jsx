@@ -1,20 +1,31 @@
 import React from 'react';
 
-const LibraryRatingItem = ({ type }) => {
+const LibraryRatingItem = ({ type, name }) => {
   // let features = [overall, performance, story];
+
+
   return (
     <div className="library-rating-line">
-        { type ? <i class="fa fa-star" aria-hidden="true"></i> :
-          <i class="fa fa-star-o" aria-hidden="true"></i> }
+      <div className="library-rating-type">
 
-       { type && type > 1 ? <i class="fa fa-star" aria-hidden="true"></i> :
-         <i class="fa fa-star-o" aria-hidden="true"></i>}
-       { type && type > 2 ? <i class="fa fa-star" aria-hidden="true"></i> :
-         <i class="fa fa-star-o" aria-hidden="true"></i>}
-       { type && type > 3 ? <i class="fa fa-star" aria-hidden="true"></i> :
-         <i class="fa fa-star-o" aria-hidden="true"></i>}
-       { type && type > 4 ? <i class="fa fa-star" aria-hidden="true"></i> :
-         <i class="fa fa-star-o" aria-hidden="true"></i>}
+        <div className="library-rating-type-name">
+          {name}
+        </div>
+
+        <div className="library-rating-just-stars">
+          { type ? <i className="fa fa-star" aria-hidden="true"></i> :
+            <i className="fa fa-star-o" aria-hidden="true"></i> }
+
+          { type && type > 1 ? <i className="fa fa-star" aria-hidden="true"></i> :
+            <i className="fa fa-star-o" aria-hidden="true"></i>}
+          { type && type > 2 ? <i className="fa fa-star" aria-hidden="true"></i> :
+            <i className="fa fa-star-o" aria-hidden="true"></i>}
+          { type && type > 3 ? <i className="fa fa-star" aria-hidden="true"></i> :
+            <i className="fa fa-star-o" aria-hidden="true"></i>}
+          { type && type > 4 ? <i className="fa fa-star" aria-hidden="true"></i> :
+            <i className="fa fa-star-o" aria-hidden="true"></i>}
+        </div>
+      </div>
     </div>
 
   )
