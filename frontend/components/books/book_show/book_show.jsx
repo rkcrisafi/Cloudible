@@ -74,7 +74,7 @@ render () {
               <div className="book-show-length">Length: {book.length}</div>
               <div className="book-show-format">{book.unabridged ? "Unabridged" : "Abridged" }</div>
               <div className="book-show-language">Language: {book.language}</div>
-              <BookShowRating type={book.overallRating} number={book.numOverallRatings.num_overall_ratings}/>
+              <BookShowRating count={book.overallRating} number={book.numOverallRatings}/>
             </div>
           </div>
         </div>

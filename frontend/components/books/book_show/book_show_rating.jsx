@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookShowRating = ({ type, number }) => {
+const BookShowRating = ({ count, number }) => {
   // let features = [overall, performance, story];
   const star = <div className="book-show-full-star"><img src='/assets/stars/full_star.png' width="15" height="15"/></div>
   const halfStar = <div className="book-show-half-star"><img src='/assets/stars/half_star.png' width="15" height="15"/></div>
@@ -10,35 +10,35 @@ const BookShowRating = ({ type, number }) => {
     <div className="book-show-rating-line">
       <div className="book-show-rating-type">
         <div className="book-show-rating-just-stars">
-          { type ? star :
-            <div>
+          { count ? star :
+            <div className="book-show-no-ratings">
               {emptyStar}{emptyStar}{emptyStar}{emptyStar}{emptyStar}
             </div>
           }
 
-          { type && type < 1.4 ? emptyStar : null }
-          { type && type > 1 && type >= 1.4 && type < 1.9 ? halfStar : null }
-          { type && type >= 1.9 ? star : null }
+          { count && count < 1.4 ? emptyStar : null }
+          { count && count > 1 && count >= 1.4 && count < 1.9 ? halfStar : null }
+          { count && count >= 1.9 ? star : null }
 
-          { type && type < 2.4 ? emptyStar : null }
-          { type && type > 2 && type >= 2.4 && type < 2.9 ? halfStar : null }
-          { type && type >= 2.9 ? star : null }
+          { count && count < 2.4 ? emptyStar : null }
+          { count && count > 2 && count >= 2.4 && count < 2.9 ? halfStar : null }
+          { count && count >= 2.9 ? star : null }
 
-          { type && type < 3.4 ? emptyStar : null }
-          { type && type > 3 && type >= 3.4 && type < 3.9 ? halfStar : null }
-          { type && type >= 3.9 ? star : null }
+          { count && count < 3.4 ? emptyStar : null }
+          { count && count > 3 && count >= 3.4 && count < 3.9 ? halfStar : null }
+          { count && count >= 3.9 ? star : null }
 
-          { type && type < 4.4 ? emptyStar : null }
-          { type && type > 4 && type >= 4.4 && type < 4.9 ? halfStar : null }
-          { type && type === 5 ? star : null }
+          { count && count < 4.4 ? emptyStar : null }
+          { count && count > 4 && count >= 4.4 && count < 4.9 ? halfStar : null }
+          { count && count === 5 ? star : null }
         </div>
 
-        <div>
-          {type}
+        <div className="book-show-number-of-ratings">
+          {count.overall_rating}
         </div>
 
-        <div className="book-show-rating-number">
-          ({number} { number > 1 ? "ratings" : "rating" })
+        <div className="book-show-rating-ratings">
+          ({number.num_overall_ratings} { number.num_overall_ratings > 1 ? "ratings" : "rating" })
         </div>
       </div>
     </div>
