@@ -13,6 +13,9 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
       </div>
       <div className="book-index-description-rating">
         <BookShowRating count={book.overallRating}/>
+        <div
+          className="book-index-rating-number">{book.numOverallRatings.num_overall_ratings} ratings
+        </div>
       </div>
       <div className="book-index-narrator-line">
         <div className="book-index-narrator">Narrator:</div>

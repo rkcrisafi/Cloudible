@@ -156,6 +156,13 @@
 
 .book-index-description-rating {
   padding-bottom: 10px;
+  display: flex;
+}
+
+.book-index-rating-number {
+  color: gray;
+  padding-top: 3px;
+  font-size: 13px;
 }
 
 .book-index-item {
