@@ -9,7 +9,6 @@ end
     json.audioUrl asset_path(book.audio.url)
 
     if @user_library
-      # debugger
       rating = ratings.find { |rating| rating.book_id == book.id }
       if rating
         json.extract! rating, :overall, :performance, :story

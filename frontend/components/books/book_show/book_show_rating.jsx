@@ -34,7 +34,7 @@ const BookShowRating = ({ count, number }) => {
         </div>
 
         { number ?
-          <div>
+          <div className="book-show-ratingss">
             <div className="book-show-number-of-ratings">
               {count}
             </div>

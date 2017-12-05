@@ -59,8 +59,8 @@ tr:nth-child(odd) {
   color: #e84f27;
   font-size: 15px;
   padding-right: 5px;
-  unicode-bidi: bidi-override;
-  direction: rtl;
+  // unicode-bidi: bidi-override;
+  // // direction: rtl;
 }
 
 // .library-rating-just-stars:nth-child(even) {
@@ -82,21 +82,21 @@ tr:nth-child(odd) {
   // position: relative;
 }
 
-.library-rating-just-stars > .fa.fa-star:hover:before,
-.library-rating-just-stars > .fa.fa-star:hover ~ .fa.fa-star:before {
-  // color: blue;
-  content: "\f006";
-  // position: absolute;
-  // content: "\f006"
-}
-
-.library-rating-just-stars > .fa.fa-star-o:hover:before,
-.library-rating-just-stars > .fa.fa-star-o:hover ~ .fa.fa-star:before {
-  // color: blue;
-  content: "\f006";
-  // position: absolute;
-  // content: "\f006"
-}
+// .library-rating-just-stars > .fa.fa-star:hover:before,
+// .library-rating-just-stars > .fa.fa-star:hover ~ .fa.fa-star:before {
+//   // color: blue;
+//   content: "\f006";
+//   // position: absolute;
+//   // content: "\f006"
+// }
+//
+// .library-rating-just-stars > .fa.fa-star-o:hover:before,
+// .library-rating-just-stars > .fa.fa-star-o:hover ~ .fa.fa-star:before {
+//   // color: blue;
+//   content: "\f006";
+//   // position: absolute;
+//   // content: "\f006"
+// }
 
 // .library-rating-stars i:hover {
 //   background-color: orange;

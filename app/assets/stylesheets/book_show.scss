@@ -1,7 +1,7 @@
 
 .book-show-page {
-  max-width: 1020px;
-  min-width: 1020px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: auto;
   width: 100%;
   display: flex;
@@ -57,6 +57,7 @@
 .book-show-description {
   color: gray;
   font-size: 14px;
+  width: 240px;
 }
 
 .book-show-title {
@@ -71,6 +72,10 @@
 }
 
 .book-show-rating-type {
+  display: flex;
+}
+
+.book-show-ratingss {
   display: flex;
 }
 
