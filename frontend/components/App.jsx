@@ -8,7 +8,7 @@ import BookIndex from './books/books_homepage/book_index_homepage';
 import NavBar from './nav_bar/nav_bar';
 import BookShow from './books/book_show/book_show_container';
 import LibraryContainer from './books/library/library_container';
-import BookSearch from './books/book_search';
+import BookSearch from './books/landing_page/book_search';
 import UserProfileContainer from './user/user_profile_container';
 
 const App = (props) => {

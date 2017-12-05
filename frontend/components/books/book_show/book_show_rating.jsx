@@ -1,11 +1,11 @@
 import React from 'react';
 
 const BookShowRating = ({ count, number }) => {
-  // let features = [overall, performance, story];
   const star = <div className="book-show-full-star"><img src='/assets/stars/full_star.png' width="15" height="15"/></div>
   const halfStar = <div className="book-show-half-star"><img src='/assets/stars/half_star.png' width="15" height="15"/></div>
   const emptyStar = <div className="book-show-empty-star"><img src='/assets/stars/empty_star.png' width="15" height="15"/></div>
-
+  count = typeof count === 'number' ? count : count.overall_rating;
+  number = typeof number === 'number' || number === undefined ? number : number.num_overall_ratings;
   return (
     <div className="book-show-rating-line">
       <div className="book-show-rating-type">
@@ -33,13 +33,18 @@ const BookShowRating = ({ count, number }) => {
           { count && count === 5 ? star : null }
         </div>
 
-        <div className="book-show-number-of-ratings">
-          {count.overall_rating}
-        </div>
+        { number ?
+          <div>
+            <div className="book-show-number-of-ratings">
+              {count}
+            </div>
 
-        <div className="book-show-rating-ratings">
-          ({number.num_overall_ratings} { number.num_overall_ratings > 1 ? "ratings" : "rating" })
-        </div>
+            <div className="book-show-rating-ratings">
+              ({number} { number > 1 ? "ratings" : "rating" })
+            </div>
+          </div> : null
+        }
+
       </div>
     </div>
 
