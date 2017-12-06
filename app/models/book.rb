@@ -20,7 +20,7 @@ class Book < ApplicationRecord
   has_many :ratings
 
   def overall_rating
-    self.ratings.average(:overall).to_i
+    self.ratings.average(:overall).to_f.round(1)
   end
 
   def num_overall_ratings
@@ -36,11 +36,11 @@ class Book < ApplicationRecord
   end
 
   def story_rating
-    self.ratings.average(:story).to_i
+    self.ratings.average(:story).to_f.round(1)
   end
 
   def performance_rating
-    self.ratings.average(:performance).to_i
+    self.ratings.average(:performance).to_f.round(1)
   end
 
 end

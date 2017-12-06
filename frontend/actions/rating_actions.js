@@ -13,6 +13,6 @@ export const addRating = (book_id, rating) => dispatch => {
   return RatingApiUtil.addRating(book_id, rating).then(rating => dispatch(receiveRating(rating)));
 };
 
-export const updateRating = (book_id, raitrating) => dispatch => {
+export const updateRating = (book_id, ratingId, rating) => dispatch => {
   return RatingApiUtil.updateRating(book_id, ratingId, rating).then(rating => dispatch(receiveRating(rating)));
 };

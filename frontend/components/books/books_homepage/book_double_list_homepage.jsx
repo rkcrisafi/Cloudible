@@ -96,7 +96,7 @@ class BookDoubleList extends React.Component {
     const hovBook = correct_book_id_books[0];
 
     let description;
-    if (this.state.idx) {
+    if (this.state.idx && hovBook) {
       description  = hovBook.summary.slice(0,500) + "...";
     }
 
