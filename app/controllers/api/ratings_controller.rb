@@ -19,7 +19,6 @@ class Api::RatingsController < ApplicationController
 
   def update
     @rating = current_user.ratings.find(params[:id])
-
     if @rating.update(rating_params)
       render :show
     else

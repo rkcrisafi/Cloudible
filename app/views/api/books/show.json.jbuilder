@@ -1,4 +1,3 @@
-
   json.extract! @book, :id, :title, :author, :narrator, :length, :unabridged, :language, :summary
   json.overallRating @book.overall_rating
   json.numOverallRatings @book, :num_overall_ratings

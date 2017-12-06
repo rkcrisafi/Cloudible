@@ -35,7 +35,7 @@ class LibraryRatingItem extends React.Component {
     if (book.overall || book.performance || book.story) {
       this.props.updateRating(bookId, ratingId, { [type]: num + 1 });
     } else {
-      this.props.addRating(bookId, ratingId, { [type]: num + 1 });
+      this.props.addRating(bookId, { [type]: num + 1 });
     }
   }
 
