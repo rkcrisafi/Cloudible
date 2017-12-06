@@ -17,10 +17,13 @@ const BooksReducer = (state = {}, action) => {
       delete newState[action.bookId];
       return newState;
     case RECEIVE_RATING:
-      newState = merge({}, state);
-      newState[action.rating.book_id].story = action.rating.story;
-      newState[action.rating.book_id].overall = action.rating.overall;
-      newState[action.rating.book_id].performance = action.rating.performance;
+      if (action.rating.overall) {
+        newState[action.rating.book_id].overall = action.rating.overall;
+      } else if (action.rating.performance) {
+        newState[action.rating.book_id].performance = action.rating.performance;
+      } else if (action.rating.story) {
+        newState[action.rating.book_id].story = action.rating.story;
+      }
       return newState;
     default:
       return state;

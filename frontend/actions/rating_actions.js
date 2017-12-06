@@ -9,10 +9,10 @@ export const receiveRating = rating => {
   };
 };
 
-export const addRating = (book_id, rating) => dispatch => (
-  RatingApiUtil.addRating(book_id, rating).then(rating => dispatch(receiveRating(rating)))
-);
+export const addRating = (book_id, rating) => dispatch => {
+  return RatingApiUtil.addRating(book_id, rating).then(rating => dispatch(receiveRating(rating)));
+};
 
-export const updateRating = (book_id, rating) => dispatch => (
-  RatingApiUtil.updateRating(book_id, rating).then(rating => dispatch(receiveRating(rating)))
-);
+export const updateRating = (book_id, ratingId, rating) => dispatch => {
+  return RatingApiUtil.updateRating(book_id, ratingId, rating).then(rating => dispatch(receiveRating(rating)));
+};

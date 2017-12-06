@@ -8,8 +8,16 @@ class LibraryRatingItem extends React.Component {
   this.handleHoverOff = this.handleHoverOff.bind(this);
   this.handleClick = this.handleClick.bind(this);
 
-  this.state = { hover: false, hoverIndex: null };
+  this.state = { hover: false, hoverIndex: null, clicked: false };
   }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return nextState.hover !== this.state.hover || nextState.hoverIndex !== this.state.hoverIndex;
+  // }
+
+// componentDidMount() {
+//   this.props.showLibrary();
+// }
 
   handleHover(num) {
     this.setState({ hover: true, hoverIndex: num });
@@ -20,12 +28,14 @@ class LibraryRatingItem extends React.Component {
   }
 
   handleClick(num) {
-    debugger
+    let bookId = this.props.book.id;
+    let book = this.props.book;
+    let ratingId = this.props.book.ratingId;
     let type = this.props.type;
-    if (this.props.number) {
-      this.props.updateRating(this.props.bookId, { [type]: num });
+    if (book.overall || book.performance || book.story) {
+      this.props.updateRating(bookId, ratingId, { [type]: num + 1 });
     } else {
-      this.props.addRating(this.props.bookId, { [type]: num });
+      this.props.addRating(bookId, ratingId, { [type]: num + 1 });
     }
   }
 

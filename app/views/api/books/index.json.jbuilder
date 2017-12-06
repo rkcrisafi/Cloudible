@@ -11,8 +11,10 @@ end
     if @user_library
       rating = ratings.find { |rating| rating.book_id == book.id }
       if rating
-        json.extract! rating, :overall, :performance, :story
+        json.extract! rating, :overall, :performance, :story, :book_id
+        json.ratingId rating.id
       end
+
     end
 
     json.overallRating book, :overall_rating

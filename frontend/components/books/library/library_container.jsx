@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   showLibrary: (user_id) => dispatch(showLibrary(user_id)),
   deleteBook: (user_id, book_id) => dispatch(deleteBook(user_id, book_id)),
   addRating: (book_id, rating) => dispatch(addRating(book_id, rating)),
-  updateRating: (book_id, rating) => dispatch(updateRating(book_id, rating)),
+  updateRating: (book_id, rating_id, rating) => dispatch(updateRating(book_id, rating_id, rating)),
 });
 
 export default connect(
