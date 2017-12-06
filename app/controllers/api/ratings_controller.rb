@@ -8,7 +8,6 @@ class Api::RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
     @rating.user_id = current_user.id
     @rating.book_id = params[:book_id]
-    debugger
 
     if @rating.save
       render :show
@@ -19,9 +18,13 @@ class Api::RatingsController < ApplicationController
   end
 
   def update
+    @rating = current_user.ratings.find(params[:id])
+    if @rating.update(rating_params)
+      render :show
+    else
+      render json: @rating.errors.full_messages, status: 422
+    end
   end
-
-
 
   private
 

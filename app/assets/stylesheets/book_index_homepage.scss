@@ -30,6 +30,29 @@
   margin: 8px;
 }
 
+.hbook-index-ratings {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.hbook-index-rating {
+  display: flex;
+}
+
+.hbook-index-rating-name {
+  width: 100px;
+  font-size: 13px;
+  color: gray;
+  padding-top: 2px;
+}
+
+.hbook-index-rating-number {
+  color: gray;
+  font-size: 13px;
+  padding-top: 2px;
+}
+
 .lhomepage-slider {
   max-width: 1000px;
   min-width: 1000px;
@@ -68,10 +91,9 @@
 }
 
 .hbook-index-item:hover  .hright-side-drop  .hbook-index-description, .lbook-index-description {
-  // background: white;
+  background: white;
   z-index: 5;
   display: inline;
-  // overflow-y: visible;
 }
 
 .hleft-side-drop .hbook-index-description, .lbook-index-description {
@@ -88,17 +110,15 @@
 
 .hbook-index-description, .lbook-index-description {
   position: absolute;
-  width: 200px;
-  height: 330px;
-  border: white;
   display: none;
-  width: 240px;
-  height: 370px;
+  width: 270px;
+  height: 350px;
+  max-height: 390px;
   border: 1px #dbdee0 solid;
   border-radius: 2px;
-  padding: 30px 10px 10px 10px;
+  padding: 30px 10px 20px 20px;
   font-family: "Amazon Amber", Arial, sans-serif;
-  background-color: #f2f2f7;
+  background-color: white;
   color: #2c2c2d;
   z-index: 100;
 }

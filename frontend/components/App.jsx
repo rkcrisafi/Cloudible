@@ -3,12 +3,12 @@ import GreetingContainer from './greeting/greeting_container';
 import { Route, withRouter, Link, Switch } from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute } from '../util/route_util';
-import LandingBookIndexContainer from './books/book_index_container';
+import LandingBookIndexContainer from './books/landing_page/book_index_container';
 import BookIndex from './books/books_homepage/book_index_homepage';
 import NavBar from './nav_bar/nav_bar';
 import BookShow from './books/book_show/book_show_container';
 import LibraryContainer from './books/library/library_container';
-import BookSearch from './books/book_search';
+import BookSearch from './books/landing_page/book_search';
 import UserProfileContainer from './user/user_profile_container';
 
 const App = (props) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import BookIndexItem from './book_index_item';
-import shuffle from '../../util/_shuffle';
+import shuffle from '../../../util/_shuffle';
 
 class BookIndex extends React.Component {
   constructor (props) {

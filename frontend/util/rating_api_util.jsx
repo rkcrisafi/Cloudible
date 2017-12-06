@@ -6,7 +6,7 @@ export const addRating = (book_id, rating) => {
   });
 };
 
-export const updateRating = (book_id, rating) => {
+export const updateRating = (book_id, rating_id, rating) => {
   return $.ajax({
     method: 'patch',
     url: `api/books/${book_id}/ratings/${rating_id}`,

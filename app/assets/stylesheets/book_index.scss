@@ -82,7 +82,7 @@
   // padding-bottom: 20px;
   max-width: 1035px;
   min-width: 1035px;
-  height: 505px;
+  height: 530px;
   display: flex;
   flex-wrap: wrap;
 
@@ -124,10 +124,12 @@
   height: 149px;
 }
 
-.book-index-outside-narrator-line {
+.book-index-outside-narrator-line-rating {
+  position: relative;
   display: flex;
+  flex-direction: column;
   width: 142px;
-  height: 30px;
+  height: 60px;
   font-family: "Amazon Amber", Arial, sans-serif;
   font-size: 13px;
   margin: 0 10px 10px 10px;
@@ -137,11 +139,31 @@
   color: black;
 }
 
+.book-index-outside-narrator-line {
+  display: flex;
+}
+
 .book-index-outside-narrator {
   color: gray;
   font-weight: 700;
   padding-right: 5px;
+}
 
+.book-index-rating {
+  position: absolute;
+  left: 10px;
+  top: 45px;
+}
+
+.book-index-description-rating {
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.book-index-rating-number {
+  color: gray;
+  padding-top: 3px;
+  font-size: 13px;
 }
 
 .book-index-item {
@@ -151,13 +173,8 @@
   margin: 11px;
 }
 
-.book-index-item:hover  .left-side-drop  .book-index-description {
-  background: white;
-  z-index: 5;
-  display: inline;
-}
-
-.book-index-item:hover  .right-side-drop  .book-index-description {
+.book-index-item:hover  .left-side-drop  .book-index-description,
+.book-index-item:hover  .right-side-drop  .book-index-description  {
   background: white;
   z-index: 5;
   display: inline;
@@ -176,7 +193,6 @@
 }
 
 .book-index-description {
-  // position: absolute;
   width: 200px;
   height: 330px;
   border: white;

@@ -2,6 +2,7 @@ class Api::BooksController < ApplicationController
 
   def index
     if params[:user_id]
+      @user_library = true
       @books = current_user.books
     else
       @books = Book.all

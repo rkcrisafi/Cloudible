@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LibraryRatingItem from './library_rating_item';
 
-const LibraryItem = ({ book }) => {
+const LibraryItem = ({ book, addRating, updateRating }) => {
 
   return (
     <tr>
@@ -11,11 +12,9 @@ const LibraryItem = ({ book }) => {
       <td>{book.length}</td>
       <td>
         <div className="library-rating-stars">
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
+          <LibraryRatingItem book={book} type={"overall"} number={book.overall} name="Overall" addRating={addRating} updateRating={updateRating} bookId={book.id}/>
+          <LibraryRatingItem book={book} type={"performance"} number={book.performance} name="Performance" addRating={addRating} updateRating={updateRating} bookId={book.id}/>
+          <LibraryRatingItem book={book} type={"story"} number={book.story} name="Story" addRating={addRating} updateRating={updateRating} bookId={book.id}/>
         </div>
         <div>Write a review link</div>
       </td>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BookShowRating from './book_show_rating';
 
 class BookShow extends React.Component {
   constructor (props) {
@@ -73,6 +74,7 @@ render () {
               <div className="book-show-length">Length: {book.length}</div>
               <div className="book-show-format">{book.unabridged ? "Unabridged" : "Abridged" }</div>
               <div className="book-show-language">Language: {book.language}</div>
+              <BookShowRating count={book.overallRating} number={book.numOverallRatings}/>
             </div>
           </div>
         </div>

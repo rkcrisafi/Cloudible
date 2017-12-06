@@ -1,6 +1,7 @@
 
 .book-show-page {
-  max-width: 1020px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: auto;
   width: 100%;
   display: flex;
@@ -8,7 +9,6 @@
   justify-content: space-between;
   font-family: "Amazon Amber", Arial, sans-serif;
   padding-top: 20px;
-
 }
 
 .book-show-book-description-buttons {
@@ -17,7 +17,6 @@
 
 .book-show-book-section {
   display: flex;
-  // flex-direction: row;
   padding: 20px 15px 5px 20px;
 }
 
@@ -35,8 +34,6 @@
 }
 
 .book-show-audio {
-  // text-align: center;
-  // vertical-align: center;
   width: 232px;
   height: 30px;
   background: #f2f2f2;
@@ -60,6 +57,7 @@
 .book-show-description {
   color: gray;
   font-size: 14px;
+  width: 240px;
 }
 
 .book-show-title {
@@ -71,6 +69,28 @@
 
 .book-show-by, .book-show-narrator-name, .book-show-length, .book-show-format, .book-show-language {
   margin: 5px;
+}
+
+.book-show-rating-type {
+  display: flex;
+}
+
+.book-show-ratingss {
+  display: flex;
+}
+
+.book-show-rating-just-stars, .book-show-no-ratings  {
+  display: flex;
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.book-show-full-star,
+.book-show-half-star,
+.book-show-empty-star,
+.book-show-number-of-ratings,
+.book-show-rating-ratings {
+  padding: 2px;
 }
 
 .show-book-buy-button {
@@ -128,7 +148,6 @@
   display: flex;
   justify-content: center;
   color: gray;
-
 }
 
 .book-show-division-or {

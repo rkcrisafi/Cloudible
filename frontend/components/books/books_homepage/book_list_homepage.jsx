@@ -2,6 +2,7 @@ import React from 'react';
 import BookIndexItem from './book_index_item_homepage';
 import shuffle from '../../../util/_shuffle';
 import Slider from 'react-slick';
+import BookShowRating from '../book_show/book_show_rating';
 
 
 class BookList extends React.Component {
@@ -40,7 +41,7 @@ class BookList extends React.Component {
         }
         let top;
         let left;
-        // 
+        //
         if ((idx+1) % 4 === 0 ) {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left - 285;
@@ -66,7 +67,7 @@ class BookList extends React.Component {
 
   render () {
     const correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
-    // 
+    //
     //if we set const correct_book_id_books = this.books.filter(book => book.id === this.state.idx)
     //it will give us all of the books with the correct book id
     //then we can just say correct_book_id_books[0] and grab the first book
@@ -78,7 +79,6 @@ class BookList extends React.Component {
     }
 
     let settings = {
-      // accessibility: true,
       dots: true,
       infinite: true,
       speed: 500,
@@ -103,14 +103,39 @@ class BookList extends React.Component {
             {this.state.idx && hovBook ? (<div className="hbook-index-description">
               <div className="hbook-index-title">{hovBook.title}</div>
 
-                <div className="hbook-index-format-length">
-                  <div className="hbook-format">{hovBook.unabridged ? "UNABRIDGED " : "ABRIDGED " }
+              <div className="hbook-index-format-length">
+                <div
+                  className="hbook-format">{hovBook.unabridged ? "UNABRIDGED " : "ABRIDGED " }
                 </div>
-                  <div className="hbook-index-length">
-                    {hovBook !== undefined  ? (hovBook.length) :
-                    null}
+
+                <div className="hbook-index-length">
+                  {hovBook !== undefined  ? (hovBook.length) :
+                  null}
+                </div>
+              </div>
+
+              <div className="hbook-index-ratings">
+                <div className="hbook-index-rating">
+                  <div className="hbook-index-rating-name">Overall</div>
+                  <BookShowRating count={hovBook.overallRating.overall_rating}/>
+                  <div className="hbook-index-rating-number">
+                    {hovBook.numOverallRatings.num_overall_ratings}</div>
+                  </div>
+                <div className="hbook-index-rating">
+                  <div className="hbook-index-rating-name">Performance</div>
+                  <BookShowRating count={hovBook.performanceRating.performance_rating}/>
+                  <div className="hbook-index-rating-number">
+                    {hovBook.numPerformanceRatings.num_performance_ratings}
                   </div>
                 </div>
+                <div className="hbook-index-rating">
+                  <div className="hbook-index-rating-name">Story</div>
+                  <BookShowRating count={hovBook.storyRating.story_rating}/>
+                  <div className="hbook-index-rating-number">
+                    {hovBook.numStoryRatings.num_story_ratings}
+                  </div>
+                </div>
+              </div>
 
               <div className="hbook-index-author-line">
                 <div className="hbook-index-by">By </div>

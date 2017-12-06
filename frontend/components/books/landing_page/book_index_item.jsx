@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import BookShowRating from '../book_show/book_show_rating';
 
 const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
   let description = book.summary.slice(0,500) + "...";
@@ -10,6 +10,12 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
       <div className="book-index-author-line">
         <div className="book-index-by">By: </div>
         <div className="book-index-author"> {book.author}</div>
+      </div>
+      <div className="book-index-description-rating">
+        <BookShowRating count={book.overallRating}/>
+        <div
+          className="book-index-rating-number">{book.numOverallRatings.num_overall_ratings} ratings
+        </div>
       </div>
       <div className="book-index-narrator-line">
         <div className="book-index-narrator">Narrator:</div>
@@ -44,10 +50,16 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
             </div>
           </div>
 
-        <div className="book-index-outside-narrator-line">
-          <div className="book-index-outside-narrator">Narrator:</div>
-          <div className="book-index-outside-narrator-name">{book.narrator}</div>
+        <div className="book-index-outside-narrator-line-rating">
+          <div className="book-index-outside-narrator-line">
+            <div className="book-index-outside-narrator">Narrator:</div>
+            <div className="book-index-outside-narrator-name">{book.narrator}</div>
+          </div>
+          <div className="book-index-rating">
+            <BookShowRating count={book.overallRating}/>
+          </div>
         </div>
+
 
         <div>{((idx+1) % 6 === 5 || (idx+1) % 6 === 0) ?
             <div className="right-side-drop">{fullDescription}</div> :
