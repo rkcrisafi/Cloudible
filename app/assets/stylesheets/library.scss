@@ -59,45 +59,11 @@ tr:nth-child(odd) {
   color: #e84f27;
   font-size: 15px;
   padding-right: 5px;
-  // unicode-bidi: bidi-override;
-  // // direction: rtl;
 }
-
-// .library-rating-just-stars:nth-child(even) {
-//   color: blue;
-// }
-
-// .library-rating-line {
-//   padding: 3px;
-// }
-
-// .library-rating-stars:hover {
-//   color: #e84f27;
-// }
 
 .library-rating-just-stars > .fa.fa-star, .fa.fa-star-o {
   padding: 1.5px;
   display: inline-block;
   position: relative;
-  // position: relative;
+  cursor: pointer;
 }
-
-// .library-rating-just-stars > .fa.fa-star:hover:before,
-// .library-rating-just-stars > .fa.fa-star:hover ~ .fa.fa-star:before {
-//   // color: blue;
-//   content: "\f006";
-//   // position: absolute;
-//   // content: "\f006"
-// }
-//
-// .library-rating-just-stars > .fa.fa-star-o:hover:before,
-// .library-rating-just-stars > .fa.fa-star-o:hover ~ .fa.fa-star:before {
-//   // color: blue;
-//   content: "\f006";
-//   // position: absolute;
-//   // content: "\f006"
-// }
-
-// .library-rating-stars i:hover {
-//   background-color: orange;
-// }

@@ -4,7 +4,6 @@ import { showLibrary, deleteBook, fetchBook } from '../../../actions/book_action
 import { addRating, updateRating } from '../../../actions/rating_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  //
   return {
     books: state.session.currentUser.bookIds.map(id => state.books[id]).filter(el => el !== undefined),
     currentUserId: state.session.currentUser.id
