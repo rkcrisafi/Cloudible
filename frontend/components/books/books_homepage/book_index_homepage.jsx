@@ -3,7 +3,7 @@ import { BookSingleList, BookDoubleList } from './book_index_container_homepage'
 
 const BookIndex = props => {
   return (
-    <div>
+    <div className="all-carousels">
       <div className="best-sellers">Best Sellers</div>
       <BookSingleList className="bookSingleList"/>
       <div className="new-releases">New Releases</div>

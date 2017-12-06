@@ -125,7 +125,7 @@ class BookDoubleList extends React.Component {
               ))
             }
           </Slider>
-            {this.state.idx ? (<div className="lbook-index-description">
+            {this.state.idx && hovBook ? (<div className="lbook-index-description">
               <div className="hbook-index-title">{hovBook.title}</div>
 
               <div className="hbook-index-format-length">
