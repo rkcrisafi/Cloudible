@@ -46,10 +46,10 @@ class BookDoubleList extends React.Component {
         let left;
         if ((idx+1) % 6 === 0 ) {
           top = $(e.currentTarget).offset().top;
-          left = $(e.currentTarget).offset().left - 285;
+          left = $(e.currentTarget).offset().left - 305;
         } else if ((idx+1) % 6 === 1 ) {
           top = $(e.currentTarget).offset().top;
-          left = $(e.currentTarget).offset().left + 330;
+          left = $(e.currentTarget).offset().left + 340;
         } else {
           top = $(e.currentTarget).offset().top;
           left = $(e.currentTarget).offset().left + 150;

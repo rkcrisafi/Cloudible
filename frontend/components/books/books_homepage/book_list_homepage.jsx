@@ -44,10 +44,10 @@ class BookList extends React.Component {
         //
         if ((idx+1) % 4 === 0 ) {
           top = $(e.currentTarget).offset().top;
-          left = $(e.currentTarget).offset().left - 285;
+          left = $(e.currentTarget).offset().left - 305;
         } else {
           top = $(e.currentTarget).offset().top;
-          left = $(e.currentTarget).offset().left + 250;
+          left = $(e.currentTarget).offset().left + 260;
         }
         $('.hbook-index-description').css({display: "block", 'top': top, 'left': left });
 
