@@ -60,13 +60,13 @@ class BookDoubleList extends React.Component {
       (e) => {
         $('.lbook-index-description').css("display", "none");
 
-    }), 200);
+    }), 500);
 
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.books && this.books.length === 0) {
-      this.books = shuffle(newProps.books.concat(newProps.books)).slice(0,20);
+      this.books = shuffle(newProps.books).slice(0,12);
     }
   }
 
@@ -90,12 +90,16 @@ class BookDoubleList extends React.Component {
   }
 
   render () {
-    const correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
 
+    let correct_book_id_books = [];
+    if (this.state.idx) {
+      correct_book_id_books = this.books.filter(book => book.id === this.state.idx);
+    }
 
     const hovBook = correct_book_id_books[0];
 
     let description;
+
     if (this.state.idx) {
       description  = hovBook.summary.slice(0,500) + "...";
     }
