@@ -1,3 +1,11 @@
+export const fetchRatings = (book_id) => {
+  return $.ajax({
+    method: 'get',
+    url: `api/books/${book_id}/ratings`
+  });
+};
+
+
 export const addRating = (book_id, rating) => {
   return $.ajax({
     method: 'post',

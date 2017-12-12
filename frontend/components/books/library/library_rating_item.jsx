@@ -11,14 +11,6 @@ class LibraryRatingItem extends React.Component {
   this.state = { hover: false, hoverIndex: null, clicked: false };
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return nextState.hover !== this.state.hover || nextState.hoverIndex !== this.state.hoverIndex;
-  // }
-
-// componentDidMount() {
-//   this.props.showLibrary();
-// }
-
   handleHover(num) {
     this.setState({ hover: true, hoverIndex: num });
   }

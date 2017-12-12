@@ -4,15 +4,20 @@ class Api::ReviewsController < ApplicationController
     @reviews = Review.where(rating_id: params[:rating_id])
   end
 
-  def create
-    review = Review.new(review_params)
-    review.user_id = current_user.id
+  def show
+    # @review = Review.where(rating_id: params[:rating_id])
+    @review = Review.find(params[:id])
+  end
 
-    if review.save
-      @reviews = Reviews.where(book_id: review.book_id)
-      render :index
+  def create
+    @review = Review.new(review_params)
+    @review.rating_id = params[:rating_id]
+
+    if @review.save
+      # @review = Review.where(rating_id: review.rating_id)
+      render :show
     else
-      render json: reviews.errors.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -20,7 +25,7 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params_require(:review).permit(:title, :body)
+    params.require(:review).permit(:title, :body)
   end
 
 end

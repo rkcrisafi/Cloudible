@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show] do
-      resources :ratings, only: [:create, :update] do
-        resources :reviews, only: [:create, :index]
+      resources :ratings, only: [:index, :create, :update] do
+        resources :reviews, only: [:create, :index, :show]
       end
     end
   end
