@@ -34,7 +34,7 @@ class LibraryRatingItem extends React.Component {
   render() {
     let name = this.props.name;
     let number = this.props.number;
-    const stars = [0,1,2,3,4].map(num => {
+    const stars = [0,1,2,3,4].map((num, idx) => {
 
       let className;
       if (this.state.hover) {
@@ -44,7 +44,7 @@ class LibraryRatingItem extends React.Component {
       }
 
 
-      return <i onMouseEnter={() => this.handleHover(num)} onMouseLeave={this.handleHoverOff} onClick={() => this.handleClick(num)} className={className} aria-hidden="true"></i>;
+      return <i key={idx} onMouseEnter={() => this.handleHover(num)} onMouseLeave={this.handleHoverOff} onClick={() => this.handleClick(num)} className={className} aria-hidden="true"></i>;
     });
     return (
       <div className="library-rating-line">

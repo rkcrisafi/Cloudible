@@ -45,6 +45,7 @@ render () {
     <audio controls ref={audio => this.audio = audio}>
       <source src={this.props.book.audioUrl} type="audio/mp3"/>
     </audio>);
+  
   return (
     <div className="book-show-page">
       <div className="book-show-book-description-buttons">

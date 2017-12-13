@@ -4,8 +4,9 @@ const BookShowRating = ({ count, number }) => {
   const star = <div className="book-show-full-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/full_star.png' width="15" height="15"/></div>
   const halfStar = <div className="book-show-half-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/half_star.png' width="15" height="15"/></div>
   const emptyStar = <div className="book-show-empty-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/empty_star.png' width="15" height="15"/></div>
-  count = typeof count === 'number' ? count : count.overall_rating;
-  number = typeof number === 'number' || number === undefined ? number : number.num_overall_ratings;
+
+  // count = typeof count === 'number' ? count : count.overall_rating;
+  // number = typeof number === 'number' || number === undefined ? number : number.num_overall_ratings;
   return (
     <div className="book-show-rating-line">
       <div className="book-show-rating-type">
@@ -40,7 +41,7 @@ const BookShowRating = ({ count, number }) => {
             </div>
 
             <div className="book-show-rating-ratings">
-              ({number} { number > 1 ? "ratings" : "rating" })
+              ({number} { number === 1 ? "rating" : "ratings" })
             </div>
           </div> : null
         }

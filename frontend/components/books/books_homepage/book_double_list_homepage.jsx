@@ -144,22 +144,22 @@ class BookDoubleList extends React.Component {
               <div className="hbook-index-ratings">
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Overall</div>
-                  <BookShowRating count={hovBook.overallRating.overall_rating}/>
+                  <BookShowRating count={hovBook.overallRating}/>
                   <div className="hbook-index-rating-number">
-                    {hovBook.numOverallRatings.num_overall_ratings}</div>
+                    {hovBook.numOverallRatings}</div>
                   </div>
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Performance</div>
-                  <BookShowRating count={hovBook.performanceRating.performance_rating}/>
+                  <BookShowRating count={hovBook.performanceRating}/>
                   <div className="hbook-index-rating-number">
-                    {hovBook.numPerformanceRatings.num_performance_ratings}
+                    {hovBook.numPerformanceRatings}
                   </div>
                 </div>
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Story</div>
-                  <BookShowRating count={hovBook.storyRating.story_rating}/>
+                  <BookShowRating count={hovBook.storyRating}/>
                   <div className="hbook-index-rating-number">
-                    {hovBook.numStoryRatings.num_story_ratings}
+                    {hovBook.numStoryRatings}
                   </div>
                 </div>
               </div>

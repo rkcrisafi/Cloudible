@@ -5,14 +5,14 @@
 //   });
 // };
 
-export const fetchReview = (book_id, rating_id, id) => {
+export const fetchReview = (book_id, rating_id, review) => {
   return $.ajax({
       method: 'get',
-      url: `api/books/${book_id}/ratings/${rating_id}/reviews/${id}`
+      url: `api/books/${book_id}/ratings/${rating_id}/reviews/${review.id}`
   });
 };
 
-export const createReview = (review, book_id, rating_id) => {
+export const createReview = (book_id, rating_id, review) => {
   return $.ajax({
     method: 'post',
     url: `api/books/${book_id}/ratings/${rating_id}/reviews`,

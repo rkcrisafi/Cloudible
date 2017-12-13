@@ -23,8 +23,8 @@ class Library extends React.Component {
         </thead>
         <tbody>
           {
-            this.props.books.map(book => (
-              <LibraryItem book={book} addRating={this.props.addRating} updateRating={this.props.updateRating}/>
+            this.props.books.map((book, idx) => (
+              <LibraryItem key={idx} book={book} addRating={this.props.addRating} updateRating={this.props.updateRating}/>
             ))
           }
         </tbody>

@@ -14,7 +14,7 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
       <div className="book-index-description-rating">
         <BookShowRating count={book.overallRating}/>
         <div
-          className="book-index-rating-number">{book.numOverallRatings.num_overall_ratings} ratings
+          className="book-index-rating-number">{book.numOverallRatings} {book.numOverallRatings === 1 ? 'rating' : 'ratings'}
         </div>
       </div>
       <div className="book-index-narrator-line">
