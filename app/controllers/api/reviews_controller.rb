@@ -1,7 +1,11 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(rating_id: params[:rating_id])
+    if params[:book_id]
+      @reviews = Book.find(params[:book_id]).reviews
+    elsif params[:user_id]
+      @reviews = User.find(params[:user_id]).reviews
+    end
   end
 
   def show

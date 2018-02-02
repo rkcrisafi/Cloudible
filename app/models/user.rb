@@ -8,11 +8,16 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :libraries
+  
   has_many :books,
     through: :libraries,
     source: :book
 
   has_many :ratings
+
+  has_many :reviews,
+    through: :ratings,
+    source: :review
 
 
   has_attached_file :image, default_url: "default_user_300x300.png"

@@ -19,6 +19,10 @@ class Book < ApplicationRecord
 
   has_many :ratings
 
+  has_many :reviews,
+    through: :ratings,
+    source: :review
+
   def overall_rating
     self.ratings.average(:overall).to_f.round(1)
   end

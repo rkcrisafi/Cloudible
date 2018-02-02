@@ -4,11 +4,13 @@ import { combineReducers } from 'redux';
 import BooksReducer from './book_reducer';
 import SearchReducer from './search_reducer';
 import UserReducer from './user_reducer';
+import RatingReducer from './rating_reducer';
 
 export default combineReducers({
   session: SessionReducer,
   errors: ErrorsReducer,
   books: BooksReducer,
   search: SearchReducer,
-  user: UserReducer
+  user: UserReducer,
+  ratings: RatingReducer
 });
