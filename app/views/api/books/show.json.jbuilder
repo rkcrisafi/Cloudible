@@ -6,6 +6,10 @@
     json.array! @book.ratings.map{|rating| rating.id}
   end
 
+  json.reviewIds do
+    json.array! @book.reviews.map{|review| review.id}
+  end
+
   # json.ratingIds @book.ratings do |rating|
   #   json.ratingId rating.id
   # end
