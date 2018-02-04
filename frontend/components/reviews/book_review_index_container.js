@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     if (!review) {
       return null;
     }
-    debugger
+    
     let rating = state.ratings[review.rating_id];
     return {
       review,

@@ -12,10 +12,9 @@ class BookReviewIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="book-review-index">
         {
           this.props.reviews.map((review, idx) => {
-            debugger
             return (
               !review ? null :
               <BookReviewIndexItem key={idx} rating={review.rating} review={review.review}/>

@@ -16,7 +16,6 @@ const RatingReducer = (state = {}, action) => {
       let ratings = action.reviews.ratings;
       newState = merge({}, state, ratings)
       // for (var ratingProp in ratings) {
-      //   debugger
       //   newState[ratingProp] = ratings[ratingProp];
       // }
       return newState;
