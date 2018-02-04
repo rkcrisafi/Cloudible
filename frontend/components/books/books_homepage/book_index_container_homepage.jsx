@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import BookList from './book_list_homepage';
 import BookDList from './book_double_list_homepage';
-// './book_index_homepage'
 import { fetchBooks } from '../../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {

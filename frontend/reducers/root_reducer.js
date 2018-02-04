@@ -5,6 +5,7 @@ import BooksReducer from './book_reducer';
 import SearchReducer from './search_reducer';
 import UserReducer from './user_reducer';
 import RatingReducer from './rating_reducer';
+import ReviewReducer from './review_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   books: BooksReducer,
   search: SearchReducer,
   user: UserReducer,
-  ratings: RatingReducer
+  ratings: RatingReducer,
+  reviews: ReviewReducer,
 });

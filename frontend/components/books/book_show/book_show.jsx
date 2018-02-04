@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BookShowRating from './book_show_rating';
+import BookReviewIndexContainer from '../../reviews/book_review_index_container';
 
 class BookShow extends React.Component {
   constructor (props) {
@@ -45,7 +46,6 @@ render () {
     <audio controls ref={audio => this.audio = audio}>
       <source src={this.props.book.audioUrl} type="audio/mp3"/>
     </audio>);
-  
   return (
     <div className="book-show-page">
       <div className="book-show-book-description-buttons">
@@ -58,7 +58,7 @@ render () {
             <div className="show-book-audio">{theAudio}</div>
             <div onClick={() => this.toggleAudio(this.audio)} className="book-show-audio">
               { !this.state.playing ?
-                <i className="fa fa-play-circle" aria-hidden="true" font-size="13px"></i> :
+                <i className="fa fa-play-circle" aria-hidden="true" fontSize="13px"></i> :
                 <i className="fa fa-pause-circle" aria-hidden="true"></i>
               }
               <div className="book-show-sample-word">Sample</div>
@@ -97,7 +97,9 @@ render () {
           <div className="book-show-summary-title">Summary</div>
           <div className="book-show-summary-body">{book.summary}</div>
         </div>
-
+        { (book.reviewIds && book.reviewIds.length >= 1) ?
+        <BookReviewIndexContainer /> :
+        null }
     </div>
     );
   }
