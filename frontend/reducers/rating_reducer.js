@@ -9,12 +9,13 @@ const RatingReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_RATINGS:
       return merge({}, action.ratings);
-    case RECEIVE_REVIEW:
-      newState[action.review.rating_id].review = action.review;
-      return newState;
+    // case RECEIVE_REVIEW:
+    //   debugger
+    //   newState[action.review.rating_id].review = action.review;
+    //   return newState;
     case RECEIVE_REVIEWS:
       let ratings = action.reviews.ratings;
-      newState = merge({}, state, ratings)
+      newState = merge({}, state, ratings);
       // for (var ratingProp in ratings) {
       //   newState[ratingProp] = ratings[ratingProp];
       // }

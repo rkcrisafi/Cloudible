@@ -10,6 +10,7 @@ import BookShow from './books/book_show/book_show_container';
 import LibraryContainer from './books/library/library_container';
 import BookSearch from './books/landing_page/book_search';
 import UserProfileContainer from './user/user_profile_container';
+import ReviewFormContainer from './reviews/review_form_container';
 
 const App = (props) => {
 
@@ -24,6 +25,7 @@ const App = (props) => {
               <Route exact path="/library" component={NavBar} />
               <Route exact path="/results" component={NavBar} />
               <Route exact path="/listener/:userId" component={NavBar} />
+              <Route exact path="/write-review/:bookId/:ratingId" component={NavBar} />
             </Switch>
           </header>
             <Switch>
@@ -33,7 +35,7 @@ const App = (props) => {
               <Route exact path="/library" component={LibraryContainer} />
               <Route exact path="/results" component={BookSearch} />
               <Route exact path="/listener/:userId" component={UserProfileContainer} />
-
+              <Route exact path="/write-review/:bookId/:ratingId" component={ReviewFormContainer} />
             </Switch>
 
           </div>

@@ -16,7 +16,14 @@ const LibraryItem = ({ book, addRating, updateRating }) => {
           <LibraryRatingItem book={book} type={"performance"} number={book.performance} name="Performance" addRating={addRating} updateRating={updateRating} bookId={book.id}/>
           <LibraryRatingItem book={book} type={"story"} number={book.story} name="Story" addRating={addRating} updateRating={updateRating} bookId={book.id}/>
         </div>
-        <div>Write a review link</div>
+        <div className="library-write-review">
+          {
+            (!(book.overall && book.performance && book.story)) ? <div>Rate to write a review</div> :
+            (book.reviewId) ? <Link to={`/books/${book.id}`}>Read your review</Link> :
+            <Link to={`/write-review/${book.id}/${book.ratingId}`} params={{ book }}>Write a review</Link>
+          }
+        </div>
+
       </td>
     </tr>
   )

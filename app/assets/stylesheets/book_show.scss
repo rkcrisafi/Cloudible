@@ -196,31 +196,22 @@
    display: flex;
  }
 
+ .book-review-rating {
+   padding-bottom: 50px;
+ }
+
  .book-review-index {
    padding: 50px 0 50px 0;
  }
 
-.book-review-rating-user {
-
-}
 
 .book-review-a-rating {
   display: flex;
   justify-content: space-between;
   color: gray;
   font-size: 14px;
-  // position: relative;
   width: 200px;
 }
-
-// .book-a-rating-name {
-//   position: absolute;
-//   bottom: 0;
-// }
-
-// .book-review-rating {
-//   padding-top: 10px;
-// }
 
 .book-review-user {
   padding-top: 15px;
