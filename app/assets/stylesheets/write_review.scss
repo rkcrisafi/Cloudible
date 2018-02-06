@@ -1,6 +1,7 @@
 .write-review {
   margin: auto;
   width: 1000px;
+  font-family: "Amazon Amber", Arial, sans-serif;
 }
 
 .write-review-book {
@@ -14,7 +15,6 @@
 
 .write-review-book-description {
   padding-top: 20px;
-  font-family: "Amazon Amber", Arial, sans-serif;
 }
 
 .write-review-book-title {
@@ -30,4 +30,49 @@
 .write-review-author, .write-review-narrator {
   font-size: 15px;
   margin-top: 5px;
+}
+
+.write-review-title, .write-review-body {
+  display: flex;
+  padding: 30px 20px 30px 30px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.write-review-step-number {
+  display: flex;
+  padding-right: 30px;
+}
+
+.write-review-step {
+  color: gray;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.write-review-stepnumber {
+  font-size: 35px;
+  font-weight: 700;
+  color: #e84f27;
+}
+
+.write-review-enter-title, .write-review-enter-body {
+  font-weight: 700;
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
+.write-review-input {
+  width: 600px;
+  height: 20px;
+}
+
+.write-review-textarea {
+  width: 600px;
+  height: 150px;
+}
+
+.write-review-submit {
+  color: blue;
+  font-weight: 700;
+  width: 100px;
 }

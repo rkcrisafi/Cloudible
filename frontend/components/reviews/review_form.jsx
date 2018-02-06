@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -30,9 +31,10 @@ class ReviewForm extends React.Component {
         {
           (!book) ? null :
           <div className="write-review-book">
-            <div className="write-review-book-cover">
-              <img src={book.imageUrl} width="200" height="200"  className="write-review-book-image"/>
-            </div>
+            <Link to={`/books/${book.id}`} >
+              <img src={book.imageUrl} width="200" height="200"  className="write-review-book-cover"/>
+            </Link>
+
             <div className="write-review-book-description">
               <div className="write-review-book-title">{book.title}</div>
               <div className="write-review-unabridged">{ (book.unabridged) ? "UNABRIDGED" : "ABRIDGED" }</div>
@@ -42,13 +44,27 @@ class ReviewForm extends React.Component {
           </div>
         }
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>Enter a headline for your review:
-            <input type="text" value={this.state.title} onChange={this.update('title')}/>
-          </label>
-          <label>Write your review in the space below:
-            <textarea value={this.state.body} onChange={this.update('body')}/>
-          </label>
-          <input type="submit" value="Submit"/>
+          <div className="write-review-title">
+            <div className="write-review-step-number">
+              <div className="write-review-step">Step</div>
+              <div className="write-review-stepnumber">1</div>
+            </div>
+            <label>
+              <div className="write-review-enter-title">Enter a headline for your review:</div>
+              <input type="text" value={this.state.title} onChange={this.update('title')} className="write-review-input"/>
+            </label>
+          </div>
+          <div className="write-review-body">
+            <div className="write-review-step-number">
+              <div className="write-review-step">Step</div>
+              <div className="write-review-stepnumber">2</div>
+            </div>
+            <label>
+              <div className="write-review-enter-body">Write your review in the space below:</div>
+              <textarea value={this.state.body} onChange={this.update('body')} className="write-review-textarea"/>
+            </label>
+          </div>
+          <input type="submit" value="Submit" className="write-review-submit"/>
         </form>
       </div>
     );
