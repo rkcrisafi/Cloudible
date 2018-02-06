@@ -31,8 +31,8 @@ export const fetchBooks = () => dispatch => (
   BookApiUtil.fetchBooks().then(books => dispatch(receiveBooks(books)))
 );
 
-export const fetchBook = book => dispatch => (
-  BookApiUtil.fetchBook(book).then(book => dispatch(receiveBook(book)))
+export const fetchBook = book_id => dispatch => (
+  BookApiUtil.fetchBook(book_id).then(book => dispatch(receiveBook(book)))
 );
 
 export const addBook = (user_id, book_id) => dispatch => (

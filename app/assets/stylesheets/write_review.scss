@@ -1,0 +1,33 @@
+.write-review {
+  margin: auto;
+  width: 1000px;
+}
+
+.write-review-book {
+  display: flex;
+  border-bottom: 1px #e6e6e6 dashed;
+}
+
+.write-review-book-cover {
+  padding: 20px 10px 20px 20px;
+}
+
+.write-review-book-description {
+  padding-top: 20px;
+  font-family: "Amazon Amber", Arial, sans-serif;
+}
+
+.write-review-book-title {
+  font-size: 25px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.write-review-unabridged {
+  font-size: 13px;
+}
+
+.write-review-author, .write-review-narrator {
+  font-size: 15px;
+  margin-top: 5px;
+}
