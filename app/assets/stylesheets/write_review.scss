@@ -72,7 +72,26 @@
 }
 
 .write-review-submit {
-  color: blue;
+  color: #1a5997;
+  font-size: 15px;
   font-weight: 700;
   width: 100px;
+  height: 25px;
+  background-color: #f3f2f2;
+  margin: 30px 20px 20px 50px;
+}
+
+.write-review-cancel {
+  border: 1px #cccccc solid;
+  text-decoration: none;
+  background-color: #f3f2f2;
+  color: #1a5997;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 3.5px 20px;
+}
+
+.write-review-submit:hover, .write-review-cancel:hover {
+  color: #e84f27;
+  cursor: pointer;
 }

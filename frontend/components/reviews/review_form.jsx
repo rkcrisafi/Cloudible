@@ -26,6 +26,10 @@ class ReviewForm extends React.Component {
 
   render() {
     let book = this.props.book;
+    const { title, body } = this.state;
+    const isEnabled =
+      title.length > 0 &&
+      body.length > 0;
     return (
       <div className="write-review">
         {
@@ -64,7 +68,8 @@ class ReviewForm extends React.Component {
               <textarea value={this.state.body} onChange={this.update('body')} className="write-review-textarea"/>
             </label>
           </div>
-          <input type="submit" value="Submit" className="write-review-submit"/>
+          <input disabled={!isEnabled} type="submit" value="Submit" className="write-review-submit"/>
+          <Link to={"/library"} className="write-review-cancel">Cancel</Link>
         </form>
       </div>
     );
