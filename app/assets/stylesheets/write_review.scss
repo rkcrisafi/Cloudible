@@ -95,3 +95,8 @@
   color: #e84f27;
   cursor: pointer;
 }
+
+.write-review-submit:disabled {
+  color: gray;
+  cursor: none;
+}
