@@ -11,10 +11,22 @@ class BookReviewIndex extends React.Component {
   }
 
   render() {
+    let sortedReviews = [];
+    if (this.props.reviews) {
+      sortedReviews = this.props.reviews.sort((a, b) => {
+        if (a.review.created_at < b.review.created_at) {
+          return 1;
+        } else if (a.review.created_at > b.review.created_at) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+    }
     return (
       <div className="book-review-index">
         {
-          this.props.reviews.map((review, idx) => {
+          sortedReviews.map((review, idx) => {
             return (
               !review ? null :
               <BookReviewIndexItem key={idx} rating={review.rating} review={review.review}/>

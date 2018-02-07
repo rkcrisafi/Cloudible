@@ -10,13 +10,14 @@ const mapStateToProps = (state, ownProps) => {
     if (!review) {
       return null;
     }
-    
+
     let rating = state.ratings[review.rating_id];
     return {
       review,
       rating,
     };
   });
+  reviews = reviews.filter((review) => review !== null);
   return {
     bookId,
     reviews,
