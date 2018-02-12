@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import UserReviewIndex from './user_review_index';
 import { fetchUserReviews } from '../../actions/review_actions';
+import { showLibrary } from '../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let reviews = state.users[userId].reviewIds.map(id => {
+  let reviews = state.user.reviewIds.map(id => {
     let review = state.reviews[id];
     if (!review) {
       return null;
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
       book
     };
   });
+  reviews = reviews.filter(review => review !== null);
   return {
     currentUserId: state.session.currentUser.id,
     userId: ownProps.match.params.userId,
@@ -26,6 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUserReviews: (userId) => dispatch(fetchUserReviews(userId)),
+  showLibrary: (userId) => dispatch(showLibrary(userId)),
 });
 
 export default withRouter(connect(

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import UserReviewIndexContainer from '../reviews/user_review_index_container';
 
 class UserProfile extends React.Component {
   constructor (props) {
@@ -7,7 +8,6 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    // 
     this.props.fetchUser(this.props.userId);
   }
 
@@ -30,12 +30,12 @@ class UserProfile extends React.Component {
   }
 
   render () {
-    // 
-    const pic = this.props.user.imageUrl ? this.props.user.imageUrl : null;
+    let user = this.props.user;
+    const pic = user.imageUrl ? user.imageUrl : null;
     return (
       <div className="user-profile">
         <div className="user-pic-reviews">
-          { !$.isEmptyObject(this.props.user) ? (
+          { !$.isEmptyObject(user) ? (
             <div>
               <div className="user-pic-description">
                 <div className="user-pic-upload-botton">
@@ -51,9 +51,9 @@ class UserProfile extends React.Component {
                   </form>
                 </div>
                 <div className="user-description">
-                  <div className="user-first-name">{this.props.user.first_name}</div>
+                  <div className="user-first-name">{user.first_name}</div>
 
-                    <div className="listener-since">Listener Since {this.props.user.created_at.slice(0,4)}</div>
+                    <div className="listener-since">Listener Since {user.created_at.slice(0,4)}</div>
                 </div>
               </div>
               <div className="user-ratings"></div>
@@ -61,6 +61,9 @@ class UserProfile extends React.Component {
           ) : null
         }
           </div>
+          { (user.reviewIds && user.reviewIds.length >= 1) ?
+          <UserReviewIndexContainer /> :
+          null }
         </div>
     );
   }

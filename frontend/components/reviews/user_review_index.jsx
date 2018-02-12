@@ -9,6 +9,7 @@ class UserReviewIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchUserReviews(this.props.userId);
+    this.props.showLibrary(this.props.userId);
   }
 
   render() {
@@ -25,15 +26,21 @@ class UserReviewIndex extends React.Component {
       });
     }
     return (
-      <div>
+      <div className="user-profile-reviews">
         {
-          sortedReviews.map((review, idx) => {
-            return (
-              !review ? null :
-              <UserReviewIndexItem key={idx} rating={review.rating} review={review.review} />
-            );
-          })
+          (!this.props.currentUserId) ? null :
+          <div className="user-profile-my-reviews-title">MY REVIEWS</div>
         }
+        <div className="user-profile-my-reviews">
+          {
+            sortedReviews.map((review, idx) => {
+              return (
+                !review ? null :
+                <UserReviewIndexItem key={idx} rating={review.rating} review={review.review} book={review.book}/>
+              );
+            })
+          }
+        </div>
       </div>
     );
   }

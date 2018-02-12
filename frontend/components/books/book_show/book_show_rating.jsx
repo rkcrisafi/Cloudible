@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BookShowRating = ({ count, number }) => {
-  const star = <div className="book-show-full-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/full_star.png' width="15" height="15"/></div>
+const BookShowRating = ({ count, number, orange }) => {
+  const star = ((orange) ? <div className="book-show-full-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/full_star.png' width="15" height="15"/></div> : <i className="fa fa-star" aria-hidden="true"></i>)
   const halfStar = <div className="book-show-half-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/half_star.png' width="15" height="15"/></div>
-  const emptyStar = <div className="book-show-empty-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/empty_star.png' width="15" height="15"/></div>
+  const emptyStar = ((orange) ? <div className="book-show-empty-star"><img src='https://s3.us-east-2.amazonaws.com/cloudible-dev/books/images/000/000/002/original/empty_star.png' width="15" height="15"/></div> : <i className="fa fa-star-o" aria-hidden="true"></i>)
 
 
   return (

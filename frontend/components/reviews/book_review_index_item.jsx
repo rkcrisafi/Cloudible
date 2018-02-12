@@ -10,15 +10,15 @@ const BookReviewIndexItem = ({ rating, review }) => {
         <div className="book-review-rating-stars">
           <div className="book-review-a-rating">
             <div className="book-review-a-rating-name">Overall</div>
-            <BookShowRating count={rating.overall}/>
+            <BookShowRating count={rating.overall} orange={true}/>
           </div>
           <div className="book-review-a-rating">
             <div className="book-review-a-rating-name">Performance</div>
-            <BookShowRating count={rating.performance} />
+            <BookShowRating count={rating.performance} orange={true}/>
           </div>
           <div className="book-review-a-rating">
             <div className="book-review-a-rating-name">Story</div>
-            <BookShowRating count={rating.story} />
+            <BookShowRating count={rating.story} orange={true}/>
           </div>
         </div>
         <div className="book-review-user">

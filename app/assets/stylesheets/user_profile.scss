@@ -64,6 +64,81 @@
   padding-top: 20px;
 }
 
+.user-profile-my-reviews {
+  padding-top: 10px;
+}
+
 .user-create-my-profile {
   font-size: 13px;
+}
+
+.user-profile-reviews {
+  padding-top: 40px;
+}
+
+.user-profile-my-reviews-title {
+  color: gray;
+}
+
+.user-profile-book-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile-book-image {
+  padding-right: 20px;
+}
+
+.user-profile-book-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.user-profile-unabridged {
+  font-size: 13px;
+  padding: 5px 0 20px 0;
+}
+
+.user-profile-book-author, .user-profile-book-narrator {
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.user-profile-single-review {
+  padding: 10px 0 50px 0;
+  border-bottom: 1px dashed #cccccc;
+  display: flex;
+}
+
+.user-profile-ratings-review {
+  font-family: Times;
+}
+
+.user-profile-review-title {
+  font-size: 25px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.user-profile-ratings {
+  display: flex;
+  padding-left: 15px;
+}
+
+.user-profile-rating {
+  font-family: "Amazon Amber", Arial, sans-serif;
+  font-size: 13px;
+  display: flex;
+}
+
+.book-show-rating-just-stars {
+  color: #e84f27;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.book-show-rating-just-stars > .fa.fa-star, .fa.fa-star-o {
+  padding: 1.5px;
+  display: flex;
+  // position: relative;
 }

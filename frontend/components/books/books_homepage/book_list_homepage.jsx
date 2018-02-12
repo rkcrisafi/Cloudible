@@ -117,20 +117,20 @@ class BookList extends React.Component {
               <div className="hbook-index-ratings">
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Overall</div>
-                  <BookShowRating count={hovBook.overallRating}/>
+                  <BookShowRating count={hovBook.overallRating} orange={true}/>
                   <div className="hbook-index-rating-number">
                     {hovBook.numOverallRatings}</div>
                   </div>
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Performance</div>
-                  <BookShowRating count={hovBook.performanceRating}/>
+                  <BookShowRating count={hovBook.performanceRating} orange={true}/>
                   <div className="hbook-index-rating-number">
                     {hovBook.numPerformanceRatings}
                   </div>
                 </div>
                 <div className="hbook-index-rating">
                   <div className="hbook-index-rating-name">Story</div>
-                  <BookShowRating count={hovBook.storyRating}/>
+                  <BookShowRating count={hovBook.storyRating} orange={true}/>
                   <div className="hbook-index-rating-number">
                     {hovBook.numStoryRatings}
                   </div>
