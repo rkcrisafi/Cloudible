@@ -8,7 +8,6 @@ class Library extends React.Component {
   }
 
   render () {
-    //
     return (<div>
       <div className="library-library">Library</div>
       <table className="library-table">
@@ -24,7 +23,7 @@ class Library extends React.Component {
         <tbody>
           {
             this.props.books.map((book, idx) => (
-              <LibraryItem key={idx} book={book} addRating={this.props.addRating} updateRating={this.props.updateRating}/>
+              <LibraryItem key={idx} book={book} addRating={this.props.addRating} updateRating={this.props.updateRating} currentUserId={this.props.currentUserId}/>
             ))
           }
         </tbody>

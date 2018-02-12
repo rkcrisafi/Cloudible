@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.currentUser ? state.session.currentUser : undefined;
-  // 
   return {
     currentUser
   };
@@ -14,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const NavBar = (props) => {
   let nav_bar = <div>that supposed to be my navbar</div>;
-  // 
+  //
   if (props.location.pathname === "/" && !props.currentUser)  {
     nav_bar = (
       <div className="front-page">

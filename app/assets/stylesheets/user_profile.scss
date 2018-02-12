@@ -73,7 +73,7 @@
 }
 
 .user-profile-reviews {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .user-profile-my-reviews-title {
@@ -105,8 +105,8 @@
 }
 
 .user-profile-single-review {
-  padding: 10px 0 50px 0;
-  border-bottom: 1px dashed #cccccc;
+  padding: 15px 0 50px 0;
+  border-bottom: 1px dashed #d7d7d7;
   display: flex;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .user-profile-review-title {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 700;
   padding-bottom: 5px;
 }
@@ -137,8 +137,11 @@
   padding: 0 10px;
 }
 
-.book-show-rating-just-stars > .fa.fa-star, .fa.fa-star-o {
+.book-show-rating-just-stars > .fa.fa-star, .book-show-rating-just-stars > .fa.fa-star-o {
   padding: 1.5px;
   display: flex;
-  // position: relative;
+}
+
+.user-profile-review-body {
+  padding: 30px 0 30px 10px;
 }

@@ -9,10 +9,10 @@ const UserReviewIndexItem = ({ rating, review, book }) => {
   return (
     <div className="user-profile-single-review">
       <div className="user-profile-book-info">
-        <Link to={`books/${book.id}`}>
+        <Link to={`/books/${book.id}`}>
           <img src={bookCover} width="200" height="200"  className="user-profile-book-image"/>
         </Link>
-        <Link className="user-profile-book-title" to={`books/${book.id}`}>{book.title}</Link>
+        <Link className="user-profile-book-title" to={`/books/${book.id}`}>{book.title}</Link>
         <div className="user-profile-unabridged">
           { (book.unabridged) ? "UNABRIDGED" : "ABRIDGED" }
         </div>

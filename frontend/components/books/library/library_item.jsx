@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LibraryRatingItem from './library_rating_item';
 
-const LibraryItem = ({ book, addRating, updateRating }) => {
-
+const LibraryItem = ({ book, addRating, updateRating, currentUserId }) => {
   return (
     <tr>
       <td><img src={book.imageUrl} width="90" height="90"  className="library-image-link"/></td>
@@ -19,7 +18,7 @@ const LibraryItem = ({ book, addRating, updateRating }) => {
         <div className="library-write-review">
           {
             (!(book.overall && book.performance && book.story)) ? <div>Rate to write a review</div> :
-            (book.reviewId) ? <Link to={`/books/${book.id}`}>Read your review</Link> :
+            (book.reviewId) ? <Link to={`/listener/${currentUserId}`}>Read your review</Link> :
             <Link to={`/write-review/${book.id}/${book.ratingId}`} params={{ book }}>Write a review</Link>
           }
         </div>
