@@ -1,9 +1,9 @@
 import React from 'react';
 import BookShowRating from '../books/book_show/book_show_rating';
+import { Link } from 'react-router-dom';
 
 const BookReviewIndexItem = ({ rating, review }) => {
   const pic = review.userImageUrl;
-
   return (
     <div className="book-review-rating">
       <div className="book-review-rating-user">
@@ -26,7 +26,7 @@ const BookReviewIndexItem = ({ rating, review }) => {
             <img src={pic} width="40" height="40"  className="book-review-user-image"/>
           </div>
           <div className="book-review-user-date">
-            <div className="book-review-first-name">{review.first_name}</div>
+            <Link className="book-review-first-name" to={`/listener/${review.userId}`}>{review.first_name}</Link>
             <div className="book-review-date-created">{review.created_at.slice(5,10)}-{review.created_at.slice(2,4)}</div>
           </div>
         </div>

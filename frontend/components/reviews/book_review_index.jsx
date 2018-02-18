@@ -29,7 +29,7 @@ class BookReviewIndex extends React.Component {
           sortedReviews.map((review, idx) => {
             return (
               !review ? null :
-              <BookReviewIndexItem key={idx} rating={review.rating} review={review.review}/>
+              <BookReviewIndexItem key={idx} rating={review.rating} review={review.review} />
             );
           })
         }

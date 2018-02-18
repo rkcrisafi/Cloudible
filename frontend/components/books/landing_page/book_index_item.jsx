@@ -12,7 +12,7 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
         <div className="book-index-author"> {book.author}</div>
       </div>
       <div className="book-index-description-rating">
-        <BookShowRating count={book.overallRating}/>
+        <BookShowRating count={book.overallRating} orange={true}/>
         <div
           className="book-index-rating-number">{book.numOverallRatings} {book.numOverallRatings === 1 ? 'rating' : 'ratings'}
         </div>
@@ -56,7 +56,7 @@ const BookIndexItem = ({ book, idx, audio, audioId, handleAudioClick }) => {
             <div className="book-index-outside-narrator-name">{book.narrator}</div>
           </div>
           <div className="book-index-rating">
-            <BookShowRating count={book.overallRating}/>
+            <BookShowRating count={book.overallRating} orange={true}/>
           </div>
         </div>
 

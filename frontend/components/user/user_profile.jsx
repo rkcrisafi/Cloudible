@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.userId);
+    this.props.showLibrary(this.props.userId);
   }
 
 

@@ -2,8 +2,11 @@ class Api::BooksController < ApplicationController
 
   def index
     if params[:user_id]
-      @user_library = true
-      @books = current_user.books
+      if current_user
+        @user_library = true
+        @books = current_user.books
+      end
+      @books = User.find(params[:user_id]).books
     else
       @books = Book.all
     end

@@ -9,7 +9,6 @@ class UserReviewIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchUserReviews(this.props.userId);
-    this.props.showLibrary(this.props.userId);
   }
 
   render() {
@@ -28,8 +27,8 @@ class UserReviewIndex extends React.Component {
     return (
       <div className="user-profile-reviews">
         {
-          (!this.props.currentUserId) ? null :
-          <div className="user-profile-my-reviews-title">MY REVIEWS</div>
+          (this.props.currentUserId && this.props.currentUserId === Number(this.props.userId)) ?
+          <div className="user-profile-my-reviews-title">MY REVIEWS</div> : null
         }
         <div className="user-profile-my-reviews">
           {

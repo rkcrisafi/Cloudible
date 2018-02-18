@@ -1,9 +1,12 @@
 ratings = []
+books = []
+
 
 json.reviews do
   @reviews.each do |review|
     user = review.reviewer
     ratings << review.rating
+    books << review.book
     json.set! review.id do
       json.extract! review, :title, :body, :id, :created_at, :rating_id
       # json.extract! review.rating :rating_id, :overall, :story, :performance, :book_id
@@ -21,3 +24,11 @@ json.ratings do
     end
   end
 end
+
+# json.books do
+#   books.each do |book|
+#     json.set! book.id do
+#       json.extract! book, :id, :title, :narrator, :author, :unabridged
+#     end
+#   end
+# end

@@ -6,7 +6,6 @@ export function fetchUser(id) {
 }
 
 export function updateUser (image, user_id) {
-  // 
   return $.ajax({
     method: 'patch',
     url: `/api/users/${user_id}`,
